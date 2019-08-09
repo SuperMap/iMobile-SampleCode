@@ -1,3 +1,5 @@
+部署方式:
+
 配置许可文件：
 http://support.supermap.com.cn/ 申请试用许可，适用产品选择SuperMap iMobile
 
