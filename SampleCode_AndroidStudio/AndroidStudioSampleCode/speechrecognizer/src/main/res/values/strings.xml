@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 请替换成在语音云官网申请的appid, appid与下载的sdk是绑定的关系 -->
+    <string name="app_id">your_appid</string>
+
+    <string name="app_name">语音识别</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+</resources>

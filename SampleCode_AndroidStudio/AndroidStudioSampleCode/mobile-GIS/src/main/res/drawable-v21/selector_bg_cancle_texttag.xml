@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shape_btn_cancle_dialog_texttag" android:state_pressed="false"></item>
+    <item android:drawable="@drawable/shape_btn_cancle_pressed_dialog_texttag" android:state_pressed="true"></item>
+
+</selector>

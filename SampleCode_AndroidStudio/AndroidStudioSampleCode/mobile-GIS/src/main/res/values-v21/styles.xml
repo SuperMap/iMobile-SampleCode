@@ -1,0 +1,11 @@
+<resources>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+    <style name="AnimationRightFade">
+        <item name="android:windowEnterAnimation">@anim/in_right</item>
+        <item name="android:windowExitAnimation">@anim/out_right</item>
+    </style>
+</resources>

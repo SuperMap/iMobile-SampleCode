@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="@drawable/toolbar_selector"
+  android:padding="5dp"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+  
+   
+        
+    
+    <TextView
+    	android:id="@+id/txt_geoname" 
+   		android:text="国家："
+   		android:textColor="#ff000000"
+   		android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_vertical"
+        android:singleLine="true" /> 
+	<TextView 
+        android:id="@+id/txt_country" 
+        android:ellipsize="marquee"  
+        android:textColor="#ff000000"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center_vertical"  
+        android:singleLine="true" 
+        android:layout_toRightOf="@+id/txt_geoname"
+        android:layout_alignTop="@+id/txt_geoname"/> 
+	<TextView
+    	android:id="@+id/txt_geocapital" 
+   		android:text="首都："
+   		android:textColor="#ff000000"
+   		android:layout_below="@+id/txt_geoname"
+   		android:layout_alignLeft="@+id/txt_geoname"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_vertical"
+        android:singleLine="true" />
+    <TextView 
+        android:id="@+id/txt_capital" 
+        android:textColor="#ff000000"
+        android:ellipsize="marquee"        
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center_vertical"  
+        android:singleLine="true" 
+        android:layout_toRightOf="@+id/txt_geocapital"
+        android:layout_alignTop="@+id/txt_geocapital"/> 
+    <TextView
+    	android:id="@+id/txt_geopop" 
+   		android:text="人口："
+   		android:textColor="#ff000000"
+   		android:layout_below="@+id/txt_geocapital"
+   		android:layout_alignLeft="@+id/txt_geocapital"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_vertical"
+        android:singleLine="true" />
+    <TextView 
+        android:id="@+id/txt_pop"     
+        android:ellipsize="marquee"  
+        android:textColor="#ff000000"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center_vertical"  
+        android:singleLine="true" 
+        android:layout_toRightOf="@+id/txt_geopop"
+        android:layout_alignTop="@+id/txt_geopop"/> 
+     <TextView
+    	android:id="@+id/txt_geoContinent" 
+   		android:text="地区："
+   		android:textColor="#ff000000"
+   		android:layout_below="@+id/txt_geopop"
+   		android:layout_alignLeft="@+id/txt_geopop"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"  
+        android:layout_gravity="center_vertical"
+        android:singleLine="true" />
+    <TextView 
+        android:id="@+id/txt_Continent"     
+        android:ellipsize="marquee"  
+        android:textColor="#ff000000"
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center_vertical"  
+        android:singleLine="true" 
+        android:layout_toRightOf="@+id/txt_geoContinent"
+        android:layout_alignTop="@+id/txt_geoContinent"/> 
+        
+   
+    
+    <ImageButton 
+	    android:layout_height="30dp" 
+	    android:layout_width="30dp" 
+	    android:layout_alignParentRight="true"
+	    android:src="@drawable/close" 
+	    android:id="@+id/btn_close" />
+    
+
+</RelativeLayout>

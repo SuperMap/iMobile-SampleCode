@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_roundedrectangle_white01"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:orientation="vertical">"
+    
+    <TextView 
+        android:id="@+id/loginTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="登录框"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_roundedrectangle_white01"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="用户名  " />
+        
+        <EditText
+            android:id="@+id/userName"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:background="@null"
+            android:textSize="16sp"
+            android:hint="iPortal用户名" />
+
+    </LinearLayout>
+
+     <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_roundedrectangle_white01"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="密   码  " />
+        
+        <EditText
+            android:id="@+id/userPassword"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:background="@null"
+            android:password="true"
+            android:gravity="left|center"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:hint="iPortal密码" />
+
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_roundedrectangle_white01"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="iPortal  " />
+        
+        <EditText
+            android:id="@+id/iPortalAddr"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:digits="1234567890."
+            android:background="@null"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:hint="192.168.19.238" />
+
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_roundedrectangle_white01"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:text="iServer  "
+             />
+        
+        <EditText
+            android:id="@+id/iServerAddr"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:gravity="left|center"
+            android:digits="1234567890."
+            android:background="@null"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:hint="192.168.0.102" />
+
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button 
+            android:id="@+id/btn_confirm"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:text="确定"/>
+        <Button 
+            android:id="@+id/btn_cancel"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:layout_marginLeft="60dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:text="取消"/>
+
+    </LinearLayout>
+    
+</LinearLayout>

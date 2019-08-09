@@ -1,0 +1,242 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.supermap.mapping.MapView>
+
+  
+
+    
+    <Button
+        android:id="@+id/btn_Cut_Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="影像拉伸" />
+    <Button
+        android:id="@+id/btn_Cut_Dataset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_Cut_Image"
+        android:layout_alignBottom="@+id/btn_Cut_Image"
+        android:layout_toRightOf="@+id/btn_Cut_Image"
+        android:text="影像裁剪" />
+    <Button
+        android:id="@+id/btn_cutting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_Cut_Dataset"
+        android:layout_alignBottom="@+id/btn_Cut_Dataset"
+        android:layout_toRightOf="@+id/btn_Cut_Dataset"
+        android:text="显示控制" />
+	<Button 
+	    android:id="@+id/btn_stretching"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_cutting"
+        android:layout_alignBottom="@+id/btn_cutting"
+        android:layout_toRightOf="@+id/btn_cutting"
+        android:text="设置" 
+        android:visibility="invisible"
+	    />
+	<Button 
+	    android:id="@+id/btn_band"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_stretching"
+        android:layout_alignBottom="@+id/btn_stretching"
+        android:layout_toRightOf="@+id/btn_stretching"
+        android:text="波段显示" 
+        android:visibility="invisible"
+	    />
+	
+	
+    <Button
+        android:id="@+id/btnStretch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btn_Cut_Image"
+        android:layout_below="@+id/btn_Cut_Image"
+        android:text="高斯拉伸"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnStretch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnStretch2"
+        android:layout_alignBottom="@+id/btnStretch2"
+        android:layout_toRightOf="@+id/btnStretch2"
+        android:text="最值拉伸"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnStretch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnStretch3"
+        android:layout_alignBottom="@+id/btnStretch3"
+        android:layout_toRightOf="@+id/btnStretch3"
+        android:text="标准差拉伸"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnStretch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnStretch4"
+        android:layout_alignBottom="@+id/btnStretch4"
+        android:layout_toRightOf="@+id/btnStretch4"
+        android:text="直方图匹配"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnStretch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnStretch5"
+        android:layout_alignBottom="@+id/btnStretch5"
+        android:layout_toRightOf="@+id/btnStretch5"
+        android:text="直方图均衡化"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnStretch7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnStretch6"
+        android:layout_alignBottom="@+id/btnStretch6"
+        android:layout_toRightOf="@+id/btnStretch6"
+        android:text="无拉伸"
+        android:visibility="invisible"/>
+    
+    <Button
+        android:id="@+id/btnClip2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btn_Cut_Dataset"
+        android:layout_below="@+id/btn_Cut_Dataset"
+        android:text="裁剪到数据集"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnClip3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnClip2"
+        android:layout_alignBottom="@+id/btnClip2"
+        android:layout_toRightOf="@+id/btnClip2"
+        android:text="裁剪到文件"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnClip4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnClip3"
+        android:layout_alignBottom="@+id/btnClip3"
+        android:layout_toRightOf="@+id/btnClip3"
+        android:text="影像切割"
+        android:visibility="invisible"/>
+    
+    
+    
+    <Button
+        android:id="@+id/btnControlDisplay2"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btn_cutting"
+        android:layout_below="@+id/btn_cutting"
+        android:text="R"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnControlDisplay3"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnControlDisplay2"
+        android:layout_alignBottom="@+id/btnControlDisplay2"
+        android:layout_toRightOf="@+id/btnControlDisplay2"
+        android:text="G"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnControlDisplay4"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnControlDisplay3"
+        android:layout_alignBottom="@+id/btnControlDisplay3"
+        android:layout_toRightOf="@+id/btnControlDisplay3"
+        android:text="B"
+        android:visibility="invisible"/>
+    
+    
+    
+    <TextView
+        android:id="@+id/tvSetting2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btn_stretching"
+        android:layout_below="@+id/btn_stretching"
+        android:text="高斯系数:"
+        android:textSize="18dp"
+        android:visibility="invisible"/>
+    <EditText
+        android:id="@+id/EditText2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSetting2"
+        android:layout_alignBottom="@+id/tvSetting2"
+        android:layout_toRightOf="@+id/tvSetting2"
+        android:text="0"
+        android:textSize="18dp"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/tvSetting3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvSetting2"
+        android:layout_below="@+id/tvSetting2"
+        android:layout_marginTop="20dp"
+        android:text="标准差系数:"
+        android:textSize="18dp"
+        android:visibility="invisible"/>
+    <EditText
+        android:id="@+id/EditText3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSetting3"
+        android:layout_alignBottom="@+id/tvSetting3"
+        android:layout_toRightOf="@+id/tvSetting3"
+        android:text="0"
+        android:textSize="18dp"
+        android:visibility="invisible"/>
+    <Button
+        android:id="@+id/btnSetting4"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvSetting3"
+        android:layout_below="@+id/tvSetting3"
+        android:text="保存"
+        android:visibility="invisible"/>
+    
+    
+	
+    <Button
+        android:id="@+id/btn_export"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_band"
+        android:layout_alignBottom="@+id/btn_band"
+        android:layout_toRightOf="@+id/btn_band"
+        android:text="导出数据"
+        android:visibility="invisible" />
+    <Button
+        android:id="@+id/btn_import"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_export"
+        android:layout_alignBottom="@+id/btn_export"
+        android:layout_toRightOf="@+id/btn_export"
+        android:text="导入数据"
+        android:visibility="invisible" />
+    
+    
+
+</RelativeLayout>

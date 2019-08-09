@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parentFrameLayout" >
+
+    <RelativeLayout
+        android:id="@+id/rl_all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/testMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+        </com.supermap.mapping.MapView>
+
+        <com.supermap.ar.ArView
+            android:id="@+id/arView"
+            android:name="com.supermap.fragment.ArFragmentSupport"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/customizeModeSwitchLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_above="@+id/avoidModeSwitchLayout"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            >
+            <TextView
+                android:text="自定义"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:height="30dp"
+                />
+            <Switch
+                android:id="@+id/customizeModeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="开"
+                android:textOff="关"
+                android:switchMinWidth="40dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/avoidModeSwitchLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_above="@+id/setFactorLayout"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="避让    "
+                android:gravity="center"
+                android:textSize="20sp"
+                android:height="30dp"
+                />
+            <Switch
+                android:id="@+id/avoidModeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="开"
+                android:textOff="关"
+                android:switchMinWidth="40dp"/>
+            <TextView
+                android:id="@+id/textGPSLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:height="30dp"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/setFactorLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_above="@+id/maxRenderLayout"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/factor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dst factor"
+                android:textSize="25sp"
+                android:visibility="visible"/>
+
+            <SeekBar
+                android:id="@+id/seekFactorRender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dip"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/maxRenderLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/maxRender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max eye   "
+                android:textSize="25sp"
+                android:visibility="visible"/>
+
+            <SeekBar
+                android:id="@+id/seekMaxRender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dip"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_checked="false" android:drawable="@drawable/ic_btn_edit_setting_red"></item>
+    <item android:state_checked="true" android:drawable="@drawable/ic_btn_edit_setting_red_pressed"></item>
+
+</selector>

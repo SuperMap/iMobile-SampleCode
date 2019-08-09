@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/attribute_title" />
+    <ImageView
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="属性"
+            android:textSize="22dp"/>
+
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="属性值"
+            android:textSize="22dp"/>
+        <ImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_attrbute"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/btn_showphoto"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/btn_pressed"
+                android:text="查看图片" />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_showaudio"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="查看音频" />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_showvideo"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="查看视频" />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_editfieldvalue"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="编辑字段值" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_takephoto"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="拍照" />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_takeaudio"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="录音" />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_takevideo"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="录屏" />
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+            <TextView
+                android:background="@drawable/btn_pressed"
+                android:id="@+id/btn_save"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="保存"/>
+            <ImageView
+
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#000"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:visibility="gone">
+        <Button
+
+            android:id="@+id/btn_close"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+
+            android:background="@drawable/btn_clsoemedia"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/image_photo"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+        <VideoView
+            android:visibility="gone"
+            android:id="@+id/video_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+    </RelativeLayout>
+</RelativeLayout>

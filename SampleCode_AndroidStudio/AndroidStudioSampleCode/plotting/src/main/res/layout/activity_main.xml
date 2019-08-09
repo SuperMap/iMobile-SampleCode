@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <com.supermap.mapping.MapView
+        android:id = "@+id/Map_view"
+        android:layout_width="fill_parent"
+        android:layout_height = "fill_parent">
+
+    </com.supermap.mapping.MapView>
+    
+
+    <Button
+        android:id="@+id/btnPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="点标绘"
+        android:onClick="btnPoint_Click" />
+
+    <Button
+        android:id="@+id/btnSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnPoint"
+        android:text="箭头标绘" 
+        android:onClick="btnSymbol_Click"/>
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnSymbol"
+        android:text="编辑符号"
+        android:onClick="btnEdit_Click" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnEdit"
+        android:text="删除符号" 
+        android:onClick="btnDelete_Click"/>
+
+    <Button
+        android:id="@+id/btnRedo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnDelete"
+        android:text="重做" 
+        android:onClick="btnRedo_Click"/>
+
+    <Button
+        android:id="@+id/btnUndo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnRedo"
+        android:text="撤销"
+        android:onClick="btnUndo_Click" />
+    
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnUndo"
+        android:text="取消"
+        android:onClick="btnCancel_Click" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnCancel"
+        android:text="提交" 
+        android:onClick="btnSubmit_Click"/>
+    
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btnSubmit"
+        android:text="清空"
+        android:onClick="btnClear_Click" />
+    
+     <GridView
+        android:id="@+id/gridviewPoint"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:background="#000"
+        android:columnWidth="50dp"
+        android:gravity="center"
+        android:horizontalSpacing="3dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="3dp" 
+        android:layout_below="@+id/btnPoint"/>
+     
+     <GridView
+        android:id="@+id/gridviewLine"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:background="#000"
+        android:columnWidth="50dp"
+        android:gravity="center"
+        android:horizontalSpacing="3dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="3dp" 
+        android:layout_below="@+id/btnPoint"/>
+
+  
+
+</RelativeLayout>

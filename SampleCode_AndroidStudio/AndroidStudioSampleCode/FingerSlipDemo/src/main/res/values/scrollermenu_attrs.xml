@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ScrollerMenu">
+        <attr name="scrollerMenuItemHeight" format="dimension" />
+        <attr name="scrollerMenuItemWidth" format="dimension" />
+        <attr name="scrollerMenuItemTextColor" format="dimension" />
+        <attr name="scrollerMenuItemDefaultBackground" format="reference" />
+        <attr name="scrollerMenuItemSelectedBackground" format="reference" />
+        <attr name="scrollerMenuPanelBackground" format="reference" />
+        <attr name="scrollerMenuItems" format="integer" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_rect"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/btn_import"
+        android:layout_width="82dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="导入" />
+
+    <Button
+        android:id="@+id/btn_export"
+        android:layout_width="82dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="导出" />
+
+</RadioGroup>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white_roundcorner"
+    >
+    
+    <RelativeLayout
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" 
+        android:layout_marginBottom="80dp"
+        >
+
+        <ListView
+            android:id="@+id/lv_track"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="0dp"
+            android:divider="@null"
+            android:fadingEdge="none" 
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_tracklist_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textColor="#000000" 
+            />
+
+        <Button
+            android:id="@+id/btn_tracklist_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_tracklist_confirm"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/btn_tracklist_confirm"
+            android:text="取消"
+            android:textColor="#000000"
+            android:textSize="15sp" 
+            />
+
+   </RelativeLayout>
+</RelativeLayout>

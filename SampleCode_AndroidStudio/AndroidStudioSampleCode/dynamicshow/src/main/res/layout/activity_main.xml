@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+        <Button 
+			android:text="清空动态层" 
+			android:textSize="10dp" 
+			android:id="@+id/btn_clear" 
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginLeft="7dp"
+			android:layout_marginBottom="25dp"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"/>
+		<Button 
+			android:text="添加点" 
+			android:textSize="10dp" 
+			android:id="@+id/btn_pt" 
+			android:layout_toRightOf="@id/btn_clear"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="25dp"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"/>	
+		<Button 
+			android:text="动画" 
+			android:textSize="10dp" 
+			android:id="@+id/btn_animation" 
+			android:layout_toRightOf="@id/btn_pt"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="25dp"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"/>
+</RelativeLayout>

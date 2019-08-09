@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 请替换成在讯飞语音云官网申请的appid, appid与下载的sdk是绑定的关系 -->
+    <string name="app_id">your_appid</string>
+
+    <string name="app_name">语音控制</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="action_voice_rec">action voice rec</string>
+    <string name="action_location">action location</string>
+    <string name="action_taxi">action taxi</string>
+    <string name="action_change_colors">change style</string>
+    <string name="action_example_scrolling_search_bar">scrolling behavior</string>
+</resources>

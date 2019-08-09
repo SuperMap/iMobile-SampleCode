@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contain">
+    <LinearLayout
+        android:id="@+id/layou_menu"
+        android:background="@drawable/background_with_shadow"
+        android:layout_margin="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:orientation="vertical"
+            android:gravity="center">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btn_hotmap"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_btn_hot"/>
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="热力图"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btn_polymer"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_btn_polymer" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="聚合图"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btn_relative"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_btn_relative" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="关系图"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btn_grid"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_btn_grid"
+
+            />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="格网图"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btn_density"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_btn_density" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="密度图"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btnBarChart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_btn_chart" />
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="图表"/>
+    </LinearLayout>
+
+
+        <!--删除-->
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageButton
+                android:id="@+id/imagebtn_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_delet"/>
+            <TextView
+                android:id="@+id/tv_delete"
+                android:textSize="12sp"
+                android:text="清除"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_right"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_real_time"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/bg_btn_realtime"/>
+    <Button
+        android:id="@+id/btn_time_data"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/bg_btn_timedata"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/layout_timeline"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

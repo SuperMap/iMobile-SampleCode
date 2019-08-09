@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+ <Button
+        android:id="@+id/btn_shp"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="SHP"
+        android:background="@drawable/button_style" />
+ <Button
+        android:id="@+id/btn_mif"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:text="MIF" 
+        android:background="@drawable/button_style" />
+ <Button
+        android:id="@+id/btn_dwg"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:text="DWG"
+        android:background="@drawable/button_style"  />
+ <Button
+        android:id="@+id/btn_dxf"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:text="DXF" 
+        android:background="@drawable/button_style" />
+ <Button
+        android:id="@+id/btn_tif"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:text="TIF"
+        android:background="@drawable/button_style"  />
+ 
+ <Button
+        android:id="@+id/btn_img"
+        android:layout_width="48dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:text="IMG"
+        android:background="@drawable/button_style"  />
+</RadioGroup>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <!-- 地图显示 -->
+    <RelativeLayout
+    	android:id="@+id/map_show"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    <com.supermap.mapping.MapView
+			android:id="@+id/map_View"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent" />
+	    <ZoomControls  
+	    	android:id="@+id/zoomControls1"    	
+	     	android:layout_height="wrap_content" 	
+	     	android:layout_width="wrap_content" 
+	     	android:layout_alignParentRight="true"
+	     	android:layout_alignParentBottom="true"/> 
+	</RelativeLayout>
+    <!-- 地图选择栏 -->
+    <RelativeLayout
+    	android:id="@+id/tb_select_map"
+    	android:background="@drawable/toolbar_selector"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="6dp"
+	    android:paddingTop="6dp"
+	    android:paddingRight="6dp"
+	    android:paddingBottom="2dp"
+	    android:layout_margin="6dp">
+	    <TextView
+	    	android:text="缓冲区范围："
+			android:textColor="#ff000000"
+			android:gravity="center"
+			android:id="@+id/txt_range" 
+			android:layout_alignParentLeft="true"
+			android:layout_width="wrap_content"
+			android:layout_height="40dp"/>  
+		<Button 
+			android:text="查询"
+			android:id="@+id/btn_searchGeo" 
+			android:layout_alignParentRight="true"
+			android:layout_width="52dp"
+			android:layout_height="40dp"/>	
+		<ImageButton 
+			android:src="@drawable/pan"
+			android:id="@+id/btn_pan" 
+			android:layout_toLeftOf="@+id/btn_searchGeo"
+			android:layout_width="40dp"
+			android:layout_height="40dp"/>
+		<ImageButton 
+			android:src="@drawable/select"
+			android:id="@+id/btn_selectGeo" 
+			android:layout_toLeftOf="@+id/btn_pan"
+			android:layout_width="40dp"
+			android:layout_height="40dp"/>
+		<EditText
+		    android:id="@+id/edt_range"  
+		    android:text="5"
+		    android:layout_toRightOf="@+id/txt_range" 
+		    android:layout_toLeftOf="@+id/btn_selectGeo" 
+		    android:layout_width="fill_parent"
+		    android:inputType="numberSigned"
+		    android:layout_height="40dp"/>   
+    </RelativeLayout>
+</RelativeLayout>
+

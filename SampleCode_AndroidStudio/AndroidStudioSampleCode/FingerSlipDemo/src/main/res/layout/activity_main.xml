@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                tools:context="com.supermap.fingerslipdemo.MainActivity"
+                tools:ignore="MergeRootFrame">
+
+    <com.supermap.mapping.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <ListView
+        android:id="@+id/layer_listview"
+        android:layout_above="@+id/bottom_menu"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+    </ListView>
+    <LinearLayout
+            android:id="@+id/ll_layer_menu"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/bottom_menu"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        <Button
+                android:id="@+id/btn_symbol_mark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="点风格"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+
+        <Button
+                android:id="@+id/btn_symbol_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="线风格"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_menu_button"/>
+
+        <Button
+                android:id="@+id/btn_symbol_fill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="面风格"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+
+        <Button
+                android:id="@+id/btn_grid_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="栅格属性"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+        <Button
+                android:id="@+id/btn_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="文本属性"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/bottom_menu"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btn_map"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="地图"
+            android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+
+        <Button
+                android:id="@+id/btn_maplayer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="图层"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+
+        <Button
+                android:id="@+id/btn_attr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="属性"
+            android:visibility="gone"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_menu_button"/>
+
+        <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="设置"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:background="@drawable/selector_menu_button"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

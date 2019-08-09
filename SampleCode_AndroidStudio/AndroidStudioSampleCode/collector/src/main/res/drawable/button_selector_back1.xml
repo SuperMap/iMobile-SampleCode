@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/back_btn_normal1" android:state_pressed="false"/>
+    <item android:drawable="@drawable/back_btn_pressed1" android:state_pressed="true"/>
+</selector>

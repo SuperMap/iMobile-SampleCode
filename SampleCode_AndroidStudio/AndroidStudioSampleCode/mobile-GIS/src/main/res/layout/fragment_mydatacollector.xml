@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="5dp">
+
+
+    <ScrollView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:scrollbars="none">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/background_with_shadow">
+
+
+            <!--绘制-->
+            <LinearLayout
+                android:id="@+id/linear_draw"
+
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+            <ImageButton
+                android:layout_gravity="center"
+                android:id="@+id/imagebtn_draw"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/btn_edit"/>
+            <TextView
+                android:id="@+id/tv_draw"
+                android:text="绘制"
+                android:textColor="#000"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--编辑-->
+            <LinearLayout
+                android:id="@+id/linear_edit"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imagebtn_edit"
+                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_edit"/>
+                <TextView
+                    android:id="@+id/tv_edit"
+                    android:text="编辑"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--捕捉-->
+            <LinearLayout
+                android:id="@+id/linear_snap"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/imagebtn_snap"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_snap"/>
+                <TextView
+                    android:id="@+id/tv_snap"
+                    android:text="捕捉"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--选择-->
+            <LinearLayout
+                android:id="@+id/linear_select"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/imagebtn_select"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_select"/>
+                <TextView
+                    android:id="@+id/tv_select"
+                    android:text="选择"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <!--选择-->
+            <LinearLayout
+                android:id="@+id/linear_pan"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/imagebtn_pan"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_pan"/>
+                <TextView
+                    android:id="@+id/tv_pan"
+                    android:text="漫游"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <!--提交-->
+            <LinearLayout
+                android:id="@+id/linear_commit"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/imagebtn_commit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_commit"/>
+                <TextView
+                    android:id="@+id/tv_commit"
+                    android:text="提交"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--属性表-->
+            <LinearLayout
+                android:id="@+id/linear_attribute"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_attribute"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_attribute" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="属性表"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <!--删除-->
+            <LinearLayout
+                android:id="@+id/linear_delete"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:id="@+id/imagebtn_delete"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_delet"/>
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:text="删除"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_marginLeft="2dp"
+        android:id="@+id/scrollview_draw"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:scrollbars="none"
+        android:visibility="gone">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/background_with_shadow">
+
+                <!--画点-->
+                <LinearLayout
+                    android:id="@+id/linear_creatPoint"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:id="@+id/imagebtn_creatPoint"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_creatpoint"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="绘点"/>
+
+                </LinearLayout>
+
+                <!--点画线-->
+                <LinearLayout
+                    android:id="@+id/linear_createline"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:id="@+id/imagebtn_createline"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_creatline"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="绘线"/>
+
+                </LinearLayout>
+
+                <!--点画面-->
+                <LinearLayout
+                    android:id="@+id/linear_createregion"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_createregion"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_creatregion"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="绘面"/>
+
+                </LinearLayout>
+
+                <!--手绘线-->
+                <LinearLayout
+                    android:id="@+id/linear_drawline"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_drawline"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_drawline"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="自由线"/>
+
+                </LinearLayout>
+
+                <!--手绘面-->
+                <LinearLayout
+                    android:id="@+id/linear_drawregion"
+                    android:gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_drawregion"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_drawregion"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="自由面"/>
+                </LinearLayout>
+
+                <!--涂鸦-->
+                <LinearLayout
+                    android:id="@+id/linear_freedraw"
+                    android:gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_freedraw"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_freedraw"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="涂鸦"/>
+                </LinearLayout>
+
+
+                <!--标注-->
+                <LinearLayout
+                    android:id="@+id/linear_addlable"
+                    android:gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_addlable"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_addlable"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="标注"/>
+                </LinearLayout>
+
+
+
+                <!--撤销-->
+                <LinearLayout
+                    android:id="@+id/linear_undo"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_undo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_undo"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="回退"/>
+
+                </LinearLayout>
+
+                <!--重做-->
+                <LinearLayout
+                    android:id="@+id/linear_redo"
+                    android:layout_width="40dp"
+                    android:layout_height="45dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/imagebtn_redo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_redo"/>
+                    <TextView
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="重做"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollview_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_marginLeft="2dp"
+        android:scrollbars="none"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_with_shadow"
+            android:orientation="vertical">
+
+            <!--新增节点-->
+            <LinearLayout
+                android:id="@+id/linear_addnode"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_addnode"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_addnode" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="新增节点"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!--编辑节点-->
+            <LinearLayout
+                android:id="@+id/linear_editnode"
+                android:gravity="center"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_editnode"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_editnode" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="编辑节点"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!--删除节点-->
+            <LinearLayout
+                android:id="@+id/linear_deletnode"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_deletnode"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_deletnode" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="删除节点"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!--合并-->
+            <LinearLayout
+                android:id="@+id/linear_merge"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_merge"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_merge" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="合并"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!--擦除-->
+            <LinearLayout
+                android:id="@+id/linear_erase"
+                android:gravity="center"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_erase"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_erase" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="擦除"
+                    android:textSize="10sp" />
+
+
+            </LinearLayout>
+
+            <!--裁剪-->
+            <LinearLayout
+                android:id="@+id/linear_clip"
+                android:gravity="center"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_clip"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_clipt" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="裁剪"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+            <!--手绘岛洞-->
+            <LinearLayout
+                android:id="@+id/linear_drawhollow"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_drawhollow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_drawhollow" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="手绘岛洞"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!--填充岛洞-->
+            <LinearLayout
+                android:id="@+id/linear_fillhollw"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_fillhollw"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_filhollow" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="填充岛洞"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <!--补充岛洞-->
+            <LinearLayout
+                android:id="@+id/linear_patchhollow"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imagebtn_patchhollow"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/btn_patchhollow" />
+
+                <TextView
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="补充岛洞"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

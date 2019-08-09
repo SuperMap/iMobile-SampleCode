@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:id="@+id/layout_attribute">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:background="#000"
+        android:layout_width="1dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/tv_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:text="属性"
+        android:maxLines="1"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#000"/>
+
+    <TextView
+        android:id="@+id/tv_fieldValue"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_weight="2"
+        android:maxLines="1"
+        android:text="属性值"
+        android:textSize="18dp" />
+    <ImageView
+        android:background="#000"
+        android:layout_width="1dp"
+        android:layout_height="match_parent" />
+</LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+</LinearLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_white_roundcorner"
+    >
+    
+    <TextView 
+        android:id="@+id/tv_TrackDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="轨迹精度"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        
+        />
+    
+    <RadioGroup 
+        android:id="@+id/rg_TrackDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_TrackDistance"
+        android:layout_below="@id/tv_TrackDistance"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        >
+        <RadioButton 
+            android:id="@+id/rb_3m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="3米"
+            android:textColor="#000000"
+            />
+        
+        <RadioButton 
+            android:id="@+id/rb_5m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="5米"
+            android:textColor="#000000"
+            />
+        
+         <RadioButton 
+            android:id="@+id/rb_10m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="10米"
+            android:textColor="#000000"
+            />
+        
+          <RadioButton 
+            android:id="@+id/rb_15m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="15米"
+            android:textColor="#000000"
+            />
+           
+    </RadioGroup>
+    
+    <TextView 
+        android:id="@+id/tv_LocationModule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/rg_TrackDistance"
+        android:layout_below="@id/rg_TrackDistance"
+        android:layout_marginTop="25dp"
+        android:text="轨迹精度"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        
+        />
+    <RadioGroup 
+        android:id="@+id/rg_LocationModule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_LocationModule"
+        android:layout_below="@id/tv_LocationModule"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        >
+        <RadioButton 
+            android:id="@+id/rb_TencentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="腾讯定位"
+            android:textColor="#000000"
+            />
+        
+        <RadioButton 
+            android:id="@+id/rb_GPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:text="GPS"
+            android:textColor="#000000"
+            />
+        
+    </RadioGroup>
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        >
+
+        <Button
+            android:id="@+id/btn_set_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textColor="#000000" 
+            />
+
+        <Button
+            android:id="@+id/btn_set_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_set_confirm"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/btn_set_confirm"
+            android:text="取消"
+            android:textColor="#000000"
+            android:textSize="15sp" 
+            />
+    </RelativeLayout>
+"
+</RelativeLayout>

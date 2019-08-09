@@ -1,0 +1,84 @@
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+   <com.supermap.mapping.MapView
+        android:id = "@+id/Map_view"
+        android:layout_width="fill_parent"
+        android:layout_height = "fill_parent" 
+        android:onClick="onClick">
+    </com.supermap.mapping.MapView>
+    
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="120dp"
+        android:onClick="buttonStart_Click"
+        android:text="起点" />
+
+    <Button
+        android:id="@+id/buttonEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonStart"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonEnd_Click"
+        android:text="终点" />
+
+    <Button
+        android:id="@+id/buttonVia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonEnd"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonVia_Click"
+        android:text="途经" />
+
+    <Button
+        android:id="@+id/buttonAnalyse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonVia"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonAnalyse_Click"
+        android:text="分析" />
+
+    <Button
+        android:id="@+id/buttonNavigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonAnalyse"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonNavi_Click"
+        android:text="导航" />
+
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonNavigation"
+        android:layout_marginTop="8dp"
+        android:onClick="buttonClear_Click"
+        android:text="清除" />
+    
+    <com.supermap.indoor.FloorListView
+		android:id="@+id/floor_list_view"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content"
+	    android:layout_marginRight="1dp"
+	    android:layout_marginBottom="145dp"
+	    android:layout_alignParentRight="true"
+	    android:layout_alignParentBottom="true"
+	    android:visibility="visible"/>
+
+</RelativeLayout> 
+

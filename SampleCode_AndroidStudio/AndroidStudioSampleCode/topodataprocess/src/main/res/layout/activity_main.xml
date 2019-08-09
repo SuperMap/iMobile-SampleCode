@@ -1,0 +1,261 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   	xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+  <com.supermap.mapping.MapView
+         android:id="@+id/Map_view"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true" >
+     </com.supermap.mapping.MapView>    
+
+    <Button
+        android:id="@+id/btnFullScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:minHeight="48dp"
+        android:minWidth="64dp"
+        android:text="全幅" 
+        android:onClick="btnFullScreen_Click"/>
+    <Button
+        android:id="@+id/btnZoomOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnFullScreen"
+        android:layout_alignParentRight="true"
+        android:minHeight="48dp"
+        android:minWidth="64dp"
+        android:text="缩小" 
+        android:onClick="btnZoomOut_Click"/>
+    <Button
+        android:id="@+id/btnZoomIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnZoomOut"
+        android:layout_alignParentRight="true"
+        android:minHeight="48dp"
+        android:minWidth="64dp"
+        android:text="放大"
+        android:onClick="btnZoomIn_Click"/> 
+    
+    <Button
+        android:id="@+id/btnSnap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拓扑捕捉"
+        android:onClick="btnSnap_Click"/> 
+    
+     <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSnap"
+        android:layout_alignBottom="@+id/btnSnap"
+        android:layout_toRightOf="@+id/btnSnap"
+        android:text="拓扑编辑" 
+        android:onClick="btnEdit_Click"/>
+    
+    <Button
+        android:id="@+id/btnDrawPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEdit"
+        android:layout_alignBottom="@+id/btnEdit"
+        android:layout_toRightOf="@+id/btnEdit"
+        android:text="绘制点" 
+        android:onClick="btnDrawPoint_Click"/>
+        
+     <Button
+        android:id="@+id/btnDrawLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnDrawPoint"
+        android:layout_alignBottom="@+id/btnDrawPoint"
+        android:layout_toRightOf="@+id/btnDrawPoint"
+        android:text="绘制线" 
+        android:onClick="btnDrawLine_Click"/>
+        
+     <Button
+        android:id="@+id/btnDrawRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnDrawLine"
+        android:layout_alignBottom="@+id/btnDrawLine"
+        android:layout_toRightOf="@+id/btnDrawLine"
+        android:text="绘制面" 
+        android:onClick="btnDrawRegion_Click"/>
+        
+     <Button
+        android:id="@+id/btnCommit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnDrawRegion"
+        android:layout_alignBottom="@+id/btnDrawRegion"
+        android:layout_toRightOf="@+id/btnDrawRegion"
+        android:text="提交" 
+        android:onClick="btnCommit_Click"/>
+
+     <Button
+        android:id="@+id/btnSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCommit"
+        android:layout_alignBottom="@+id/btnCommit"
+        android:layout_toRightOf="@+id/btnCommit"
+        android:text="选择" 
+        android:onClick="btnSelect_Click"/>
+    
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSelect"
+        android:layout_alignBottom="@+id/btnSelect"
+        android:layout_toRightOf="@+id/btnSelect"
+        android:text="清空" 
+        android:onClick="btnClear_Click"/>
+    
+    
+ 	<Button
+        android:id="@+id/btnMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnClear"
+        android:layout_alignBottom="@+id/btnClear"
+        android:layout_toRightOf="@+id/btnClear"
+        android:text="平移" 
+        android:onClick="btnMove_Click"/>
+
+    <Button
+        android:id="@+id/btnSnapDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnSnap"
+        android:layout_below="@+id/btnSnap"
+        android:text="默认捕捉" 
+        android:onClick="btnSnapDefault_Click"/>
+
+    <Button
+        android:id="@+id/btnSnapAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSnapDefault"
+        android:layout_alignBottom="@+id/btnSnapDefault"
+        android:layout_toRightOf="@+id/btnSnapDefault"
+        android:text="全部捕捉" 
+        android:onClick="btnSnapAll_Click"/>
+
+    <Button
+        android:id="@+id/btnSnapToRegion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSnapAll"
+        android:layout_alignBottom="@+id/btnSnapAll"
+        android:layout_toRightOf="@+id/btnSnapAll"
+        android:text="拓扑构面"
+        android:onClick="btnSnapToRegion_Click"/> 
+
+    <Button
+        android:id="@+id/btnSnapClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSnapToRegion"
+        android:layout_alignBottom="@+id/btnSnapToRegion"
+        android:layout_toRightOf="@+id/btnSnapToRegion"
+        android:text="关闭捕捉" 
+        android:onClick="btnSnapClose_Click"/>
+        
+     <Button
+        android:id="@+id/btnSnapUndo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSnapClose"
+        android:layout_alignBottom="@+id/btnSnapClose"
+        android:layout_toRightOf="@+id/btnSnapClose"
+        android:text="回退" 
+        android:onClick="btnSnapUndo_Click"/>
+        
+     <Button
+        android:id="@+id/btnSnapRedo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnSnapUndo"
+        android:layout_alignBottom="@+id/btnSnapUndo"
+        android:layout_toRightOf="@+id/btnSnapUndo"
+        android:text="重做" 
+        android:onClick="btnSnapRedo_Click"/>
+
+    <Button
+        android:id="@+id/btnEditRegionDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnEdit"
+        android:layout_below="@+id/btnEdit"
+        android:text="面擦除" 
+        android:onClick="btnEditRegionDivide_Click"/>
+
+    <Button
+        android:id="@+id/btnEditRegionLineDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEditRegionDivide"
+        android:layout_alignBottom="@+id/btnEditRegionDivide"
+        android:layout_toRightOf="@+id/btnEditRegionDivide"
+        android:text="面分割"
+        android:onClick="btnEditRegionLineDivide_Click" />
+
+    <Button
+        android:id="@+id/btnEditRegionUnion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEditRegionLineDivide"
+        android:layout_alignBottom="@+id/btnEditRegionLineDivide"
+        android:layout_toRightOf="@+id/btnEditRegionLineDivide"
+        android:text="面合并" 
+        android:onClick="btnEditRegionUnion_Click"/>
+
+    <Button
+        android:id="@+id/btnEditRegionCompose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEditRegionUnion"
+        android:layout_alignBottom="@+id/btnEditRegionUnion"
+        android:layout_toRightOf="@+id/btnEditRegionUnion"
+        android:text="面组合" 
+        android:onClick="btnEditRegionCompose_Click"/>
+
+    <Button
+        android:id="@+id/btnEditRegionIntersect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEditRegionCompose"
+        android:layout_alignBottom="@+id/btnEditRegionCompose"
+        android:layout_toRightOf="@+id/btnEditRegionCompose"
+        android:text="面求交"
+        android:onClick="btnEditRegionIntersect_Click" />
+
+    <Button
+        android:id="@+id/btnEditRegionIslandDivide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEditRegionIntersect"
+        android:layout_alignBottom="@+id/btnEditRegionIntersect"
+        android:layout_toRightOf="@+id/btnEditRegionIntersect"
+        android:text="补充岛洞"
+        android:onClick="btnEditRegionIslandDivide_Click"/>
+
+    <Button
+        android:id="@+id/btnEditRegionIslandFill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnEditRegionIslandDivide"
+        android:layout_alignBottom="@+id/btnEditRegionIslandDivide"
+        android:layout_toRightOf="@+id/btnEditRegionIslandDivide"
+        android:text="填充岛洞" 
+        android:onClick="btnEditRegionIslandFill_Click"/>
+</RelativeLayout>

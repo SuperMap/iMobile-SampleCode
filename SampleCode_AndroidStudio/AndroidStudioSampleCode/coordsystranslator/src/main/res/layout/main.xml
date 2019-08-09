@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <!--第一层 存放的是两幅地图数据  -->
+    <RelativeLayout 
+	    android:gravity="center_vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
+	     
+		<com.supermap.mapping.MapView
+			android:id="@+id/src"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:layout_width="200dip" 
+	   		android:layout_height="200dip">
+		</com.supermap.mapping.MapView>
+		
+		<TextView
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"
+			android:id="@+id/srcTxt"
+			android:layout_below="@id/src"
+			android:textColor="#FF000000"
+			android:background="#FFB0B0B0"
+			android:layout_width="fill_parent"
+	   		android:layout_height="fill_parent"
+	   		android:scrollbars="vertical">
+		</TextView>
+		
+		<com.supermap.mapping.MapView
+			android:id="@+id/des"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentRight="true"
+			android:layout_width="200dip"
+	   		android:layout_height="200dip">
+		</com.supermap.mapping.MapView>
+		
+		<TextView
+			android:id="@+id/desTxt"
+	   		android:layout_height="fill_parent"
+	   		android:layout_width="fill_parent"
+	   		android:layout_below="@id/des"
+	   		android:textColor="#FF000000"
+	   		android:background="#FFF0F0F0"
+	   		android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:scrollbars="vertical">
+		</TextView>
+		
+</RelativeLayout>
+    
+    <!-- 第二层，存放的是控件 -->
+    <LinearLayout 
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
+	    
+	    <Button
+		    android:id="@+id/gauss"
+		    android:text="高斯-克吕格投影转换"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+	    />
+	    <Button
+	    	android:text="UTM投影转换"
+		    android:id="@+id/transverse"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+	    />
+	    <Button
+	    	android:text="Lambert投影转换"
+		    android:id="@+id/lambert"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+	    />
+	    
+	</LinearLayout>
+    
+    
+    
+ </FrameLayout>
+    
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+                android:id="@+id/my_map"
+                android:icon="@mipmap/ic_map"
+                android:title="我的地图"/>
+        <item
+                android:id="@+id/my_layermanage"
+                android:icon="@mipmap/ic_layermanage"
+                android:title="我的图层"/>
+        <item
+                android:id="@+id/my_datacollection"
+                android:icon="@mipmap/ic_datacollection"
+                android:title="我的采集"/>
+        <item
+                android:id="@+id/my_dataanalyst"
+                android:icon="@mipmap/ic_menu_manage"
+                android:title="我的分析"/>
+        <item
+                android:id="@+id/my_Insight"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="我的洞察"/>
+    </group>
+
+</menu>

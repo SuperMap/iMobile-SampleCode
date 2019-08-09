@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:id="@+id/sliding_layout"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:gravity="bottom"
+                                                 app:umanoDragView="@+id/dragView"
+                                                 app:umanoFadeColor="@android:color/transparent"
+                                                 app:umanoOverlay="true"
+                                                 app:umanoPanelHeight="130dp"
+                                                 app:umanoParallaxOffset="100dp"
+                                                 app:umanoScrollableView="@+id/listview"
+                                                 app:umanoShadowHeight="4dp">
+
+    <!-- MAIN CONTENT -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    tools:context="com.supermap.android.speech.MainActivity">
+
+        <com.supermap.mapping.MapView
+                android:id="@+id/mapView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"/>
+
+        <com.arlib.floatingsearchview.FloatingSearchView
+                android:id="@+id/floating_search_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:floatingSearch_close_search_on_keyboard_dismiss="false"
+                app:floatingSearch_dimBackground="false"
+                app:floatingSearch_dismissOnOutsideTouch="true"
+                app:floatingSearch_leftActionMode="showSearch"
+                app:floatingSearch_menu="@menu/menu_search_view"
+                app:floatingSearch_searchBarMarginLeft="@dimen/search_view_inset"
+                app:floatingSearch_searchBarMarginRight="@dimen/search_view_inset"
+                app:floatingSearch_searchBarMarginTop="@dimen/search_view_inset"
+                app:floatingSearch_searchHint="找地点、搜路线、导航"
+                app:floatingSearch_showSearchKey="true"
+                app:floatingSearch_suggestionsListAnimDuration="250"/>
+
+        <LinearLayout
+                android:id="@+id/ll_draw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="70dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <Button
+                    android:id="@+id/draw_point"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ar_btn_selector"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="点击式绘点"
+                    android:textSize="14sp"/>
+
+            <Button
+                    android:id="@+id/draw_line"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ar_btn_selector"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="点击式绘线"
+                    android:textSize="14sp"/>
+
+            <Button
+                    android:id="@+id/draw_surface"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ar_btn_selector"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="点击式绘面"
+                    android:textSize="14sp"/>
+
+            <Button
+                    android:id="@+id/draw_undo"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ar_btn_selector"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="撤销"
+                    android:textSize="14sp"/>
+
+            <Button
+                    android:id="@+id/draw_save"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ar_btn_selector"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="保存"
+                    android:textSize="14sp"/>
+
+            <Button
+                    android:id="@+id/draw_quit"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ar_btn_selector"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="退出编辑"
+                    android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- SLIDING LAYOUT -->
+    <LinearLayout
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp">
+
+            <TextView
+                    android:id="@+id/name"
+                    android:layout_width="22dp"
+                    android:layout_height="3dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:background="#50000000"/>
+
+        </RelativeLayout>
+
+        <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:divider="@null"
+                android:listSelector="@drawable/selector_bg_mapsheet_item"/>
+
+    </LinearLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

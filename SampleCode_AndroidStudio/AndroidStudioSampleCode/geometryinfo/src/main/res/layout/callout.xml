@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:orientation="horizontal" 
+    android:gravity="bottom|center"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+    
+<LinearLayout
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" >      
+    <ImageView android:id="@+id/btnAndvanced" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:src="@drawable/location_02_small" />
+    
+    <ImageView 
+    	android:layout_width="wrap_content"
+		android:layout_height="fill_parent" 
+		android:layout_gravity="center_vertical"
+		android:src="@drawable/com_separator" />
+    
+    <LinearLayout
+        android:id="@+id/layout_infomation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="5px"
+   		android:paddingRight="5px" >
+
+        <TextView 
+	        android:id="@+id/edtBubbleTitle" 
+	        android:text=""
+	        android:ellipsize="marquee"  
+	        android:layout_width="wrap_content"  
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_vertical"  
+	        android:singleLine="true" />  
+        
+    	<TextView 
+    		android:id="@+id/edtBubbleText" 
+    		android:text=""
+	        android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content"  
+	        android:layout_gravity="center_vertical"
+	        android:singleLine="false" /> 	
+    </LinearLayout>
+    
+    <ImageView 
+    	android:layout_width="wrap_content"
+		android:layout_height="fill_parent" 
+		android:layout_gravity="center_vertical"
+		android:src="@drawable/com_separator" />
+    
+    <ImageView 
+    	android:id="@+id/btnDetail" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:src="@drawable/btn_detailinfo_selector" />	
+</LinearLayout> 
+</LinearLayout> 

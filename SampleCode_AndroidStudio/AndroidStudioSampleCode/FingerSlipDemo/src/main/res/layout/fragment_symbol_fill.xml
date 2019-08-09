@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="com.supermap.fragment.SymbolMarkerFragment"
+              android:orientation="vertical">
+
+    <com.supermap.seekbar.BubbleSeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/seekbar_bg"
+            custom:bsb_hide_bubble="true"
+            custom:bsb_second_track_color="@color/color_blue"
+            custom:bsb_track_size="4dp"
+            custom:bsb_section_count="5"
+            custom:bsb_show_progress_in_float="false"
+            custom:bsb_touch_to_seek="true"
+            custom:bsb_show_section_mark="true"
+            custom:bsb_show_section_text="false"
+            android:visibility="gone"/>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent">
+
+        <LinearLayout
+                android:id="@+id/ll_show_progress"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/shape_menu_progress"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:text="None"
+                    android:gravity="center"
+                    android:textStyle="normal"
+                    android:textSize="16sp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:typeface="sans"
+                    android:id="@+id/fragment_image_holder_selected_menu"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:text="None"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:typeface="monospace"
+                    android:id="@+id/fragment_image_holder_progress"/>
+
+        </LinearLayout>
+
+        <com.supermap.scrollermenu.ScrollerMenu
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scroller_menu">
+        </com.supermap.scrollermenu.ScrollerMenu>
+
+
+        <LinearLayout
+                android:id="@+id/ll_menu"
+                android:layout_gravity="bottom"
+                android:animateLayoutChanges="true"
+                android:layout_width="match_parent"
+                android:background="@color/menu_pressed"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:focusable="true"
+                android:layout_height="wrap_content">
+
+            <GridView
+                    android:id="@+id/gridview"
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:columnWidth="50dp"
+                    android:verticalSpacing="2dp"
+                    android:horizontalSpacing="5dp"
+                    android:fadeScrollbars="true"
+                    android:visibility="gone"
+                    android:numColumns="auto_fit"/>
+
+            <com.supermap.scrollermenu.HorizontalListView
+                    android:id="@+id/horizontal_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    custom:dividerWidth="0dp"
+                    android:divider="@color/menu_bg"
+                    android:fadingEdgeLength="0dp"
+                    android:requiresFadingEdge="horizontal"
+                    android:visibility="gone"/>
+
+            <LinearLayout
+                    android:id="@+id/ll_fill_gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                <Button
+                        android:id="@+id/fill_linear_gradient"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="线性"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/selector_menu_button"/>
+                <Button
+                        android:id="@+id/fill_fadial_gradient"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="辐射"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/selector_menu_button"/>
+                <Button
+                        android:id="@+id/fill_square_gradient"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="方形"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/selector_menu_button"/>
+
+                <Button
+                        android:id="@+id/fill_none_gradient"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="无"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/selector_menu_button"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/cancle"
+                android:background="@drawable/selector_menu_button"/>
+        <ImageButton
+                android:id="@+id/menu_show_hide"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/menu"
+                android:background="@drawable/selector_menu_button"/>
+        <ImageButton
+                android:id="@+id/samples"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:src="@drawable/style_control"
+                android:background="@drawable/selector_menu_button"/>
+        <ImageButton
+                android:id="@+id/save"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:src="@drawable/commit"
+                android:background="@drawable/selector_menu_button"/>
+
+    </LinearLayout>
+
+</LinearLayout>

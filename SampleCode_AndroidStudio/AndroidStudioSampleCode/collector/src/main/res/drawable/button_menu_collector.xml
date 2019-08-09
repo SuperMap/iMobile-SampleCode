@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/clr_menu_collector" android:state_pressed="false"/>
+    <item android:drawable="@drawable/clr_menu_pressed" android:state_pressed="true"/>
+</selector>

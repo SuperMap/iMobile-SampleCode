@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/shape_menu_selected"
+                android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/tv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <TextView
+            android:id="@+id/tv_select"
+            android:layout_width="match_parent"
+            android:background="@color/scroller_menu_item_selected_color"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_height="5dp"/>
+
+</RelativeLayout>

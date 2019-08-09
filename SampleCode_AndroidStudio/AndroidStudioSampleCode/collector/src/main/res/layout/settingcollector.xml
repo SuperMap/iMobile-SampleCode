@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_roundcorner"
+    >
+    
+       
+    
+ 
+    
+    
+    <RelativeLayout
+        android:id="@+id/RelativeLayout0"
+        android:layout_width="match_parent"
+    	android:layout_height="40dp"
+    	android:paddingTop="0dp"
+    	android:paddingBottom="0dp"
+    	android:background="#17aaf0" >
+        <!-- android:background="#f3f3f3" #4685f6 -->
+
+        <Button
+            android:id="@+id/btnCBack"
+            android:layout_width="wrap_content"
+    	    android:layout_height="45dp"
+    	    android:layout_centerVertical="true"
+    	    android:background="@drawable/button_selector_back1"
+    	    android:layout_alignParentLeft="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_recommend_spot_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:text="设置"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+    </RelativeLayout>
+    <View 
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_below="@+id/RelativeLayout0"
+    	android:background="@drawable/cutline_gradient" />
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scrollView1" >
+    
+        
+             
+    <TextView
+        android:id="@+id/tvSetting2"
+		android:layout_width="70dp"
+		android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="名称:"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:background="#ffffff"
+        android:visibility="visible"/>
+    <EditText
+        android:id="@+id/EditText2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSetting2"
+        android:layout_alignBottom="@+id/tvSetting2"
+        android:layout_toRightOf="@+id/tvSetting2"
+        android:text=""
+        android:textSize="18dp"
+        android:visibility="visible"/>
+    <TextView
+        android:id="@+id/tvSetting3"
+		android:layout_width="70dp"
+		android:layout_height="30dp"
+        android:layout_alignRight="@+id/tvSetting2"
+        android:layout_below="@+id/tvSetting2"
+        android:layout_marginBottom="10dp"
+        android:text="说明:"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:background="#ffffff"
+        android:visibility="visible"/>
+    <EditText
+        android:id="@+id/EditText3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSetting3"
+        android:layout_alignBottom="@+id/tvSetting3"
+        android:layout_toRightOf="@+id/tvSetting3"
+        android:text=""
+        android:textSize="18dp"
+        android:visibility="visible"/>
+    <Button
+        android:id="@+id/btnSave"
+		android:layout_width="70dp"
+		android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/EditText2"
+        android:layout_alignBottom="@+id/EditText2"
+        android:layout_toRightOf="@+id/EditText2"
+        android:layout_marginLeft="60dp"
+    	android:background="@drawable/button_menu_collector"
+        android:textColor="#ffffff"
+        android:text="保存"
+        android:visibility="visible"/>
+
+    
+    
+    <Button
+        android:id="@+id/btnLineStyle"
+		android:layout_width="70dp"
+		android:layout_height="40dp"
+        android:layout_alignRight="@+id/tvSetting3"
+        android:layout_below="@+id/tvSetting3"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+    	android:background="@drawable/button_menu_collector"
+        android:textColor="#ffffff"
+        android:text="线风格" />
+    <EditText
+        android:id="@+id/EditText4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnLineStyle"
+        android:layout_alignBottom="@+id/btnLineStyle"
+        android:layout_toRightOf="@+id/btnLineStyle"
+        android:text="R=180,G=110,B=0"
+        android:textSize="18dp"
+        android:editable="false"
+        android:textColor="@color/black"
+        android:visibility="visible"/>
+    <Button
+        android:id="@+id/btnPolygonStyle"
+		android:layout_width="70dp"
+		android:layout_height="40dp"
+        android:layout_alignRight="@+id/btnLineStyle"
+        android:layout_below="@+id/btnLineStyle"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+    	android:background="@drawable/button_menu_collector"
+        android:textColor="#ffffff"
+        android:text="面风格" />
+    <EditText
+        android:id="@+id/EditText5"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnPolygonStyle"
+        android:layout_alignBottom="@+id/btnPolygonStyle"
+        android:layout_toRightOf="@+id/btnPolygonStyle"
+        android:text="R=180,G=255,B=120"
+        android:editable="false"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:visibility="visible"/>
+    <Button
+        android:id="@+id/btnLineWidth"
+		android:layout_width="70dp"
+		android:layout_height="40dp"
+        android:layout_alignRight="@+id/btnPolygonStyle"
+        android:layout_below="@+id/btnPolygonStyle"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+    	android:background="@drawable/button_menu_collector"
+        android:textColor="#ffffff"
+        android:text="线宽度" />
+    <EditText
+        android:id="@+id/EditText6"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnLineWidth"
+        android:layout_alignBottom="@+id/btnLineWidth"
+        android:layout_toRightOf="@+id/btnLineWidth"
+        android:editable="false"
+        android:text="1.0"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:visibility="visible"/>
+        
+    </RelativeLayout>
+
+    
+    
+</RelativeLayout>

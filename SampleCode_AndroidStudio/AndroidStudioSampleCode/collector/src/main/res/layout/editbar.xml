@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_gray"
+    android:orientation="horizontal" >
+    
+    <RadioButton
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:background="@drawable/selector_btn_select"
+        android:button="@drawable/bg_transparent"
+        android:visibility="invisible" />
+
+     <TextView
+         android:layout_width="72dip"
+         android:layout_height="match_parent"
+         android:layout_gravity="top"
+         android:drawableTop="@drawable/ic_btn_top"
+         android:gravity="center"
+         android:text="编辑对象"
+         android:maxLines="1"
+         android:textColor="#53ccc3"
+         android:textSize="15sp" />
+         
+    <RadioButton
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:background="@drawable/selector_btn_select"
+        android:button="@drawable/bg_transparent"
+        android:visibility="invisible" />
+    
+     <RadioButton
+        android:id="@+id/btn_select"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_select"
+        android:button="@drawable/bg_transparent" />
+
+    <RadioButton
+        android:id="@+id/btn_editnode"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_editnode"
+        android:button="@drawable/bg_transparent" />
+
+    <RadioButton
+        android:id="@+id/btn_addnode"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_addnode"
+        android:button="@drawable/bg_transparent" 
+        />
+
+   <RadioButton
+        
+        android:id="@+id/btn_deletenode"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_delnode"
+        android:button="@drawable/bg_transparent"
+        />
+
+
+    <RadioButton
+        android:id="@+id/btn_delteobject"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_delobj"
+        android:button="@drawable/bg_transparent"
+        />
+    
+    <RadioButton
+        android:id="@+id/btn_receivefocus3"
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:visibility="gone" />
+
+</RadioGroup>

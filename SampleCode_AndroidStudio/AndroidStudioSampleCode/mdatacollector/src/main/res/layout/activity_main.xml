@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/m_MapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#00ff00"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:gravity="center_vertical"
+        >
+
+       <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:visibility="invisible"
+             />
+        <Button
+            android:id="@+id/btn_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/button1"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:gravity="center"
+            android:text="采集" />
+
+        <Button 
+            android:id="@+id/btn_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_collect"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:gravity="center"
+            android:text="查看"
+            />
+        <Button 
+            android:id="@+id/btn_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_review"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:gravity="center"
+            android:text="网络"
+            />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_network"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/bg_button_roundedrectangle"
+            android:clickable="false"
+            android:focusable="true"
+            android:visibility="invisible" />
+
+
+
+
+         <Button
+            android:id="@+id/btn_captureImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_collect"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/bg_button_round"
+            android:gravity="center"
+            android:text="拍照" 
+            android:visibility="gone"/>
+         <Button
+            android:id="@+id/btn_captureVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_collect"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/bg_button_round"
+            android:gravity="center"
+            android:text="录像" 
+            android:visibility="gone"/>
+         <Button
+            android:id="@+id/btn_captureAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_collect"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/bg_button_round"
+            android:gravity="center"
+            android:text="录音" 
+            android:visibility="gone"/>
+         
+         <Button
+            android:id="@+id/btn_stopcaptureaudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_collect"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/bg_button_round"
+            android:gravity="center"
+            android:text="停止\n录音" 
+            android:visibility="gone"/>
+         
+         <Button
+            android:id="@+id/btn_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_network"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/bg_button_round"
+            android:gravity="center"
+            android:text="上传"
+            android:visibility="gone" />
+         <Button
+            android:id="@+id/btn_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_upload"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/bg_button_round"
+            android:gravity="center"
+            android:text="下载"
+            android:visibility="gone"/>
+     </RelativeLayout>
+</RelativeLayout>

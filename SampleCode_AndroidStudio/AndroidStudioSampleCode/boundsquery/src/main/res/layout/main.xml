@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 地图显示 -->
+ <com.supermap.mapping.MapView
+            android:id="@+id/map_View"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    <LinearLayout
+        android:id="@+id/map_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+        
+       
+
+        <Button
+            android:id="@+id/zoomin"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="放大"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/zoomout"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="缩小"
+            android:textSize="10dp" />
+        
+    </LinearLayout>
+    <!-- 地图选择栏 -->
+
+    <RelativeLayout
+        android:id="@+id/tb_select_map"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/toolbar_selector"
+        android:paddingBottom="2dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="6dp" >
+
+        <TextView
+            android:id="@+id/txt_selectLayer"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="查询图层："
+            android:textColor="#ff000000" />
+
+        <Button
+            android:id="@+id/btn_searchGeo"
+            android:layout_width="52dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:text="查询" />
+
+        <Spinner
+            android:id="@+id/spn_select_layer"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_toLeftOf="@+id/btn_searchGeo"
+            android:layout_toRightOf="@+id/txt_selectLayer" />
+    </RelativeLayout>
+
+</RelativeLayout>

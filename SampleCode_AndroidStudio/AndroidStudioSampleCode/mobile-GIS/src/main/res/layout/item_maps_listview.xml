@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                        android:layout_margin="6dp"
+                                        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+
+            <ImageView android:id="@+id/image_thumbnail"
+                       android:layout_marginTop="5dp"
+                       android:layout_marginLeft="5dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="名称："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_maptitle"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:lines="1"
+                        android:textIsSelectable="true"
+                        android:ellipsize="end"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="类型："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:id="@+id/tv_maptype"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="描述："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_description"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="访问次数："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_visit_count"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="创建时间："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_create_time"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="更新时间："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_update_time"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:text="浏览地址："
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/tv_url"
+                        android:textSize="16sp"
+                        android:padding="4dp"
+                        android:autoLink="web"
+                        android:textIsSelectable="true"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
