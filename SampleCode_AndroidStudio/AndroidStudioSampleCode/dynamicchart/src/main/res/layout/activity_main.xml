@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/Map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal"
+        android:paddingLeft="2dp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:background="#088"
+            android:id="@+id/ChartView">
+
+            <com.supermap.mapping.imChart.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.supermap.mapping.imChart.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <com.supermap.mapping.imChart.BarChart
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <com.supermap.mapping.imChart.InstrumentChart
+                android:id="@+id/diaChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:paddingLeft="2dp">
+
+
+            <Button
+                android:id="@+id/btnBarChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:onClick="btnBarChart_Click"
+                android:text="柱状图" />
+
+            <Button
+                android:id="@+id/btnLineChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnBarChart"
+                android:layout_alignParentRight="true"
+                android:onClick="btnLineChart_Click"
+                android:text="折线图" />
+
+            <Button
+                android:id="@+id/btnPieChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnLineChart"
+                android:layout_alignParentRight="true"
+                android:onClick="btnPieChart_Click"
+                android:text="饼状图" />
+            <Button
+                android:id="@+id/btnDiaChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnPieChart"
+                android:layout_alignParentRight="true"
+                android:onClick="btnDiaChart_Click"
+                android:text="仪表盘" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
