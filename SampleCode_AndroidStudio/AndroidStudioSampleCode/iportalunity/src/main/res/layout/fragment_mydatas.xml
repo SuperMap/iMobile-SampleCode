@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:id="@+id/rl_download_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:layout_margin="6dp"
+                                            android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <LinearLayout
+                        android:layout_centerInParent="true"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/tv_filename"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="文件："/>
+
+                    <TextView
+                            android:id="@+id/progesss_value1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/percentage"
+                            android:layout_marginTop="4dp"
+                            android:paddingBottom="8dp"
+                            android:paddingLeft="4dp"
+                            android:paddingRight="4dp"
+                            android:paddingTop="2dp"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp"
+                            android:text="0%"/>
+                    <ProgressBar
+                            android:layout_gravity="center_horizontal"
+                            android:id="@+id/progesss"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/myprogressbar"
+                            android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
+                            android:indeterminateOnly="false"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:max="100"
+                            android:maxHeight="50dp"
+                            android:minHeight="12dp"
+                            android:progress="0"
+                            android:progressDrawable="@drawable/myprogressbar"/>
+                </LinearLayout>
+
+                <Button
+                        android:id="@+id/btn_cancel_upload"
+                        android:layout_margin="10dp"
+                        android:textSize="14sp"
+                        android:padding="4dp"
+                        android:background="@drawable/btn_nor_down_two"
+                        android:gravity="center"
+                        android:text="取消上传"
+                        android:textColor="@color/download_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:visibility="gone"/>
+
+                <Button
+                        android:id="@+id/btn_cancel_download"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:textSize="14sp"
+                        android:padding="4dp"
+                        android:background="@drawable/btn_nor_down_two"
+                        android:gravity="center"
+                        android:text="取消下载"
+                        android:textColor="@color/download_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <com.yalantis.phoenix.PullToRefreshView
+            android:id="@+id/pull_to_refresh"
+            android:layout_below="@id/rl_download_upload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp">
+
+        <ListView
+                android:id="@+id/list_mydatas"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </com.yalantis.phoenix.PullToRefreshView>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/mydatas"/>
+
+    <LinearLayout
+            android:id="@+id/ll_progesssbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="#9028334F"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+        <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:padding="10dp"
+                  android:textSize="16sp"
+                  android:textColor="@color/white"
+                  android:text="正在进行中..."/>
+
+    </LinearLayout>
+
+</RelativeLayout>

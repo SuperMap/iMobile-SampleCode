@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/layout_btns_navi"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="130dp">
+
+            <Button
+                android:id="@+id/btn_start_point"
+                android:layout_width="58dip"
+                android:layout_height="40dip"
+                android:background="?attr/colorPrimary"
+                android:button="@null"
+                android:gravity="center"
+                android:text="起点"
+                android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc" />
+
+        <Button
+            android:id="@+id/btn_end_point"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:gravity="center"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:textColor="@android:color/white"
+            android:text="终点"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc" />
+
+        <Button
+            android:id="@+id/btn_analyse_path"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:gravity="center"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:text="分析"
+            android:textColor="@android:color/white"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc" />
+
+        <Button
+            android:id="@+id/btn_navi"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:gravity="center"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:textColor="@android:color/white"
+            android:text="第一人称"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc" />
+
+        <Button
+            android:id="@+id/btn_navi_other"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:gravity="center"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:textColor="@android:color/white"
+            android:text="第三人称"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc" />
+
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:gravity="center"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:textColor="@android:color/white"
+            android:text="清除"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/end_point"
+        android:layout_width="58dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="171dp"
+        android:layout_toEndOf="@+id/layout_btns_navi"
+        android:layout_toRightOf="@+id/layout_btns_navi"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/btn_indoor_end"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:layout_alignParentTop="true"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:gravity="center"
+            android:text="室内"
+            android:textColor="@android:color/white"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc"/>
+
+        <Button
+            android:id="@+id/btn_outdoor_end"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/btn_indoor_end"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:gravity="center"
+            android:text="室外"
+            android:textColor="@android:color/white"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/start_point"
+        android:layout_width="58dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="130dp"
+        android:layout_toEndOf="@+id/layout_btns_navi"
+        android:layout_toRightOf="@+id/layout_btns_navi"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/btn_indoor_start"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:layout_alignParentTop="true"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:gravity="center"
+            android:text="室内"
+            android:textColor="@android:color/white"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#cccccc"
+            />
+
+        <Button
+            android:id="@+id/btn_outdoor_start"
+            android:layout_width="58dip"
+            android:layout_height="40dip"
+            android:layout_below="@+id/btn_indoor_start"
+            android:background="?attr/colorPrimary"
+            android:button="@null"
+            android:gravity="center"
+            android:text="室外"
+            android:textColor="@android:color/white"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

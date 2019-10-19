@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parentFrameLayout" >
+
+    <RelativeLayout
+        android:id="@+id/rl_all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--<fragment-->
+            <!--android:id="@+id/arFragment"-->
+            <!--android:name="com.supermap.ar.ArFragmentSupport"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/projectionMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+        </com.supermap.mapping.MapView>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/avoidModeSwitchLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content">
+            <!--  android:layout_above="@+id/setFactorLayout" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="固定旋转"
+                android:gravity="center"
+                android:height="30dp"
+                android:textSize="18sp"
+                />
+            <Switch
+                android:id="@+id/fixedPntRotateSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="开"
+                android:textOff="关"
+                android:switchMinWidth="40dp"/>
+        </LinearLayout>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

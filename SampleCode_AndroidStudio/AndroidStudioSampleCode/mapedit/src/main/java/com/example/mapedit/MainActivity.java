@@ -109,7 +109,7 @@ public class MainActivity extends Activity {
 					public void run() {					
 						mWorkspace=new Workspace();			
 						WorkspaceConnectionInfo info=new WorkspaceConnectionInfo();				
-						info.setServer(RootPath+"/SampleData/EditDemo/changchun.smwu");				
+						info.setServer(RootPath+"/SampleData/MapEdit/changchun.smwu");
 						info.setType(WorkspaceType.SMWU);				
 						mWorkspace.open(info);				
 						mMapControl.getMap().setWorkspace(mWorkspace);				

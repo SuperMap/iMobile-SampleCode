@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="theme_button">#008577</color>
+    <color name="color_check_bg">#D81B60</color>
+    <color name="login_button">#FFFFFF</color>
+    <color name="download_button">#FFFFFF</color>
+    <color name="colorFloatingActionButton">#FFFFFF</color>
+    <color name="rippleColor">#5F9EA0</color>
+
+    <color name="color_gray">#B4B4B4</color>
+    <color name="color_green">#00b4aa</color>
+    <color name="color_red">#FF6A6E</color>
+    <color name="color_red_light">#FFB4B6</color>
+    <color name="color_blue">#03A9F4</color>
+    <color name="color_gray_light">#F5F5F5</color>
+
+    <color name="scroller_menu_item_text_color">#C0C0C0</color>
+    <color name="scroller_menu_panel_inset_color">#90595a5D</color>
+    <color name="scroller_menu_panel_border_color">#000000</color>
+    <color name="scroller_menu_item_default_color">#90595a5D</color>
+    <color name="scroller_menu_item_selected_color">#6495ED</color>
+
+    <color name="menu_normal">#FFFFFF</color>
+    <color name="menu_pressed">#555556</color>
+    <color name="menu_selected">#6495ED</color>
+
+    <color name="gridview_item_selected">#6495ED</color>
+    <color name="gridview_item_normal">#555556</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="menu_bg">#2D2D30</color>
+
+    <color name="seekbar_bg">#90000000</color>
+</resources>

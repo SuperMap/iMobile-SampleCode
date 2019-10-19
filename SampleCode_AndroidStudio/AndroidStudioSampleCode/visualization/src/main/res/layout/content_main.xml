@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/app_bar_main"
+        android:layout_margin="8dp"
+        tools:context=".MainActivity">
+
+    <FrameLayout
+            android:id="@+id/content_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.supermap.mapping.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        </com.supermap.mapping.MapView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/layout_tool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
+            <ImageButton
+                android:id="@+id/btn_main_fullmap"
+                android:layout_width="60dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_btn_main_fullmap"
+                android:gravity="center" />
+            <Button
+                android:id="@+id/btn_navidemo_zoomin"
+                android:layout_width="60dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_btn_main_zoomin" />
+            <!-- android:background="@drawable/btn_navi_view_zoomin_selector" -->
+
+            <Button
+                android:id="@+id/btn_navidemo_zoomout"
+                android:layout_width="60dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_btn_main_zoomout" />
+        </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

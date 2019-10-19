@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+     android:background="@drawable/bg_shape"
+     android:padding="5dp"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/leftMapView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8" >
+        </com.supermap.mapping.MapView>
+	
+        <LinearLayout
+            android:background="@drawable/bg_shape"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="X:" />
+
+            <TextView
+                android:id="@+id/tvX_left_CT"
+                 android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Y:" />
+
+            <TextView
+                android:id="@+id/tvY_left_CT"
+                 android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+	<TextView 
+	    android:layout_width="3dp"
+	    android:background="#000000"
+	    android:layout_height="match_parent"
+	    />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/rightMapView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="0.8"
+            
+            >
+        </com.supermap.mapping.MapView>
+
+        <LinearLayout
+            android:background="@drawable/bg_shape"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="vertical"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="X:" />
+
+            <TextView
+                android:id="@+id/tvX_right_CT"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Y:" />
+
+            <TextView
+                android:id="@+id/tvY_right_CT"
+                 android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

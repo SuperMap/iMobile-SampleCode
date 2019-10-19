@@ -4,15 +4,12 @@ import android.Manifest;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import com.supermap.data.Environment;
 import com.supermap.data.GeoStyle;
 import com.supermap.data.Workspace;
 import com.supermap.data.WorkspaceConnectionInfo;
 import com.supermap.data.WorkspaceType;
-import com.supermap.mapping.ColorLegendItem;
 import com.supermap.mapping.Layer;
 import com.supermap.mapping.Layers;
 import com.supermap.mapping.Legend;
@@ -20,17 +17,54 @@ import com.supermap.mapping.LegendItem;
 import com.supermap.mapping.LegendView;
 import com.supermap.mapping.MapControl;
 import com.supermap.mapping.MapView;
-import com.supermap.mapping.ThemeGridRange;
 import com.supermap.mapping.ThemeRange;
 import com.supermap.mapping.ThemeType;
-import com.supermap.mapping.ThemeUnique;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import pub.devrel.easypermissions.EasyPermissions;
-
+/**
+ * <p>
+ * Title:imobile图例功能展示
+ *
+ * </p>
+ *
+ * <p>
+ * Description:
+ * ============================================================================>
+ * ------------------------------版权声明----------------------------
+ * 此文件为 SuperMap iMobile for Android 的示范代码
+ * 版权所有：北京超图软件股份有限公司
+ * ----------------------------------------------------------------
+ * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
+ *
+ * 1、范例简介：示范imobile图例功能展示
+ * 2、示例数据：数据目录："/sdcard/SampleData/Hunan/"
+ *            地图数据：Hunan.smwu,Hunan.udb,Hunan.udd
+ *            许可目录："/SuperMap/License/"
+ * 3、关键类型/成员:
+ *	 LegendView.setRowWidth() 			//方法
+ *   LegendView.setRowHeight()			//方法
+ *   LegendView.setTextSize()			//方法
+ *   LegendView.setNumColumns()			//方法
+ *   Map.createLegend()				    //方法
+ *	 LegendItem.setColor()				//方法
+ *   LegendItem.setCaption()			//方法
+ *	 Legend.addUserDefinedLegendItem()	//方法
+ *
+ *
+ * 4、使用步骤：
+ *
+ * ------------------------------------------------------------------------------
+ * ============================================================================>
+ * </p>
+ *
+ * <p>
+ * Company: 北京超图软件股份有限公司
+ * </p>
+ *
+ */
 public class MainActivity extends AppCompatActivity {
     private final String sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath().toString();
     MapView mapView;
@@ -64,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         m_mapControl = mapView.getMapControl();
         WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
-        info.setServer(sdcard + "/SampleData/湖北/Population.smwu");
+        info.setServer(sdcard + "/SampleData/hunan/hunan.smwu");
         info.setType(WorkspaceType.SMWU);
         m_workSpace.open(info);
         m_mapControl.getMap().setWorkspace(m_workSpace);

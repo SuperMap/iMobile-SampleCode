@@ -1,0 +1,78 @@
+<resources>
+
+    <string name="app_name">OnlineDemo</string>
+    
+   <!-- activity_coord_transform -->
+    <string name="poi_query_act">POI查询</string>
+    <string name="geocoding_act">地理编码与反编码</string>
+    <string name="traffic_transfer_act">公交换乘</string>
+    <string name="navigation_act">路径导航</string>
+    
+    <!--All_activity  -->
+      <string name="in">放大</string>
+    <string name="out">缩小</string>
+    <string name="full_screet">全屏</string>
+    <string name="clear">清除信息</string>
+    <string name="start_point">设置起点</string>
+    <string name="end_point">设置终点</string>
+    <string name="finish">设置完成</string>
+    
+    <!--activity_navigation_online  -->
+    <string name="navigation_ano">路径导航</string>
+    <string name="min_length_ano">最短路径</string>
+    <string name="recommand_ano">推荐模式</string>
+    <string name="no_high_way_ano">不走高速</string>
+    
+    <!--activity_geocoding  -->
+    <string name="tv_ag">在</string>
+    <string name="city_ag">北京</string>
+    <string name="hint_city_ag">输入城市</string>
+    <string name="tv2_ag">市内找</string>
+    <string name="landmark_ag">朝阳区酒仙桥北路超图软件</string>
+    <string name="hint_landmark_ag">输入关键字</string>
+    <string name="geocoding_ag">正向编码</string>
+    <string name="tv3_ag">输入X:</string>
+    <string name="x_ag">116.51221214922793</string>
+    <string name="hint_x_ag">输入地理x坐标</string>
+    <string name="tv4_ag">输入Y:</string>
+    <string name="y_ag">39.991848126454656</string>
+    <string name="hint_y_ag">输入地理y坐标</string>
+    <string name="reverse_geocoding_ag">逆正向编码</string>
+    
+    <!--activity_poi_query  -->
+    <string name="tv_apq">在</string>
+    <string name="city_apq">北京</string>
+    <string name="hint_city_apq">输入城市</string>
+    <string name="tv2_apq">市内找</string>
+    <string name="keywords_apq">超图软件</string>
+    <string name="hint_keywords_apq">输入关键字</string>
+    <string name="tv3_apq">搜索模式</string>
+    <string name="query_apq">查找</string>
+    <string name="next_query_apq">下一组数据</string>
+    
+    <!--activity_traffic_info  -->
+    <string name="tv_ati">从</string>
+    <string name="tv2_ati">到</string>
+    <string name="tv3_ati">点击搜索</string>
+    
+      <!--activity_traffic_transfer  -->
+    <string name="search_att">点击搜索</string>
+    <string name="tv_att">从</string>
+    <string name="tv2_att">到</string>
+    <string name="tv3_att">我的位置</string>
+    
+    <!--adapter_traffic_transfer_solution  -->
+    <string name="tv_atts">换乘信息:</string>
+    <string name="tv2_atts">转换次数:</string>
+    <string name="tv3_atts">步行距离:</string>
+    
+    <!--include  -->
+    <string name="tv_i">X:</string>
+    <string name="x_i">输入X坐标值</string>
+    <string name="tv2_i">Y:</string>
+    <string name="y_i">输入Y坐标值</string>
+    <string name="alias_i">起点站名:</string>
+    <string name="name_i">输入起点站名</string>
+    
+    
+</resources>

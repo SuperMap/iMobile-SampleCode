@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="#C0C0C0"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnPOIQuery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="8dp"
+        android:text="@string/poi_query_act"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnGeocoding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="8dp"
+        android:text="@string/geocoding_act"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnTrafficTransfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="8dp"
+        android:text="@string/traffic_transfer_act"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:background="@drawable/bg_selector"
+        android:id="@+id/btnNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/navigation_act"
+        android:textAllCaps="false" />
+
+</LinearLayout>

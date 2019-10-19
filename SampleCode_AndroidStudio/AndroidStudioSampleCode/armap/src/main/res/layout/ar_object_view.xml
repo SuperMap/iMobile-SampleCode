@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:scaleType="matrix"
+    >
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:src="@drawable/timg"
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_poiinfo"
+        android:textColor="#ffffff"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:text="详细信息："/>
+    <!-- android:background="#5bb85b" -->
+    <!-- android:background="#55cb6e" -->
+
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:textSize="18dp"/>
+    <Button
+        android:text="Button"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_poiinfo"
+        android:textColor="#ffffff"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        />
+
+</LinearLayout>

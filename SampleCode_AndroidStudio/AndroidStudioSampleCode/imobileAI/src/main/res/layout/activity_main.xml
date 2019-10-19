@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                tools:context="com.supermap.myapplication.MainActivity">
+
+    <com.supermap.ai.AIDetectView
+        android:id="@+id/test_arcontrol"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+
+
+    <Button
+        android:id="@+id/btn_AR_Near"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:visibility="visible"
+        android:onClick="showMutilAlertDialog"
+        android:text="选择分类"
+        android:textSize="14sp"/>
+    <Button
+        android:id="@+id/btn_AR_Following"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btn_AR_Near"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:visibility="visible"
+        android:onClick="startDetect"
+        android:text="开始识别"
+        android:textSize="14sp"/>
+    <Button
+        android:id="@+id/btn_map_mode"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btn_AR_Following"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:visibility="visible"
+        android:onClick="stopDetect"
+        android:text="停止识别"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btn_show_carema"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btn_map_mode"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="changePolyStatus"
+        android:visibility="visible"
+        android:text="聚合模式"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btn_test"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btn_show_carema"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="screenCapture"
+        android:visibility="visible"
+        android:text="AI截图"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btn_startCount"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btn_test"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="startTrackCount"
+        android:visibility="visible"
+        android:text="开始计数"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/btn_stopCount"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/btn_startCount"
+        android:background="@drawable/ar_btn_selector"
+        android:textColor="#FF1493"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="stopTrackCount"
+        android:visibility="visible"
+        android:text="停止计数"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/countInfo"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textColor="#FF1493"
+        android:text="Count:"
+        android:textSize="20sp"
+        android:background="@android:color/transparent"/>
+
+    <ImageView
+        android:id="@+id/previewBitmap"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        />
+
+
+    <SeekBar
+        android:id="@+id/progress"
+        style="@style/mprogress_horizontal"
+        android:layout_below="@+id/btn_test"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:paddingRight="12dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        android:max="200"
+        android:paddingTop="10dp"/>
+
+</RelativeLayout>
+
+
+

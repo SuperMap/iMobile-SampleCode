@@ -21,7 +21,41 @@ import com.supermap.mapping.MapView;
 import com.supermap.mapping.MapViewGroup;
 
 import pub.devrel.easypermissions.EasyPermissions;
-
+/**
+ * <p>
+ * Title:MVT叠加矢量图层
+ *
+ * </p>
+ *
+ * <p>
+ * Description:
+ * ============================================================================>
+ * ------------------------------版权声明----------------------------
+ * 此文件为 SuperMap iMobile for Android 的示范代码
+ * 版权所有：北京超图软件股份有限公司
+ * ----------------------------------------------------------------
+ * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
+ *
+ * 1、范例简介：示范MVT叠加矢量图层
+ * 2、示例数据：数据目录："/sdcard/SampleData/Beijing/"
+ *            地图数据：Beijing.smwu,clip1.udb,clip1.udd
+ *            许可目录："/SuperMap/License/"
+ * 3、关键类型/成员:
+ *	 EngineType.OpenGLCache 			//枚举
+ *   MapViewGroup.addMapView()			//方法
+ *
+ * 4、使用步骤：
+ *
+ *
+ * ------------------------------------------------------------------------------
+ * ============================================================================>
+ * </p>
+ *
+ * <p>
+ * Company: 北京超图软件股份有限公司
+ * </p>
+ *
+ */
 public class MainActivity extends AppCompatActivity {
     private final String sdcard = android.os.Environment.getExternalStorageDirectory().getAbsolutePath().toString();
     MapView mapView;

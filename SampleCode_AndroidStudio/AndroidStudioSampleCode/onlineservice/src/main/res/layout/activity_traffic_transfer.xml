@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapView_att"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.supermap.mapping.MapView>
+
+    <LinearLayout
+        android:id="@+id/include_att"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" >
+
+        <include layout="@layout/include" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStart_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_selector"
+        android:text="@string/start_point" />
+
+    <Button
+        android:id="@+id/btnEnd_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStart_att"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/bg_selector"
+        android:text="@string/end_point" />
+
+    <Button
+        android:id="@+id/btnIn_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/in" />
+
+    <Button
+        android:id="@+id/btnOut_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toLeftOf="@id/btnIn_att"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/out" />
+
+    <Button
+        android:id="@+id/btnEntire_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/full_screet" />
+
+    <Button
+        android:id="@+id/btnClear_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/btnEntire_att"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/clear" />
+
+    <Button
+        android:id="@+id/btnSearch_att"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnEnd_att"
+        android:layout_below="@+id/btnEnd_att"
+        android:background="@drawable/bg_selector"
+        android:text="@string/search_att" />
+
+
+    <LinearLayout
+        android:id="@+id/llParentListView_att"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnStart_att"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/btnStart_att"
+        android:background="@drawable/bg_gray_shape"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="3dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tv_att" />
+
+            <TextView
+                android:id="@+id/tvStartName_att"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_selector"
+                android:gravity="left|center_vertical"
+                android:padding="3dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:padding="3dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tv2_att" />
+
+            <TextView
+                android:id="@+id/tvEndName_att"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_selector"
+                android:gravity="left|center_vertical"
+                android:padding="3dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="2dp"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/tvLocation_att"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/tv3_att"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/llListView_att"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone" >
+
+            <include layout="@layout/listview_traffic_transfer" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

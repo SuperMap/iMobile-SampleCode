@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">室内外导航</string>
+    <!-- Strings related to login -->
+
+    <string name="title_activity_main">室内外导航</string>
+
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="nav_header_title">室内外导航</string>
+    <string name="nav_header_subtitle">imobile123@126.com</string>
+
+</resources>

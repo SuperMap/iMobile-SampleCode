@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+        <item
+                android:id="@+id/dotmaps"
+                android:icon="@mipmap/ic_map"
+                android:title="点密度图"/>
+        <item
+                android:id="@+id/graduatedmaps"
+                android:icon="@mipmap/ic_layermanage"
+                android:title="等级符号图"/>
+        <item
+                android:id="@+id/heatmaps"
+                android:icon="@mipmap/ic_datacollection"
+                android:title="热力图"/>
+        <item
+                android:id="@+id/gridaggregation"
+                android:icon="@mipmap/ic_menu_manage"
+                android:title="网格图"/>
+    </group>
+
+</menu>

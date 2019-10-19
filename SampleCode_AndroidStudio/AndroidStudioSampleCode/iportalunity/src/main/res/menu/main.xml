@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/browse"
+          android:title="浏览状态"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/edit"
+          android:title="编辑状态"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/export"
+          android:title="导出数据"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/action_settings"
+          android:title="其他设置"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+</menu>

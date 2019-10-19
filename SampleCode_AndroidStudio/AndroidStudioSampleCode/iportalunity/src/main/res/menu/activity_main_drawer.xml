@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view">
+
+    <!--<item android:title="地图编辑">-->
+        <!--<menu>-->
+            <!--<group android:checkableBehavior="single">-->
+                <!--<item-->
+                        <!--android:id="@+id/cartography"-->
+                        <!--android:icon="@drawable/mymap_menu"-->
+                        <!--android:title="地图制图"/>-->
+                <!--<item-->
+                        <!--android:id="@+id/theme_cartography"-->
+                        <!--android:icon="@drawable/myservices_menu"-->
+                        <!--android:title="专题制图"/>-->
+            <!--</group>-->
+        <!--</menu>-->
+    <!--</item>-->
+
+    <item android:title="我的资源">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                        android:id="@+id/my_map"
+                        android:icon="@drawable/mymap_menu"
+                        android:title="我的地图"/>
+                <item
+                        android:id="@+id/my_service"
+                        android:icon="@drawable/myservices_menu"
+                        android:title="我的服务"/>
+                <item
+                        android:id="@+id/my_scene"
+                        android:icon="@drawable/myscenes_menu"
+                        android:title="我的场景"/>
+                <item
+                        android:id="@+id/my_data"
+                        android:icon="@drawable/mydatas_menu"
+                        android:title="我的数据"/>
+                <item
+                        android:id="@+id/my_Insight"
+                        android:icon="@drawable/myinsights_menu"
+                        android:title="我的洞察"/>
+                <item
+                        android:id="@+id/my_large_screen"
+                        android:icon="@drawable/mymapdashboards_menu"
+                        android:title="我的大屏"/>
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="资源中心">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                        android:id="@+id/maps"
+                        android:icon="@drawable/mymap_menu"
+                        android:title="地图资源"/>
+                <item
+                        android:id="@+id/services"
+                        android:icon="@drawable/myservices_menu"
+                        android:title="服务资源"/>
+                <item
+                        android:id="@+id/scenes"
+                        android:icon="@drawable/myscenes_menu"
+                        android:title="场景资源"/>
+                <item
+                        android:id="@+id/datas"
+                        android:icon="@drawable/mydatas_menu"
+                        android:title="数据资源"/>
+                <item
+                        android:id="@+id/insights"
+                        android:icon="@drawable/myinsights_menu"
+                        android:title="洞察资源"/>
+                <item
+                        android:id="@+id/large_screens"
+                        android:icon="@drawable/mymapdashboards_menu"
+                        android:title="大屏资源"/>
+            </group>
+        </menu>
+    </item>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                    <!--android:id="@+id/nav_share"-->
+                    <!--android:icon="@drawable/ic_menu_share"-->
+                    <!--android:title="Share"/>-->
+            <!--<item-->
+                    <!--android:id="@+id/nav_send"-->
+                    <!--android:icon="@drawable/ic_menu_send"-->
+                    <!--android:title="Send"/>-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/topLayout" 
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+<!--
+	android:layout_width="fill_parent"
+	android:layout_width="700dp"
+-->
+
+	<FrameLayout
+		android:id="@+id/mainLayout"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="visible">
+
+		<com.supermap.mapping.AR.ArControl2
+			android:id="@+id/arcontrol_supermap"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:visibility="visible"/>
+
+	</FrameLayout>
+
+	<Button
+		android:id="@+id/ar_scene_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:text="开启"
+		android:textSize="18sp"
+		android:textStyle="bold"
+		android:layout_gravity="bottom"
+		android:visibility="visible"/>
+
+
+
+</RelativeLayout>

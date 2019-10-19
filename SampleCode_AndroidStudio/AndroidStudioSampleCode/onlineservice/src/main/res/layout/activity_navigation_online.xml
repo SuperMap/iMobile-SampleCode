@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapView_ano"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.supermap.mapping.MapView>
+
+    <LinearLayout
+        android:id="@+id/include_ano"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" >
+
+        <include layout="@layout/include" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStart_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_selector"
+        android:text="@string/start_point" />
+
+    <Button
+        android:id="@+id/btnEnd_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStart_ano"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/bg_selector"
+        android:text="@string/end_point" />
+
+    <Button
+        android:id="@+id/btnIn_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/in" />
+
+    <Button
+        android:id="@+id/btnOut_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toLeftOf="@id/btnIn_ano"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/out" />
+
+    <Button
+        android:id="@+id/btnEntire_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/full_screet" />
+
+    <Button
+        android:id="@+id/btnClear_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/btnEntire_ano"
+        android:background="@drawable/bg_selector"
+        android:padding="2dp"
+        android:text="@string/clear" />
+
+    <Button
+        android:id="@+id/btnNavigation_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnEnd_ano"
+        android:layout_below="@+id/btnEnd_ano"
+        android:background="@drawable/bg_selector"
+        android:text="@string/navigation_ano" />
+
+    <LinearLayout
+        android:id="@+id/llNavigation_ano"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_gray_shape"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="gone" >
+
+        <RadioGroup
+            android:id="@+id/rgNavigationSelected_ano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/rbMinLength_ano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/min_length_ano" />
+
+            <RadioButton
+                android:id="@+id/rbRecommend_ano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recommand_ano" />
+
+            <RadioButton
+                android:id="@+id/rbNoHighWay_ano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_high_way_ano" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnNavigationFinish_ano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_selector"
+            android:gravity="center"
+            android:text="@string/finish" />
+    </LinearLayout>
+
+</RelativeLayout>

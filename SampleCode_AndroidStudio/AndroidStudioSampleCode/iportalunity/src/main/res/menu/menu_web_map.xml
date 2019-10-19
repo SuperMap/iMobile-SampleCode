@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.supermap.imobile.iportalservices.UserScrollingActivity">
+    <item android:id="@+id/edit"
+          android:title="修改地图资源"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/update"
+          android:title="同步云端资源"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+</menu>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<Button
+		android:background="@drawable/qidian"
+		android:id="@+id/btnSelected"
+		android:layout_width="30dp"
+		android:layout_height="30dp"/>
+
+</LinearLayout>
+
+	<!--<?xml version="1.0" encoding="utf-8"?>-->
+	<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="match_parent"-->
+	<!--xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+	<!--<com.supermap.imobile.View.SpreadView-->
+	<!--android:id="@+id/spreadView"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="wrap_content"-->
+	<!--app:spread_center_color="@color/colorAccent"-->
+	<!--app:spread_delay_milliseconds="35"-->
+	<!--app:spread_distance="5"-->
+	<!--app:spread_max_radius="90"-->
+	<!--app:spread_radius="100"-->
+	<!--app:spread_spread_color="@color/colorAccent" />-->
+
+	<!--</LinearLayout>-->

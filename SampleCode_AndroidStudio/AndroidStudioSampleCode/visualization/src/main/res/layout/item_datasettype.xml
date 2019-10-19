@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+    android:background="@drawable/round_rec2">
+<ImageView
+    android:layout_marginLeft="20dp"
+    android:id="@+id/image_datasettype"
+    android:layout_width="40dp"
+    android:layout_height="40dp" />
+    <TextView
+        android:text="wcaosd"
+        android:layout_marginLeft="50dp"
+        android:textColor="#808080"
+        android:textSize="18sp"
+        android:id="@+id/tv_datasetname"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"/>
+</LinearLayout>

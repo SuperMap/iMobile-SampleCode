@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parentFrameLayout" >
+
+    <RelativeLayout
+        android:id="@+id/camera_ar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/projectionMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+        </com.supermap.mapping.MapView>
+
+
+        <com.supermap.ar.ArView
+            android:id="@+id/arview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/poi_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" POI投射"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="top|right"
+            android:visibility="visible"
+            android:onClick="btnPOIProjection_onClick"/>
+
+        <Button
+            android:id="@+id/map_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/poi_add_button"
+            android:text=" 地图投射"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="top|right"
+            android:visibility="visible"
+            android:onClick="btnMapProjection_onClick"/>
+
+        <LinearLayout
+            android:id="@+id/setHeadLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_above="@+id/setFactorLayout"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max Head"
+                android:textSize="20sp"
+                android:visibility="visible"/>
+            <SeekBar
+                android:id="@+id/seekHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dip"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/setFactorLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_above="@+id/maxRenderLayout"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/factor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max Scale"
+                android:textSize="20sp"
+                android:visibility="visible"/>
+
+            <SeekBar
+                android:id="@+id/seekFactorRender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dip"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/maxRenderLayout"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/maxRender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Max eye   "
+                android:textSize="20sp"
+                android:visibility="visible"/>
+
+            <SeekBar
+                android:id="@+id/seekMaxRender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dip"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

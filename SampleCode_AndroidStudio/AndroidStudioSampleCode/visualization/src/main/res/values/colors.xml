@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="theme_button">#008577</color>
+    <color name="color_check_bg">#D81B60</color>
+    <color name="login_button">#FFFFFF</color>
+    <color name="download_button">#FFFFFF</color>
+    <color name="listitem_bg">#f4f4f4</color>
+    <color name="listitem_bg_pressed">#53ccc3</color>
+    <color name="btn_pop">#808080</color>
+    <color name="btn_pressed">#ffffff</color>
+    <color name="btn_chart">#088</color>
+    <color name="bg_main_top">#36ae66</color>
+
+    <color name="btn_cancle">#B5B5B5</color>
+    <color name="btn_cancle_pressed">#9C9C9C</color>
+
+    <color name="bg_dialog_texttag">#00CD66</color>
+
+    <color name="gray">#20000000</color>
+</resources>

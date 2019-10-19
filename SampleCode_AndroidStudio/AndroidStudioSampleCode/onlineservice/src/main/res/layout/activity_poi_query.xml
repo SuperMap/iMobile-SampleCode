@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_selector"
+    android:orientation="vertical"
+    android:padding="2dp" >
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapView_apq"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.supermap.mapping.MapView>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:paddingBottom="5dp"-->
+        <!--android:paddingTop="5dp" >-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvFocus_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:focusable="true"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/tv_apq"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="16sp" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/etCity_apq"-->
+            <!--android:hint="@string/hint_city_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="3dp"-->
+            <!--android:text="@string/city_apq"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="20sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/tv2_apq"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="16sp" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/etKeywords_apq"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:hint="@string/hint_keywords_apq"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:gravity="center"-->
+            <!--android:padding="3dp"-->
+            <!--android:text="@string/keywords_apq"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="20sp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:gravity="center"-->
+            <!--android:text="@string/tv3_apq"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="16sp"-->
+            <!--android:visibility="gone" />-->
+
+        <!--<Spinner-->
+            <!--android:id="@+id/spinnerQueryMode_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:visibility="gone" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:paddingBottom="5dp" >-->
+
+        <!--<View-->
+            <!--android:layout_width="5dp"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnQuery_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:text="@string/query_apq" />-->
+
+        <!--<View-->
+            <!--android:layout_width="5dp"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnNextQuery_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:text="@string/next_query_apq" />-->
+
+        <!--<View-->
+            <!--android:layout_width="5dp"-->
+            <!--android:layout_height="match_parent" />-->
+    <!--</LinearLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" >-->
+
+        <!--<com.supermap.mapping.MapView-->
+            <!--android:id="@+id/mapView_apq"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" >-->
+        <!--</com.supermap.mapping.MapView>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnIn_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:padding="2dp"-->
+            <!--android:text="@string/in" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnOut_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_toLeftOf="@id/btnIn_apq"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:padding="2dp"-->
+            <!--android:text="@string/out" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnEntire_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:padding="2dp"-->
+            <!--android:text="@string/full_screet" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btnClear_apq"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_toRightOf="@id/btnEntire_apq"-->
+            <!--android:background="@drawable/bg_selector"-->
+            <!--android:padding="2dp"-->
+            <!--android:text="@string/clear" />-->
+    <!--</RelativeLayout>-->
+
+</LinearLayout>
