@@ -305,7 +305,7 @@ public class  MainActivity extends AppCompatActivity
 //	          设置道路信息显示栏的位置。
         mNavigation2.setRoadInfoSize(320, 50);// 设置分析所得路径可见
         mNavigation2.setNetworkDataset(networkDataset);    // 设置网络数据集
-        boolean bResult = mNavigation2.loadModel("sdcard/sampleData/IndoorNavigationData/NetworkModel.snm");
+        boolean bResult = mNavigation2.loadModel("sdcard/sampleData/SupermapNaviData/NetworkModel.snm");
 
         mNavigation2.setIsEncryptGPS(false);
         mNavigation2.enablePanOnGuide(true);
