@@ -214,7 +214,22 @@ public class FirstFragment extends Fragment implements View.OnClickListener, OnC
         rootView.findViewById(R.id.kuaican).setOnClickListener(this);
 
         floating_search_view = rootView.findViewById(R.id.sliding_layout);
+        floating_search_view.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View view, float v) {
 
+            }
+
+            @Override
+            public void onPanelStateChanged(View view, SlidingUpPanelLayout.PanelState panelState, SlidingUpPanelLayout.PanelState panelState1) {
+//                panelState1 == SlidingUpPanelLayout.PanelState.DRAGGING &&
+                if(panelState1 == SlidingUpPanelLayout.PanelState.EXPANDED){
+                    //隐藏图层POI
+                    mWorld.clearWorld();
+//                    mArView.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
         nowaddress = rootView.findViewById(R.id.address);
 
     }

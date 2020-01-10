@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrConfig;
+import com.r0adkll.slidr.model.SlidrInterface;
 import com.r0adkll.slidr.model.SlidrPosition;
 import com.supermap.data.CoordSysTransMethod;
 import com.supermap.data.CoordSysTransParameter;
@@ -54,14 +55,15 @@ public class SearchDemo extends AppCompatActivity implements View.OnClickListene
         //指划返回
         mBuilder = new SlidrConfig.Builder().scrimColor(Color.BLACK)//滑动时Activity之间的颜色
                 .position(SlidrPosition.LEFT)//从左边滑动
+                .sensitivity(1f)//敏感度
                 .scrimStartAlpha(0.8f)//滑动开始时两个Activity之间的透明度
                 .scrimEndAlpha(0f)//滑动结束时两个Activity之间的透明度
                 .velocityThreshold(10f)//超过这个滑动速度，忽略位移限定值就切换Activity
                 .distanceThreshold(.9f);//滑动位移占屏幕的百分比，超过这个间距就切换Activity
         mSlidrConfig = mBuilder.build();
 
-        Slidr.attach(this,mSlidrConfig);
-
+        SlidrInterface slidrInterface = Slidr.attach(this,mSlidrConfig);
+        slidrInterface.lock();
 
         setContentView(R.layout.activity_search);
 
@@ -99,7 +101,7 @@ public class SearchDemo extends AppCompatActivity implements View.OnClickListene
         info.setAlias("GoogleMaps");
         info.setEngineType(EngineType.GoogleMaps);
         info.setReadOnly(false);
-        info.setServer("http://www.goole.cn/maps");
+        info.setServer("http://www.google.cn/maps");
 
 
         //打开数据源
@@ -122,7 +124,7 @@ public class SearchDemo extends AppCompatActivity implements View.OnClickListene
 
                 CoordSysTranslator.convert(point2Ds, sourcePrjCoordSys, m_mapControl.getMap().getPrjCoordSys(), coordSysTransParameter, CoordSysTransMethod.MTH_GEOCENTRIC_TRANSLATION);
 
-                m_mapControl.getMap().setScale(3.082407758167956E-5);
+                m_mapControl.getMap().setScale(0.00005);
                 m_mapControl.getMap().setCenter(point2Ds.getItem(1));
 
 

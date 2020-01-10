@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioSampleCode.iml" filepath="$PROJECT_DIR$/AndroidStudioSampleCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/armap/armap.iml" filepath="$PROJECT_DIR$/armap/armap.iml" />
+    </modules>
+  </component>
+</project>

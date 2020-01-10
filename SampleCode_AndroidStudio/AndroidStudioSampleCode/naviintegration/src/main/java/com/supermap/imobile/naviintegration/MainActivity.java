@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.supermap.data.Color;
+import com.supermap.data.CursorType;
 import com.supermap.data.DatasetVector;
 import com.supermap.data.Datasets;
 import com.supermap.data.Datasource;
@@ -21,6 +22,7 @@ import com.supermap.data.GeoLine;
 import com.supermap.data.GeoStyle;
 import com.supermap.data.Point2D;
 import com.supermap.data.Point2Ds;
+import com.supermap.data.Recordset;
 import com.supermap.data.Workspace;
 import com.supermap.data.WorkspaceConnectionInfo;
 import com.supermap.data.WorkspaceType;
@@ -207,6 +209,13 @@ public class  MainActivity extends AppCompatActivity
         mMapControl.getMap().open(mapname);
         mMapControl.getMap().refresh();
         mDatasource = mWorkspace.getDatasources().get("supermap");
+
+        //删除增量的线
+        DatasetVector dataset = (DatasetVector) mDatasource.getDatasets().get("T1_ROAD_INFO");
+        Recordset set = dataset.query("SMID > 60", CursorType.DYNAMIC);
+        set.deleteAll();
+        set.update();
+        set.dispose();
     }
 
     /**

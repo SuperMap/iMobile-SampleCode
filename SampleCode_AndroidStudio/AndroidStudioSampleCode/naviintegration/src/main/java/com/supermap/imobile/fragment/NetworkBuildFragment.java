@@ -40,6 +40,7 @@ public class NetworkBuildFragment extends Fragment implements View.OnClickListen
         layout.findViewById(R.id.btn_addline).setOnClickListener(this);
         layout.findViewById(R.id.btn_submitline).setOnClickListener(this);
         layout.findViewById(R.id.btn_autobuildNetWork).setOnClickListener(this);
+        layout.findViewById(R.id.btn_cancel).setOnClickListener(this);
         return layout;
     }
 
@@ -49,7 +50,7 @@ public class NetworkBuildFragment extends Fragment implements View.OnClickListen
         mMapControl.setAction(Action.PAN);
         if(!hidden){
             mMapControl.getMap().getLayers().add(mMapControl.getMap().getWorkspace().getDatasources().get("supermap").
-                    getDatasets().get("T7_ROAD_LINKS"),true);
+                    getDatasets().get("T1_ROAD_INFO"),true);
             mEditlayerName = mMapControl.getMap().getLayers().get(0).getName();
             mMapControl.getMap().getLayers().get(0).setEditable(true);
             bUpdate = false;
@@ -75,11 +76,15 @@ public class NetworkBuildFragment extends Fragment implements View.OnClickListen
             case R.id.btn_addline:
                 mMapControl.setAction(Action.DRAWLINE);
                 break;
-            case R.id.btn_submitline:
-                mMapControl.submit();
+            case R.id.btn_cancel:
                 mMapControl.setAction(Action.PAN);
                 break;
+            case R.id.btn_submitline:
+                mMapControl.submit();
+//                mMapControl.setAction(Action.DRAWLINE);
+                break;
             case R.id.btn_autobuildNetWork:
+                mMapControl.submit();
                 buildNetwork();
                 mMapControl.setAction(Action.PAN);
                 break;
@@ -97,7 +102,7 @@ public class NetworkBuildFragment extends Fragment implements View.OnClickListen
 
         DatasetVector lineDataset;
         //路网生成
-        lineDataset= (DatasetVector)mDatasource.getDatasets().get("T7_ROAD_LINKS");
+        lineDataset= (DatasetVector)mDatasource.getDatasets().get("T1_ROAD_INFO");
 
         //线线打断功能
         mDatasource.getDatasets().delete("F7_tmpDataset");
@@ -108,7 +113,7 @@ public class NetworkBuildFragment extends Fragment implements View.OnClickListen
         topologyProcessingOptions.setLinesIntersected(true);
         TopologyProcessing.clean(datasetVector2,topologyProcessingOptions);
 
-        mDatasource.getDatasets().delete("T7_Network_adjust");
+        mDatasource.getDatasets().delete("T1_Network_adjust");
 
         String[] lineFieldNames = new String[datasetVector2.getFieldInfos().getCount()];
         for(int i = 0;i < datasetVector2.getFieldInfos().getCount();i++){
@@ -117,9 +122,9 @@ public class NetworkBuildFragment extends Fragment implements View.OnClickListen
 
         DatasetVector datasets[] = {datasetVector2};
         DatasetVector resultDataset = NetworkBuilder.buildNetwork(datasets,null,lineFieldNames,null,
-                mDatasource,"T7_Network_adjust", NetworkSplitMode.LINE_SPLIT_BY_POINT,0.0000001);
+                mDatasource,"T1_Network_adjust", NetworkSplitMode.LINE_SPLIT_BY_POINT,0.0000001);
 
-        DatasetVector datasetVector = (DatasetVector) mDatasource.getDatasets().get("T7_Network_adjust");
+        DatasetVector datasetVector = (DatasetVector) mDatasource.getDatasets().get("T1_Network_adjust");
         mMapControl.getMap().getLayers().add(datasetVector.getChildDataset(),true);
 
         bUpdate = true;

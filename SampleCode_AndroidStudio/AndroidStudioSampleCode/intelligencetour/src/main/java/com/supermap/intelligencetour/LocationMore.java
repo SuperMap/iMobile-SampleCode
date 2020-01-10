@@ -195,7 +195,7 @@ public class LocationMore extends AppCompatActivity implements View.OnClickListe
         dcInfo.setAlias("GoogleMaps");
         dcInfo.setEngineType(EngineType.GoogleMaps);
         dcInfo.setReadOnly(false);
-        dcInfo.setServer("http://www.goole.cn/maps");
+        dcInfo.setServer("http://www.google.cn/maps");
         mapControl.getMap().setWorkspace(workspace);
         datasource = workspace.getDatasources().open(dcInfo);
         if (datasource != null) {
@@ -203,7 +203,7 @@ public class LocationMore extends AppCompatActivity implements View.OnClickListe
             if (dataset != null) {
                 mapControl.getMap().getLayers().add(dataset, true);
                 //设置地图初始的显示范围，地图出图时是成都
-                mapControl.getMap().setScale(3.082407758167956E-5);
+                mapControl.getMap().setScale(0.0002);
                 mapControl.getMap().setCenter(new Point2D(locationx, locationy));
                 mapControl.getMap().refresh();
             }

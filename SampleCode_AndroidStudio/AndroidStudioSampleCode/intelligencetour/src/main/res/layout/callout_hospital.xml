@@ -10,9 +10,10 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/text"
 		android:text="1"
+		android:padding="5dp"
 		android:textColor="@color/black"
 		android:visibility="invisible"
-		android:background="@drawable/textlines"/>
+		android:background="@drawable/calloutlines"/>
 	<Button
 		android:background="@mipmap/hospital_callout"
 		android:id="@+id/btnSelected"

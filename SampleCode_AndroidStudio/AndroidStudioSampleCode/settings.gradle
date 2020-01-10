@@ -1,5 +1,7 @@
+include ':3dar'
 include ':addlable'
 include ':armap'
+include ':imobileARcontrol'
 include ':boundsquery'
 include ':bufferanalyst'
 include ':collector'
