@@ -133,7 +133,7 @@ public class NavigationOnlineActivity extends Activity implements OnClickListene
 
 		DatasourceConnectionInfo dcInfo=new DatasourceConnectionInfo();
 		dcInfo.setEngineType(EngineType.SuperMapCloud);
-		dcInfo.setServer("http://supermapcloud.com");
+		dcInfo.setServer("http://t2.supermapcloud.com/");
 		mapControl.getMap().setWorkspace(workspace);
 		datasource=workspace.getDatasources().open(dcInfo);
 		if(datasource != null){

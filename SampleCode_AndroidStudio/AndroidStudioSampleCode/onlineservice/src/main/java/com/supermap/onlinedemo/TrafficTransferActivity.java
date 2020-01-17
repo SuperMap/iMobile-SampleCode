@@ -147,7 +147,7 @@ public class TrafficTransferActivity extends Activity implements OnClickListener
 		DatasourceConnectionInfo dcInfo=new DatasourceConnectionInfo();
 //		打开超图云地图
 		dcInfo.setEngineType(EngineType.SuperMapCloud);
-		dcInfo.setServer("http://supermapcloud.com");
+		dcInfo.setServer("http://t2.supermapcloud.com/");
 //		给地图设置工作空间
 		mapControl.getMap().setWorkspace(workspace);
 		datasource=workspace.getDatasources().open(dcInfo);

@@ -20,6 +20,10 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
 }
 
 dependencies {
