@@ -6,7 +6,7 @@ ext{
 	//library versions
 	andSupportLibVersion = '28.0.0'
 	//plugin version
-	gradleVersion = '3.1.4'
+	gradleVersion = '3.4.2'
 	//java version
 	javaVersion = 1.8
 
