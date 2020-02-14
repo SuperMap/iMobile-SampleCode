@@ -18,21 +18,21 @@ package com.supermap.hpcollector;
  *   	展示高精采集新建采集，保存采集结果的功能。
  *
  * 2、Demo数据：
- * 		数据目录："../SampleData/IndoorNavigationData/"
- *      地图数据："beijing.smwu", "beijing0525.udb", "bounds.udb", "kaide_mall.udb"
  *      许可目录："../SuperMap/License/"
  *
  * 3、关键类型/成员:
- *    m_NavigationEx.setStartPoint();			方法
- *    m_NavigationEx.setDestinationPoint();		方法
- *    m_NavigationEx.addWayPoint();				方法
- *    m_NavigationEx.routeAnalyst();			方法
- *    m_NavigationEx.startGuide();				方法
- *    m_floorListView.setCurrentFloorId();		方法
+ *    mGatherView.addNewRoute();			    方法
+ *    mGatherView.saveCurrentRoute();	    	方法
+ *    mGatherView.clearCurrentRoute();			方法
+ *    mGatherView.loadRoute();			        方法
+ *    mGatherView.saveAllRoutes();              方法
+ *    mGatherView.clearAllRoutes();             方法
+ *    mGatherView.setPointCloudEnable();        方法
+ *    mGatherView.setViewMode();                方法
  *
  * 4、功能展示
- *   (1)添加起点、终点、途径点；
- *   (2)路径分析；
+ *   (1)点击【新建采集】，新建路线的采集；
+ *   (2)点击【保存当前】，保存当前采集的路线，然后点击【新建采集】继续采集；
  *   (3)导航。
  *   (4)楼层切换
  * ------------------------------------------------------------------------------
