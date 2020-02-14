@@ -36,6 +36,11 @@ subprojects{
                 sourceCompatibility rootProject.ext.javaVersion
                 targetCompatibility rootProject.ext.javaVersion
             }
+            defaultConfig {
+                ndk {
+                    abiFilters "armeabi-v7a"
+                }
+            }
         }
     }
 }

@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+    <com.supermap.ar.gather.GatherView
+        android:id="@+id/gatherView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <Button
+        android:id="@+id/btnAddNewRoute"
+        android:textAllCaps="false"
+        android:text="新建采集"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
+
+    <Button
+        android:id="@+id/btnSaveCurrentRoute"
+        android:textAllCaps="false"
+        android:text="保存当前"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnAddNewRoute"
+        />
+
+
+    <Button
+        android:id="@+id/btnClearCurrentRoute"
+        android:textAllCaps="false"
+        android:text="清除采集"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSaveCurrentRoute"
+        />
+
+
+    <Button
+        android:id="@+id/btnSaveAllRoutes"
+        android:textAllCaps="false"
+        android:text="保存路线"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnClearCurrentRoute"
+        />
+
+
+    <Button
+        android:id="@+id/btnClearAllRoutes"
+        android:textAllCaps="false"
+        android:text="清空路线"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSaveAllRoutes"
+        />
+
+
+    <Button
+        android:id="@+id/btnLoadRoute"
+        android:textAllCaps="false"
+        android:text="加载路线"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnClearAllRoutes"
+        />
+
+
+
+    <Button
+        android:id="@+id/btnCEnablePointCloud"
+        android:textAllCaps="false"
+        android:text="点云显示"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLoadRoute"
+        />
+
+
+    <Button
+        android:id="@+id/btnChangeViewMode"
+        android:textAllCaps="false"
+        android:text="切换视角"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCEnablePointCloud"
+        />
+</RelativeLayout> 
+
