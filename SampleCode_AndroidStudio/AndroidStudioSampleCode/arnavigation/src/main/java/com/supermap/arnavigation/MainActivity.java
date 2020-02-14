@@ -18,23 +18,23 @@ package com.supermap.arnavigation;
  *   	展示AR模式下导航功能的使用实现。
  *
  * 2、Demo数据：
- * 		数据目录："../SampleData/IndoorNavigationData/"
- *      地图数据："beijing.smwu", "beijing0525.udb", "bounds.udb", "kaide_mall.udb"
  *      许可目录："../SuperMap/License/"
  *
  * 3、关键类型/成员:
- *    m_NavigationEx.setStartPoint();			方法
- *    m_NavigationEx.setDestinationPoint();		方法
- *    m_NavigationEx.addWayPoint();				方法
- *    m_NavigationEx.routeAnalyst();			方法
- *    m_NavigationEx.startGuide();				方法
- *    m_floorListView.setCurrentFloorId();		方法
+ *    mARLayerView.setRefreshInterval();		方法
+ *    mARLayerView.setHasFinishedLoading();		方法
+ *    mARLayerView.drawNaviRoutes();            方法
+ *    mARLayerView.isARCity();			        方法
+ *    mARLayerView.setIsARCity();				方法
+ *    mARLayerView.setCurrentPosition();		方法
+ *    mARLayerView.getRelativePosition();       方法
+ *
  *
  * 4、功能展示
- *   (1)添加起点、终点、途径点；
- *   (2)路径分析；
- *   (3)导航。
- *   (4)楼层切换
+ *   (1)初始化AR箭头环境；
+ *   (2)点击【导航箭头】按钮，显示导航箭头；
+ *   (3)点击【固定姿态】按钮，将AR箭头在场景位置中固定，不根据实际位置刷新。
+ *
  * ------------------------------------------------------------------------------
  * ============================================================================>
  * </p>
@@ -295,6 +295,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     mARLayerView.setIsARCity(false);
                 } else {
                     mIsARCity.setBackgroundResource(R.drawable.arcity_enable);
+                    //将AR箭头在场景位置中固定，不根据实际位置刷新
                     mARLayerView.setIsARCity(true);
                 }
 
