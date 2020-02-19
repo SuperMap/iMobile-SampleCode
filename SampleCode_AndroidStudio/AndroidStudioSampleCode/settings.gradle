@@ -50,6 +50,7 @@ include ':swipedemo'
 include ':theme'
 include ':topodataprocess'
 include ':track'
+include ':trackmoving'
 include ':vectorcache'
 include ':visualization'
 
