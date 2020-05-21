@@ -1,10 +1,8 @@
 package com.supermap.addlable;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -36,8 +34,6 @@ import com.supermap.toolkit.TextStickerView;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-
-import pub.devrel.easypermissions.EasyPermissions;
 
 /**
  * <p>
@@ -82,77 +78,30 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class MainActivity extends AppCompatActivity {
 
     String RootPath = android.os.Environment.getExternalStorageDirectory().getAbsolutePath().toString();
-    MapView mapView;
-    Workspace workspace;
-    MapControl mapControl;
-    String mtext;
-    Button colorpickbtn;
-    TextStickerView textStickerView;
-    int red, green, blue, alpha;
-    Layer lablelayer;
+    MapView mMapView;
+    Workspace mWorkspace;
+    MapControl mMapControl;
+    String mText;
+    Button mBtnColorPick;
+    TextStickerView mTextStickerView;
+    int mRed, mGreen, mBlue, mAlpha;
+    Layer mLablelayer;
 
-    /**
-     * 需要申请的权限数组
-     */
-    protected String[] needPermissions = {
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.ACCESS_WIFI_STATE,
-            Manifest.permission.ACCESS_NETWORK_STATE,
-            Manifest.permission.CHANGE_WIFI_STATE,
-    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestPermissions();
-        Environment.setLicensePath(RootPath + "/SuperMap/License/");
+
         Environment.initialization(this);
         setContentView(R.layout.activity_main);
+        //打开一幅地图
+        openMap();
         initView();
     }
-    /**
-     * 检测权限
-     * return true:已经获取权限
-     * return false: 未获取权限，主动请求权限
-     */
 
-    public boolean checkPermissions(String[] permissions) {
-        return EasyPermissions.hasPermissions(this, permissions);
-    }
-
-    /**
-     * 申请动态权限
-     */
-    private void requestPermissions() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return;
-        }
-        if (!checkPermissions(needPermissions)) {
-            EasyPermissions.requestPermissions(
-                    this,
-                    "为了应用的正常使用，请允许以下权限。",
-                    0,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.READ_PHONE_STATE,
-                    Manifest.permission.ACCESS_WIFI_STATE,
-                    Manifest.permission.ACCESS_NETWORK_STATE,
-                    Manifest.permission.CHANGE_WIFI_STATE);
-            //没有授权，编写申请权限代码
-        } else {
-            //已经授权，执行操作代码
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // Forward results to EasyPermissions
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
     protected void initView() {
-        openMap();
-        textStickerView = findViewById(R.id.textstickerview);
+
+        mTextStickerView = findViewById(R.id.textstickerview);
         findViewById(R.id.addlable).setOnClickListener(listener);
         findViewById(R.id.save).setOnClickListener(listener);
         findViewById(R.id.delet).setOnClickListener(listener);
@@ -164,27 +113,27 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.addlable:
-                    addlable();
+                    addLable();
                     break;
                 case R.id.save:
-                    savelable();
+                    saveLable();
                     break;
                 case R.id.colorpick:
-                    colorpick();
+                    colorPick();
                     break;
                 case R.id.delet:
-                    deletText();
+                    deleteText();
                     break;
                 case R.id.select:
-                    mapControl.setAction(Action.SELECT);
-                    if (!lablelayer.isEditable()) {
-                        lablelayer.setSelectable(true);
-                        lablelayer.setEditable(true);
+                    mMapControl.setAction(Action.SELECT);
+                    if (!mLablelayer.isEditable()) {
+                        mLablelayer.setSelectable(true);
+                        mLablelayer.setEditable(true);
                     }
-                    mapControl.addGeometrySelectedListener(new GeometrySelectedListener() {
+                    mMapControl.addGeometrySelectedListener(new GeometrySelectedListener() {
                         @Override
                         public void geometrySelected(GeometrySelectedEvent Event) {
-                            mapControl.appointEditGeometry(Event.getGeometryID(), Event.getLayer());
+                            mMapControl.appointEditGeometry(Event.getGeometryID(), Event.getLayer());
                         }
 
                         @Override
@@ -198,39 +147,47 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private void openMap() {
-        mapView = findViewById(R.id.mapview);
-        mapControl = mapView.getMapControl();
+
+        mMapView = findViewById(R.id.mapview);
+        mMapControl = mMapView.getMapControl();
+
+        mWorkspace = new Workspace();
+        mMapControl.getMap().setWorkspace(mWorkspace);
+
+        //打开工作空间
         WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
         info.setServer(RootPath + "/SampleData/AddLable/AddLable.smwu");
-        info.setType(WorkspaceType.SMWU);
-        workspace = new Workspace();
-        workspace.open(info);
-        mapControl.getMap().setWorkspace(workspace);
-        String mapname = workspace.getMaps().get(0);
-        mapControl.getMap().open(mapname);
-        lablelayer = mapControl.getMap().getLayers().get(0);
+        info.setType(WorkspaceType.SXWU);
+        mWorkspace.open(info);
+
+        //打开第三幅地图
+        String mapName = mWorkspace.getMaps().get(0);
+        mMapControl.getMap().open(mapName);
+        mMapControl.getMap().refresh();
+        //获取第一个图层（文本图层）
+        mLablelayer = mMapControl.getMap().getLayers().get(0);
+      
     }
 
     //保存标注
-    private void savelable() {
-        textStickerView.setVisibility(View.GONE);
-        DatasetVector textdataset = (DatasetVector) lablelayer.getDataset();
-        Recordset recordset = textdataset.getRecordset(false, CursorType.DYNAMIC);
+    private void saveLable() {
+        mTextStickerView.setVisibility(View.GONE);
+        DatasetVector textDataset = (DatasetVector) mLablelayer.getDataset();
+        Recordset recordset = textDataset.getRecordset(false, CursorType.DYNAMIC);
         recordset.moveFirst();
         GeoText geoText = new GeoText();
         TextPart textPart = new TextPart();
-        textPart.setText(textStickerView.getText());
+        textPart.setText(mTextStickerView.getText());
 
-        textPart.setRotation(-textStickerView.getRotateAngle());
-        Point2D point2D = mapControl.getMap().pixelToMap(textStickerView.getpoint());
+        textPart.setRotation(-mTextStickerView.getRotateAngle());
+        Point2D point2D = mMapControl.getMap().pixelToMap(mTextStickerView.getpoint());
         textPart.setAnchorPoint(point2D);
         geoText.addPart(textPart);
         //设置风格
         TextStyle textStyle = new TextStyle();
-        textStyle.setForeColor(new com.supermap.data.Color(textStickerView.getTextColor()));
+        textStyle.setForeColor(new com.supermap.data.Color(mTextStickerView.getTextColor()));
         textStyle.setAlignment(TextAlignment.MIDDLECENTER);
-
-
+        textStyle.setFontHeight(mTextStickerView.getTextHeight());
 
         geoText.setTextStyle(textStyle);
 
@@ -241,21 +198,21 @@ public class MainActivity extends AppCompatActivity {
         geoText.dispose();
         recordset.close();
         recordset.dispose();
-        mapControl.getMap().refresh();
-        //
-        textStickerView.resetView();
+        mMapControl.getMap().refresh();
+
+        mTextStickerView.resetView();
     }
 
     //
-    private void addlable() {
+    private void addLable() {
         addTextLable();
     }
 
     private void addTextLable() {
         View SetTextView = LayoutInflater.from(this).inflate(R.layout.layout_settext, null);
         final EditText editText = SetTextView.findViewById(R.id.edittext);
-        colorpickbtn = SetTextView.findViewById(R.id.colorpick);
-        colorpickbtn.setOnClickListener(listener);
+        mBtnColorPick = SetTextView.findViewById(R.id.colorpick);
+        mBtnColorPick.setOnClickListener(listener);
 
         final AlertDialog alerdialog = new AlertDialog.Builder(MainActivity.this)
                 .setView(SetTextView)
@@ -266,11 +223,11 @@ public class MainActivity extends AppCompatActivity {
         alerdialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mtext = editText.getText().toString();
-                if (!mtext.isEmpty()) {
-                    textStickerView.setText(mtext);
-                    textStickerView.setTextColor(Color.argb(100, red, green, blue));
-                    textStickerView.setVisibility(View.VISIBLE);
+                mText = editText.getText().toString();
+                if (!mText.isEmpty()) {
+                    mTextStickerView.setText(mText);
+                    mTextStickerView.setTextColor(Color.argb(100, mRed, mGreen, mBlue));
+                    mTextStickerView.setVisibility(View.VISIBLE);
                     alerdialog.dismiss();
                 } else {
                     Toast.makeText(MainActivity.this, "标注不能为空", Toast.LENGTH_SHORT).show();
@@ -279,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void colorpick() {
+    private void colorPick() {
         final View contenview = LayoutInflater.from(this).inflate(R.layout.colorpick, null);
         final ColorPickerView colorPickerView = (ColorPickerView) contenview.findViewById(R.id.colorDisk);
         final TextView tv_rgb = (TextView) contenview.findViewById(R.id.tv_rgb);
@@ -357,10 +314,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "请输入正确的数字，如：255,255,255", Toast.LENGTH_SHORT).show();
                 } else {
                     if (isInteger(color[0]) && isInteger(color[1]) && isInteger(color[2])) {
-                        red = Integer.parseInt(color[0]);
-                        green = Integer.parseInt(color[1]);
-                        blue = Integer.parseInt(color[2]);
-                        colorpickbtn.setBackgroundColor(Color.argb(100, red, green, blue));
+                        mRed = Integer.parseInt(color[0]);
+                        mGreen = Integer.parseInt(color[1]);
+                        mBlue = Integer.parseInt(color[2]);
+                        mBtnColorPick.setBackgroundColor(Color.argb(100, mRed, mGreen, mBlue));
                         colorpickdialog.dismiss();
                     } else {
                         Toast.makeText(MainActivity.this, "请输入正确的数字，如：255,255,255", Toast.LENGTH_SHORT).show();
@@ -390,16 +347,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void deletText() {
-        if (mapControl.getCurrentGeometry()!=null) {
+    private void deleteText() {
+        if (mMapControl.getCurrentGeometry()!=null) {
             AlertDialog dialog = new AlertDialog.Builder(this)
                     .setMessage("确定要删除这个对象?")
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            mapControl.deleteCurrentGeometry();
-                            lablelayer.setEditable(false);
-                            mapControl.setAction(Action.PAN);
+                            mMapControl.deleteCurrentGeometry();
+                            mLablelayer.setEditable(false);
+                            mMapControl.setAction(Action.PAN);
 
                         }
                     })
