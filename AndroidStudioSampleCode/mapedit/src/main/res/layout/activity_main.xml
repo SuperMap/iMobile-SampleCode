@@ -1,0 +1,235 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.supermap.mapping.MapView>
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/draw"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_rb_scrawl_edit_toolbar"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="涂鸦" -->
+
+        <ImageButton
+            android:id="@+id/edit"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_rb_editor_edit_toolbar"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="编辑" -->
+
+        <ImageButton
+            android:id="@+id/rb_undo"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_btn_premain_redo"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="回退" -->
+
+        <ImageButton
+            android:id="@+id/rb_redo"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_btn_premain_undo"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="重做" -->
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_btn_premain_clear"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="删除" -->
+
+        <ImageButton
+            android:id="@+id/btn_save"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_btn_premain_submit"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="提交" -->
+
+        <ImageButton
+            android:id="@+id/btn_multiselect"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_btn_premain_mulselect"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="图斑批量操作" -->
+
+        <ImageButton
+            android:id="@+id/btn_clear_select"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:background="@drawable/selector_btn_clear_select"
+            android:button="@null"
+            android:visibility="visible" />
+        <!-- android:text="清空选择" -->
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rg_expand_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageButton
+                android:id="@+id/rb_creatLine"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_rb_scrawl_01"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="点画线" -->
+
+            <ImageButton
+                android:id="@+id/rb_supLine"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_rb_scrawl"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="辅助线" -->
+
+            <ImageButton
+                android:id="@+id/rb_creatRegion"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_rb_scrawl_02"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="点画面" -->
+
+            <ImageButton
+                android:id="@+id/rb_drawLine"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_rb_scrawl_03"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="手绘线" -->
+
+            <ImageButton
+                android:id="@+id/rb_drawRegion"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_rb_scrawl_04"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="手绘面" -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rg_expand_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/editnode"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/editnode"
+                android:button="@null"
+                android:visibility="visible"/>
+            <ImageView
+                android:id="@+id/addnode"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/addnode"
+                android:button="@null"
+                android:visibility="visible"/>
+            <ImageView
+                android:id="@+id/deletnode"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/deletnode"
+                android:button="@null"
+                android:visibility="visible"/>
+            <ImageButton
+                android:id="@+id/rb_union"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rb_edit_02"
+                android:button="@null"
+                android:visibility="gone" />
+            <!-- android:text="合并图斑" -->
+
+            <ImageButton
+                android:id="@+id/rb_split"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rb_edit_04"
+                android:button="@null"
+                android:visibility="gone" />
+            <!-- android:text="切割图斑-属性" -->
+
+            <ImageButton
+                android:id="@+id/rb_hollow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_rb_edit_03"
+                android:button="@null"
+                android:visibility="gone" />
+            <!-- android:text="岛洞图斑" -->
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_multiselect_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageButton
+                android:id="@+id/btn_begin_multiselect"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_begin_multiselect"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="开始多选" -->
+
+            <ImageButton
+                android:id="@+id/btn_finish_multiselect"
+                android:layout_width="75dp"
+                android:layout_height="65dp"
+                android:background="@drawable/selector_finish_multiselect"
+                android:button="@null"
+                android:visibility="visible" />
+            <!-- android:text="结束多选" -->
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

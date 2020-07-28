@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/startCollect"
+        android:textAllCaps="false"
+        android:text="开始记录"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
+    <Button
+        android:id="@+id/stopCollect"
+        android:textAllCaps="false"
+        android:text="停止记录"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startCollect"
+        />
+
+    <Button
+        android:id="@+id/showTrack"
+        android:textAllCaps="false"
+        android:text="轨迹展示"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stopCollect"
+        />
+
+
+    <Button
+        android:id="@+id/smmothTrack"
+        android:textAllCaps="false"
+        android:text="平滑轨迹"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showTrack"
+        />
+
+    <Button
+        android:id="@+id/clearCollect"
+        android:textAllCaps="false"
+        android:text="清除记录"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/smmothTrack"
+        />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/location_cv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_location"
+            android:foreground="?attr/selectableItemBackground"/>
+    </android.support.v7.widget.CardView>
+
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.supermap.mapping.MapView>
+
+</RelativeLayout>
