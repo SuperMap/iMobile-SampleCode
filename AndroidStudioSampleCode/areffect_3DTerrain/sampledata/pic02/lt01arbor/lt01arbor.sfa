@@ -1,0 +1,87 @@
+{
+  materials: [
+    {
+      name: 'House_004_Material_BaseColor',
+      parameters: [
+        {
+          baseColorFactor: [
+            0.5,
+            0.5,
+            0.5,
+            1,
+          ],
+        },
+        {
+          baseColor: 'House_004_Material_BaseColor',
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0,
+        },
+        {
+          roughnessFactor: 0.70222099999999998,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/pic02/lt01arbor/lt01arbor.gltf',
+    name: 'lt01arbor',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/pic02/lt01arbor\\House_004_Material_BaseColor.png',
+      name: 'House_004_Material_BaseColor',
+      pipeline_name: 'House_004_Material_BaseColor.png',
+    },
+  ],
+  version: '0.54:2',
+}

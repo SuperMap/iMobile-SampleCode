@@ -1,0 +1,113 @@
+{
+  animations: [
+    {
+      path: 'sampledata/pic01/ticdoor.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'House_004_Material_BaseColor',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'House_004_Material_BaseColor',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: '_9',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '9',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Color',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/pic01/ticdoor.fbx',
+    name: 'ticdoor',
+    recenter: 'root',
+    scale: 0.42621700000000001,
+  },
+  samplers: [
+    {
+      file: 'sampledata/pic01\\texture\\House_004_Material_BaseColor.png',
+      name: 'House_004_Material_BaseColor',
+      pipeline_name: 'sampledata/pic01\\texture\\House_004_Material_BaseColor.png',
+    },
+    {
+      file: 'sampledata/pic01\\texture\\9.jpg',
+      name: '9',
+      pipeline_name: 'sampledata/pic01\\texture\\9.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

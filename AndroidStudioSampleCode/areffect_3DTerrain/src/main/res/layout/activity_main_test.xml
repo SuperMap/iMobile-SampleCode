@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.supermap.ar.areffect.AREffectView
+        android:id="@+id/ar_effect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.supermap.ar.areffect.AREffectView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:gravity = "right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/leftBtn"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:background="@drawable/left"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/rightBtn"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/right"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/btn01"
+                android:onClick="btnOnClick01"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/pic1"
+                tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/btn02"
+                android:onClick="btnOnClick02"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/pic2"
+                tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/btn04"
+                android:onClick="btnOnClick03"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/pic4"
+                tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/btn03"
+                android:onClick="btnOnClick04"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/pic3"
+                tools:ignore="MissingConstraints" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/acTextView"
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:fadeScrollbars="false"
+            android:gravity="center"
+            android:maxLines="15"
+            android:scrollbars="vertical"
+            android:textColor="#FFFFC8"
+            android:text="云阳景区 欢迎您"
+            android:textSize="36sp"
+            android:visibility="invisible"
+            android:background="@drawable/text_bg"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+    <!--以下控件为测试时修改模型位置/比例时，使用-->
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/insertBtn"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Insert"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <Button
+                android:id="@+id/cesBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="S+"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/cesBtnres"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="S-"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/msg"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <Button
+                android:id="@+id/cesBtn2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="X+"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/cesBtnres2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="X-"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/msg2"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <Button
+                android:id="@+id/cesBtnY"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Y+"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/cesBtnresY"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Y-"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/msgY"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <Button
+                android:id="@+id/cesBtnZ"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Z+"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/cesBtnresZ"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="Z-"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/msgZ"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+    </LinearLayout>
+
+-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

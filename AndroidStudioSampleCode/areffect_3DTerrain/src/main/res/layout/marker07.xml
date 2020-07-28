@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text"
+    android:layout_width="80dp"
+    android:layout_height="30dp"
+    android:fontFamily="@font/lemonada_light"
+    android:text="晓渔渡"
+    android:textColor="#fff"
+    android:textSize="15dp"
+    android:textStyle="bold"
+    android:gravity="center"
+    android:background="@drawable/shape_bg_speech_dialog"
+    tools:ignore="MissingDefaultResource">
+</TextView>

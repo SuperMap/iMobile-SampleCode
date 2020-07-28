@@ -1,0 +1,69 @@
+{
+  animations: [
+    {
+      path: 'sampledata/pic02/wharf.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'House_004_Material_BaseColor',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'House_004_Material_BaseColor',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/pic02/wharf.fbx',
+    name: 'wharf',
+    recenter: 'root',
+    scale: 0.78264400000000001,
+  },
+  samplers: [
+    {
+      file: 'sampledata/pic01\\texture\\House_004_Material_BaseColor.png',
+      name: 'House_004_Material_BaseColor',
+      pipeline_name: 'sampledata/pic01\\texture\\House_004_Material_BaseColor.png',
+    },
+  ],
+  version: '0.54:2',
+}

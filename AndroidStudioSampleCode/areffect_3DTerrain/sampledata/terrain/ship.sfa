@@ -1,0 +1,69 @@
+{
+  animations: [
+    {
+      path: 'sampledata/terrain/ship.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'Drop_in_material',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'Drop in material',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/terrain/ship.fbx',
+    name: 'ship',
+    recenter: 'root',
+    scale: 0.31762899999999999,
+  },
+  samplers: [
+    {
+      file: 'sampledata/terrain\\materials\\Drop in material.jpg',
+      name: 'Drop in material',
+      pipeline_name: 'sampledata/terrain\\materials\\Drop in material.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

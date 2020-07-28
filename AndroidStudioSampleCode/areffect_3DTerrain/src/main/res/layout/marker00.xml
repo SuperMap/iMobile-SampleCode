@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text"
+    android:layout_width="80dp"
+    android:layout_height="30dp"
+    android:fontFamily="cursive"
+    android:gravity="center"
+    android:text="南门"
+    android:textColor="#fff"
+    android:textSize="15dp"
+    android:textStyle="bold"
+    android:background="@drawable/shape_bg_speech_dialog"
+    tools:ignore="MissingDefaultResource">
+
+
+    <!--    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />-->
+</TextView>

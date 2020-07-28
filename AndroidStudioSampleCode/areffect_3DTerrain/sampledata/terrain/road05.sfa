@@ -1,0 +1,33 @@
+{
+  materials: [
+    {
+      name: 'unnamed material',
+      parameters: [
+        {
+          texture: 'MISSING_PATH',
+        },
+        {
+          metallic: 0,
+        },
+        {
+          roughness: 0,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/bluecp2.mat',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/terrain/road05.FBX',
+    name: 'road05',
+    recenter: 'root',
+    scale: 0.013745,
+  },
+  version: '0.54:2',
+}
