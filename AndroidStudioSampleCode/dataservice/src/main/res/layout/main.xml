@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <!-- 地图显示 -->
+    <RelativeLayout
+    	android:id="@+id/map_show"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    <com.supermap.mapping.MapView
+			android:id="@+id/mapview"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent" />
+	    <ZoomControls  
+	    	android:id="@+id/zoomControls1"    	
+	     	android:layout_height="wrap_content" 	
+	     	android:layout_width="wrap_content" 
+	     	android:layout_alignParentRight="true"
+	     	android:layout_alignParentBottom="true"/>
+	</RelativeLayout>
+	
+	<!-- 专题图 -->
+
+    <RelativeLayout
+        android:id="@+id/tb_search"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/toolbar_selector"
+        android:paddingBottom="2dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="6dp" >
+
+        <Button
+            android:id="@+id/Button01"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+        	android:layout_weight="1.0"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="上传" />
+
+        <Button
+            android:id="@+id/Button03"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+        	android:layout_weight="1.0"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/Button04"
+            android:text="更新" />
+
+        <Button
+            android:id="@+id/Button04"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+        	android:layout_weight="1.0"
+            android:layout_alignParentRight="true"
+            android:text="删除" />
+
+        <Button
+            android:id="@+id/Button02"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+        	android:layout_weight="1.0"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="38dp"
+            android:layout_toRightOf="@+id/Button01"
+            android:text="下载" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

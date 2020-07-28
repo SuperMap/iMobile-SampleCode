@@ -1,0 +1,125 @@
+<!--
+   Copyright 2016 Google Inc.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.ar.ex.examples.java.gather.GatherExampleActivity">
+
+
+    <com.supermap.ar.gather.ARGatherView
+        android:id="@+id/gatherView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <Button
+        android:id="@+id/btnAddNewRoute"
+        android:textAllCaps="false"
+        android:text="新建路线"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
+
+  <Button
+      android:id="@+id/btnSaveCurrentRoute"
+      android:textAllCaps="false"
+      android:text="保存当前"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/btnAddNewRoute"
+      />
+
+
+  <Button
+      android:id="@+id/btnClearCurrentRoute"
+      android:textAllCaps="false"
+      android:text="清除当前"
+      android:layout_width="100dp"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/btnSaveCurrentRoute"
+      />
+
+
+    <Button
+        android:id="@+id/btnSaveAllRoutes"
+        android:textAllCaps="false"
+        android:text="保存所有"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnClearCurrentRoute"
+        />
+
+
+    <Button
+        android:id="@+id/btnClearAllRoutes"
+        android:textAllCaps="false"
+        android:text="清空所有"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSaveAllRoutes"
+        />
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnLoadRoute"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:text="加载路线"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/btnClearAllRoutes"-->
+<!--        />-->
+
+
+
+    <Button
+        android:id="@+id/btnEnableFeaturePoint"
+        android:textAllCaps="false"
+        android:text="特征显示"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnClearAllRoutes"
+        />
+
+
+    <Button
+        android:id="@+id/btnChangeViewMode"
+        android:textAllCaps="false"
+        android:text="切换视角"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEnableFeaturePoint"
+        />
+
+
+
+  <TextView
+      android:textAllCaps="false"
+      android:id="@+id/txvShowPosition"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_alignParentTop="true"
+      android:visibility="visible"
+      android:textColor="#FFFFFF"
+      />
+
+
+</RelativeLayout>

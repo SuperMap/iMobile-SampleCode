@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">指划修图</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_scroller_menu">ScrollerMenuActivity</string>
+    <string name="progress">Progress</string>
+    <string name="selected_menu">Selected Menu</string>
+
+    <string-array name="menu_items">
+        <item>菜单一</item>
+        <item>菜单二</item>
+        <item>菜单三</item>
+        <item>菜单四</item>
+        <item>菜单五</item>
+        <item>菜单六</item>
+    </string-array>
+</resources>
