@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.supermap.mapping.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+
+
+
+    <LinearLayout
+            android:id="@+id/cd_group_child"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+        android:layout_marginBottom="0dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:visibility="visible"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:background="@drawable/shape_rectangle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical"
+                          android:clickable="true"
+                          android:layout_marginTop="5dp"
+                          android:id="@+id/ib_create_group"
+                          android:foreground="?attr/selectableItemBackground"
+                          android:layout_height="wrap_content">
+
+                <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:clickable="false"
+                        android:background="@drawable/create_group"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:text="创建群组"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="15dp"
+                          android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical"
+                          android:layout_marginTop="10dp"
+                          android:clickable="true"
+                          android:id="@+id/ib_join_group"
+                          android:foreground="?attr/selectableItemBackground"
+                          android:layout_height="wrap_content">
+
+                <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:clickable="false"
+                        android:background="@drawable/join_group"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:text="加入群组"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="15dp"
+                          android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:orientation="horizontal"
+                          android:gravity="center_vertical"
+                          android:layout_marginTop="10dp"
+                          android:clickable="true"
+                          android:id="@+id/ib_delete_group"
+                          android:foreground="?attr/selectableItemBackground"
+                          android:layout_height="wrap_content">
+
+                <ImageButton
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:clickable="false"
+                        android:background="@drawable/delete_group"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:text="删除群组"
+                          android:textSize="15sp"
+                          android:layout_marginLeft="15dp"
+                          android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--保证界面顶部和底部有view填充,防止MapView遮挡界面,原理有待考证-->
+    <View
+            android:layout_width="0.5dp"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"/>
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:visibility="gone"
+                    android:id="@+id/rl_progress"
+                    android:clickable="true"
+                    android:elevation="2dp"
+
+                    android:layout_height="match_parent">
+
+        <ProgressBar android:layout_width="100dp"
+                     android:id="@+id/progress_bar"
+                     android:layout_centerInParent="true"
+                     android:layout_height="100dp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/tv_progress"
+                  android:textSize="18sp"
+                  android:padding="5dp"
+                  android:text="正在初始化..."
+                  android:layout_below="@id/progress_bar"
+                  android:layout_marginTop="5dp"
+                  android:layout_centerHorizontal="true"
+                  android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>

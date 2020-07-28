@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <item name="material_drawer_item_custom_url_item" type="id" />
+    <item name="material_drawer_item_icon_only" type="id" />
+    <item name="material_drawer_item_centered_primary" type="id" />
+    <item name="material_drawer_item_overflow_menu" type="id" />
+    <item name="material_drawer_profile_item_divider" type="id" />
+
+    <item name="fastadapter_sample_item_id" type="id" />
+    <item name="fastadapter_sub_item_id" type="id" />
+    <item name="fastadapter_expandable_item_id" type="id" />
+    <item name="fastadapter_image_item_id" type="id" />
+    <item name="fastadapter_simple_image_item_id" type="id" />
+    <item name="fastadapter_icon_item_id" type="id" />
+    <item name="fastadapter_model_icon_item_id" type="id" />
+    <item name="fastadapter_right_Model_icon_item_id" type="id" />
+    <item name="fastadapter_checkbox_sample_item_id" type="id" />
+    <item name="fastadapter_radiobutton_sample_item_id" type="id" />
+    <item name="fastadapter_swipable_item_id" type="id" />
+    <item name="fastadapter_letter_item_id" type="id" />
+    <item name="fastadapter_realm_sample_user_item_id" type="id" />
+</resources>

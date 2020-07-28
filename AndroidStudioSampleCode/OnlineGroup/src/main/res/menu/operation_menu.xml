@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/group_info"
+        android:orderInCategory="1"
+        android:title="业务群信息"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/group_resource"
+        android:orderInCategory="2"
+        android:title="业务群资源"
+        app:showAsAction="never" />
+    <item
+        android:visible="false"
+        android:id="@+id/exit_currentgroup"
+        android:orderInCategory="3"
+        android:title="退出当前业务群"
+        app:showAsAction="never" />
+</menu>
