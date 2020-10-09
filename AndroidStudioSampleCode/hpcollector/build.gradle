@@ -8,9 +8,8 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
+      
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -23,7 +22,12 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
-
+    packagingOptions {
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 dependencies {
@@ -34,7 +38,7 @@ dependencies {
     implementation 'com.google.ar:core:1.11.0'
     implementation 'com.google.ar.sceneform:core:1.11.0'
     implementation 'org.rajawali3d:rajawali:1.0.325@aar'
-
+    implementation 'com.android.support:multidex:1.0.2'
 
     implementation 'pub.devrel:easypermissions:2.0.1'
 }

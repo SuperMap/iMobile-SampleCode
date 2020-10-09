@@ -2,7 +2,7 @@ package com.supermap.AImeasure;
 
 /**
  * <p>
- * Title:AI 测图
+ * Title:AI测图
  * </p>
  *javagl
  * <p>
@@ -21,18 +21,17 @@ package com.supermap.AImeasure;
  *      许可目录："../SuperMap/License/"
  *
  * 3、关键类型/成员:
- *    m_NavigationEx.setStartPoint();			方法
- *    m_NavigationEx.setDestinationPoint();		方法
- *    m_NavigationEx.addWayPoint();				方法
- *    m_NavigationEx.routeAnalyst();			方法
- *    m_NavigationEx.startGuide();				方法
- *    m_floorListView.setCurrentFloorId();		方法
+ *    mARMeasureView.setFlagType();			         方法
+ *    mARMeasureView.setOnLengthChangedListener();	 方法
+ *    mARMeasureView.addPoint();				     方法
+ *    mARMeasureView.startMeasure();			     方法
+ *    mARMeasureView.stopMeasure();				     方法
+ *    mARMeasureView.undo();		                 方法
  *
  * 4、功能展示
- *   (1)添加起点、终点、途径点；
- *   (2)路径分析；
- *   (3)导航。
- *   (4)楼层切换
+ *   (1)平视找到平面；
+ *   (2)添加测图标记；
+ *   (3)完成测图。
  * ------------------------------------------------------------------------------
  * ============================================================================>
  * </p>

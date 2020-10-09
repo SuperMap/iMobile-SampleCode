@@ -62,6 +62,11 @@ public class SubmitInfo extends PopupWindow implements OnClickListener{
 				// TODO Auto-generated method stub
 				
 			}
+
+			@Override
+			public void geometryMultiSelectedCount(int i) {
+
+			}
 		});
 		
 		mMapControl.addActionChangedListener(new ActionChangedListener() {

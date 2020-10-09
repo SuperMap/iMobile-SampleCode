@@ -243,6 +243,11 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
 				// TODO Auto-generated method stub
 
 			}
+
+			@Override
+			public void geometryMultiSelectedCount(int i) {
+
+			}
 		});
     	
     	//Add a EditStatusListener to MapControl

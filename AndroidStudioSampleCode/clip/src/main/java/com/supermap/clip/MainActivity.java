@@ -29,6 +29,34 @@ import com.supermap.mapping.MapControl;
 import com.supermap.mapping.MapView;
 
 import pub.devrel.easypermissions.EasyPermissions;
+/**
+ * <p>
+ * Title:数据剪裁
+ * </p>
+ *
+ * <p>
+ * Description:
+ * ============================================================================>
+ * ------------------------------版权声明----------------------------
+ * 此文件为SuperMap iMobile for Android 的示范代码
+ * 版权所有：北京超图软件股份有限公司
+ * ----------------------------------------------------------------
+ * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
+ *
+ * 1、范例简介：示范如何对数据进行查询，并在MapControl中展示出来
+ * 2、示例数据：安装目录/SampleData/Map_clip/Map_clip.udb
+ * 3、关键类型/成员:
+ *      OverlayAnalyst.clipEx()
+ *
+ * ------------------------------------------------------------------------------
+ * ============================================================================>
+ * </p>
+ *
+ * <p>
+ * Company: 北京超图软件股份有限公司
+ * </p>
+ *
+ */
 
 public class MainActivity extends Activity implements ReactLinListener{
     String rootPath =android.os.Environment.getExternalStorageDirectory().getAbsolutePath();

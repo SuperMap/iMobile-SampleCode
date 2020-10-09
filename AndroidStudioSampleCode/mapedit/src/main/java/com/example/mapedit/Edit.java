@@ -25,6 +25,11 @@ public class Edit {
 				// TODO Auto-generated method stub
 				
 			}
+
+			@Override
+			public void geometryMultiSelectedCount(int i) {
+
+			}
 		});
 	}
 	public void editnode() {

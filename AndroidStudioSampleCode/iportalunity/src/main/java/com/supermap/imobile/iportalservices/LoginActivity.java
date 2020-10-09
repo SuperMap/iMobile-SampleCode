@@ -23,48 +23,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 import java.io.IOException;
 import java.util.List;
-/**
- * <p>
- * Title:云端一体化
- * </p>
- *
- * <p>
- * Description:
- * ============================================================================>
- * ------------------------------版权声明----------------------------
- * 此文件为SuperMap iMobile for Android 的示范代码
- * 版权所有：北京超图软件股份有限公司
- * ----------------------------------------------------------------
- * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
- *
- * 1、范例简介：示范对接protal
- * 2、登陆protal，查看protal资源
- * 3、关键类型/成员:
- *      IPortalService.addOnResponseListener 事件监听
- *      IPortalService.getIPortalServiceHost 方法
- *      IPortalService.login 方法
- *      IPortalService.logout 方法
- *      IPortalService.getMyMaps 方法
- *      IPortalService.getMyDatas 方法
- *      IPortalService.uploadData 方法
- *      IPortalService.downloadData 方法
- *      IPortalService.getMyServices 方法
- *      IPortalService.getMyScenes 方法
- *      IPortalService.getMyInsights 方法
- *
- * 4、使用步骤：
- *   (1)左拉，选择我的地图
- *   (2)展示protal我的地图资源
- *   (3)点击地图栏左上角按钮，修改地图资源
- * ------------------------------------------------------------------------------
- * ============================================================================>
- * </p>
- *
- * <p>
- * Company: 北京超图软件股份有限公司
- * </p>
- *
- */
+
 /**
  * 登录界面
  */

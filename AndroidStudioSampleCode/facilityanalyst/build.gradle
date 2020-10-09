@@ -7,6 +7,7 @@ android {
         applicationId "com.supermap.imobile.facilityanalyst"
         minSdkVersion 20
         targetSdkVersion 28
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -29,11 +30,7 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
-    defaultConfig {
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
-    }
+   
     packagingOptions {
         exclude 'META-INF/NOTICE' // will not include NOTICE file
         exclude 'META-INF/LICENSE' // will not include LICENSE file

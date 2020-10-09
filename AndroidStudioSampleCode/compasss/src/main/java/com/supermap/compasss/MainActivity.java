@@ -20,7 +20,7 @@ import com.supermap.mapping.MapView;
 import pub.devrel.easypermissions.EasyPermissions;
 /**
  * <p>
- * Title:指南针示范代码（含有大、小指南针两种控件）
+ * Title:定位功能展示
  * </p>
  *
  * <p>
@@ -32,21 +32,8 @@ import pub.devrel.easypermissions.EasyPermissions;
  * ----------------------------------------------------------------
  * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
  *
- * 1、范例简介：指南针示范代码（含有大、小指南针两种控件）
- * 2、示例数据：数据目录："/sdcard/SampleData/DOM/"
- *            地图数据：DOM.smwu,DOM.udb,DOM.udd
- *            许可目录："/SuperMap/License/"
- * 3、关键类型/成员:
- *
- *
- *   getSystemService()//获取手机服务
- *   SensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)//加速度传感器
- *   SensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)//磁力传感器
- *   SensorManager.registerListener()//注册手机服务监听，当不需要手机服务时，务必注销监听，否则该服务一直运行，耗电量大
- *
- * 4、使用步骤：
- * （1）打开应用是一个跟地图相关联的小指南针
- * （2）可点击小指南针，跳转到全屏指南针
+ * 1、范例简介：定位功能展示
+ * 2、示例数据：google地图
  *
  * ------------------------------------------------------------------------------
  * ============================================================================>

@@ -1,19 +1,3 @@
-/* Copyright 2016 Esri
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
-
 package com.supermap.sample.displaydevicelocation;
 
 import java.util.ArrayList;
@@ -27,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.supermap.data.Datasource;
@@ -36,6 +21,8 @@ import com.supermap.data.Environment;
 import com.supermap.data.GeoPoint;
 import com.supermap.data.Point2D;
 import com.supermap.data.Workspace;
+import com.supermap.mapping.CallOut;
+import com.supermap.mapping.CalloutAlignment;
 import com.supermap.mapping.MapControl;
 import com.supermap.plugin.LocationChangedListener;
 import com.supermap.plugin.LocationManagePlugin;
@@ -56,18 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
     Environment.initialization(this);
     setContentView(R.layout.activity_main);
-    // Get the Spinner from layout
+
     mSpinner = (Spinner) findViewById(R.id.spinner);
-//    // Get the MapView from layout and set a map with the BasemapType Imagery
     openGoogleMaps();
 
-    // Populate the list for the Location display options for the spinner's Adapter
     ArrayList<ItemData> list = new ArrayList<>();
     list.add(new ItemData("Stop", R.drawable.locationdisplaydisabled));
     list.add(new ItemData("OnLocation", R.drawable.locationdisplayon));
     list.add(new ItemData("Re-Center", R.drawable.locationdisplayrecenter));
-//    list.add(new ItemData("Navigation", R.drawable.locationdisplaynavigation));
-//    list.add(new ItemData("Compass", R.drawable.locationdisplayheading));
 
     SpinnerAdapter adapter = new SpinnerAdapter(this, R.layout.spinner_layout, R.id.txt, list);
     mSpinner.setAdapter(adapter);
@@ -79,17 +62,22 @@ public class MainActivity extends AppCompatActivity {
           case 0:
             mMapControl.getMap().setScale(1/29351818.8615112);
             mMapControl.getMap().setCenter(new Point2D(0.0,0.0));
+            mMapView.removeAllCallOut();
             mMapControl.getMap().refresh();
+
             break;
           case 1:
             mMapControl.getMap().setScale(1/3582.49285043382);
             getLoction();
             mMapControl.getMap().setCenter(mPoint);
+            mMapView.removeAllCallOut();
+            showPointByCallout(mPoint,"location",R.drawable.location);
             mMapControl.getMap().refresh();
               break;
           case 2:
             mMapControl.getMap().setScale(1/234814550.891814);
             mMapControl.getMap().setCenter(new Point2D(0.0,0.0));
+            mMapView.removeAllCallOut();
             mMapControl.getMap().refresh();
               break;
           case 3:
@@ -136,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
   }
   private void openGoogleMaps() {
+    String RootPath = android.os.Environment.getExternalStorageDirectory().getAbsolutePath().toString();
 
     mMapView = (MapView) findViewById(R.id.mapView);
     mMapControl = mMapView.getMapControl();
@@ -144,15 +133,31 @@ public class MainActivity extends AppCompatActivity {
 
     DatasourceConnectionInfo info = new DatasourceConnectionInfo();
     info.setAlias("GOOGLE");
-    info.setEngineType(EngineType.GoogleMaps);
+    info.setEngineType(EngineType.IMAGEPLUGINS);
     String url3 = "http://www.google.cn/maps";
+//    String url3 = RootPath + "/sampledata/img/img.sci";
+//    String url3 = "http://192.168.13.111:8090/iserver/services/map-Population/rest/maps/PopulationDistribution";
     info.setServer(url3);
     Datasource datasourcegoogle = mWorkspace.getDatasources().open(info);
 
+//    mMapControl.getMap().getLayers().add(datasourcegoogle.getDatasets().get(0),false);
     mMapControl.getMap().getLayers().add(datasourcegoogle.getDatasets().get(4),false);
     mMapControl.getMap().setScale(1/29351818.8615112);
+//    mMapControl.getMap().viewEntire();
     mMapControl.getMap().refresh();
   }
 
+  public void showPointByCallout(Point2D point, final String pointName,
+                                 final int idDrawable) {
+    CallOut callOut = new CallOut(this);
+    callOut.setStyle(CalloutAlignment.BOTTOM);
+
+    callOut.setCustomize(true);
+    callOut.setLocation(point.getX(), point.getY());
+    ImageView imageView = new ImageView(this);
+    imageView.setBackgroundResource(idDrawable);
+    callOut.setContentView(imageView);
+    mMapView.addCallout(callOut, pointName);
+  }
 
 }

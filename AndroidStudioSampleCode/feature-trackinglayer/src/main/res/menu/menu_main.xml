@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:icon="@mipmap/ic_launcher"
+    android:id="@+id/show_tracking"
+    android:title="显示元素" />
+
+    <item
+        android:icon="@mipmap/ic_launcher"
+        android:id="@+id/remove_tracking"
+        android:title="移除元素" />
+
+</menu>

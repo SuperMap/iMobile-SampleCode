@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="security_questions">
+        <item>您高中母校的名字是什么？</item>
+        <item>您最爱吃的零食是什么？</item>
+        <item>您最喜欢的汽车品牌是什么？</item>
+        <item>您最喜欢的球类运动是什么？</item>
+        <item>您母亲最喜欢吃的水果是什么？</item>
+        <item>您梦想的工作是什么？</item>
+        <item>您最想去的地方是哪里？</item>
+        <item>您收到的最难忘的礼物是什么？</item>
+        <item>您的故乡是哪个城市？</item>
+    </string-array>
+</resources>

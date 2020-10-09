@@ -15,9 +15,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.beyondar.android.fragment.BeyondarFragmentSupport;
-import com.beyondar.android.plugin.radar.RadarView;
-import com.beyondar.android.plugin.radar.RadarWorldPlugin;
+//import com.beyondar.android.fragment.BeyondarFragmentSupport;
+//import com.beyondar.android.plugin.radar.RadarView;
+//import com.beyondar.android.plugin.radar.RadarWorldPlugin;
 import com.supermap.ar.World;
 import com.supermap.data.Color;
 import com.supermap.data.CoordSysTransMethod;
@@ -82,9 +82,9 @@ public class LocationMore extends AppCompatActivity implements View.OnClickListe
     private CallOut callout1;
     private String queryStr ;
 
-    private BeyondarFragmentSupport mBeyondarFragment;
-    private RadarView mRadarView;
-    private RadarWorldPlugin mRadarPlugin;
+//    private BeyondarFragmentSupport mBeyondarFragment;
+//    private RadarView mRadarView;
+//    private RadarWorldPlugin mRadarPlugin;
     private World mWorld;
 
     @Override

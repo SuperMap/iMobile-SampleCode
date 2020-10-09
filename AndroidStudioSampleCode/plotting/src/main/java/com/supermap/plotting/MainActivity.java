@@ -250,6 +250,11 @@ public class MainActivity extends Activity {
 		public void geometryMultiSelected(ArrayList<GeometrySelectedEvent> arg0) {
 			// TODO Auto-generated method stub
 		}
+
+		@Override
+		public void geometryMultiSelectedCount(int i) {
+
+		}
 	};
 	
 	//获取点标绘数据

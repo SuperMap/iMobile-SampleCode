@@ -145,6 +145,11 @@ public class MainActivity extends Activity {
 				mulselect=events;
 
 			}
+
+			@Override
+			public void geometryMultiSelectedCount(int i) {
+
+			}
 		});
 		
 	}

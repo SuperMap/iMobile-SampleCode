@@ -212,7 +212,9 @@ public class MainActivity extends Activity implements TencentLocTool.LocationCha
                                     new CoordSysTransParameter(),
                                     CoordSysTransMethod.MTH_GEOCENTRIC_TRANSLATION);
                             m_list1.add(new Point2D(points.getItem(0).getX(), points.getItem(0).getY()));
-                        }
+                        }else{
+							m_list1.add(sourcePositionList.get(i));
+						}
                     }
 
 

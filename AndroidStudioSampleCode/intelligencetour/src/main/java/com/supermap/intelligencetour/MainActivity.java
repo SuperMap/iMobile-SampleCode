@@ -12,6 +12,47 @@ import android.view.WindowManager;
 
 import com.supermap.data.Environment;
 import pub.devrel.easypermissions.EasyPermissions;
+
+/**
+ * <p>
+ * Title:智能导览
+ * POI搜索，AR空间展示，路径分析
+ * </p>
+ *
+ * <p>
+ * Description:
+ * ============================================================================>
+ * ------------------------------版权声明----------------------------
+ * 此文件为SuperMap iMobile for Android 的示范代码
+ * 版权所有：北京超图软件股份有限公司
+ * ----------------------------------------------------------------
+ * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
+ *
+ * 1、范例简介：示范POI搜索，AR空间展示，路径分析
+ * 2、搜索附近POI，详细信息展示，路径分析。
+ * 3、关键类型/成员:
+ *      ArView 类
+ *      ARRendererInfoUtil 类
+ *      OnClickArObjectListener 类
+ *      GeoObject 类
+ *      WorldLocationChanged 类
+ *      GeocodingData 类
+ *
+ * 4、使用步骤：
+ *   (1)上拉，选择分类
+ *   (2)在摄像头中展示查询结果
+ *   (3)点击POI投射，展示详细信息。
+ *
+ * ------------------------------------------------------------------------------
+ * ============================================================================>
+ * </p>
+ *
+ * <p>
+ * Company: 北京超图软件股份有限公司
+ * </p>
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private FirstFragment mFirstFragment = null;

@@ -129,8 +129,10 @@ public class MainActivity extends Activity {
 				//初始化FloorList
 	    		m_floorListView3D = (FloorListView3D)findViewById(R.id.floor_list_view_3d);
 	    		m_floorListView3D.setVisibility(View.VISIBLE);
-	    		m_floorListView3D.linkScenepControl(m_sceneControl, m_workspace);
+
+	    		//先设置导航类，再linkSceneControl
 	    		m_floorListView3D.setNavigation3D(m_navigation3D);
+	    		m_floorListView3D.linkScenepControl(m_sceneControl, m_workspace);
 				//设置室内地图所在的数据源	
 				m_navigation3D.setDatasource(m_workspace.getDatasources().get("beijingMall"));
 				//设置三场景控件

@@ -273,6 +273,11 @@ public class MainActivity extends Activity {
             @Override
             public void geometryMultiSelected(ArrayList<GeometrySelectedEvent> events) {
             }
+
+            @Override
+            public void geometryMultiSelectedCount(int i) {
+
+            }
         });
 
     }

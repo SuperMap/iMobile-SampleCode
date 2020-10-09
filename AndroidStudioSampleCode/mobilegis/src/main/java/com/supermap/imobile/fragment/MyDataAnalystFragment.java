@@ -454,6 +454,11 @@ public class MyDataAnalystFragment extends Fragment {
         public void geometryMultiSelected(ArrayList<GeometrySelectedEvent> arrayList) {
 
         }
+
+        @Override
+        public void geometryMultiSelectedCount(int i) {
+
+        }
     };
 
     /**

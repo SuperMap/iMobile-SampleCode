@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/mapview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.supermap.mapping.MapView>
+
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="22dp"
+        android:background="#00000000"
+        android:popupBackground="#00000000"
+        android:overlapAnchor="false"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="100dp"
+        >
+        <LinearLayout
+            android:id="@+id/lay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold"
+                android:text="0.00"
+                android:textSize="40dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="公里"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/lay1"
+            android:id="@+id/lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="0.0"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="公里/小时"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

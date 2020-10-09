@@ -8,6 +8,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,6 +23,12 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    packagingOptions {
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 dependencies {
@@ -31,6 +38,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation files('libs/com.supermap.ai_v1010.jar')
-    implementation files('libs/com.supermap.data_v1010.jar')
+    implementation 'com.android.support:multidex:1.0.2'
 }

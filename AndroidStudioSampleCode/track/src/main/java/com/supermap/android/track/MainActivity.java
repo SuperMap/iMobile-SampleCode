@@ -2,23 +2,41 @@ package com.supermap.android.track;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.supermap.data.CoordSysTransMethod;
 import com.supermap.data.CoordSysTransParameter;
 import com.supermap.data.CoordSysTranslator;
+import com.supermap.data.CursorType;
+import com.supermap.data.DatasetType;
+import com.supermap.data.DatasetVector;
+import com.supermap.data.DatasetVectorInfo;
+import com.supermap.data.Datasource;
 import com.supermap.data.Environment;
+import com.supermap.data.FieldInfo;
+import com.supermap.data.FieldInfos;
+import com.supermap.data.FieldType;
+import com.supermap.data.GeoPoint;
 import com.supermap.data.Point2D;
 import com.supermap.data.Point2Ds;
 import com.supermap.data.PrjCoordSys;
 import com.supermap.data.PrjCoordSysType;
+import com.supermap.data.Recordset;
 import com.supermap.data.Workspace;
 import com.supermap.data.WorkspaceConnectionInfo;
 import com.supermap.data.WorkspaceType;
@@ -29,7 +47,9 @@ import com.supermap.navi.Navigation;
 import com.supermap.navi.SuperMapPatent;
 import com.supermap.plugin.LocationManagePlugin.GPSData;
 import com.supermap.track.Track;
-import com.tencent.tencentmap.lbssdk.TencentMapLBSApiResult;
+import com.tencent.map.geolocation.TencentLocation;
+
+import java.io.File;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -91,11 +111,13 @@ public class MainActivity extends Activity implements OnClickListener{
     
     private boolean m_ExitEnable                  = false;
     public static boolean m_EnableLocationService = false;
-    public static LocationTencent m_LocationTencent = null;
+    public static TencentLocTool m_LocationTencent = null;
     private final String dataPath = MyApplication.SDCARD + "SampleData/TrackData/track.smwu";
     
-    private static Navigation mNavigation;
+//    private static Navigation mNavigation;
     private static Point2D    mPoint;
+
+	private String fileString;
 	/**
 	 * 需要申请的权限数组
 	 */
@@ -111,13 +133,16 @@ public class MainActivity extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestPermissions();
+		File dirpath = this.getExternalFilesDir("");
+		fileString = dirpath + File.separator;
+
 		Environment.setLicensePath(MyApplication.SDCARD + "SuperMap/License");
 		Environment.setWebCacheDirectory(MyApplication.SDCARD+"/SuperMap/WebCahe/");
 		Environment.initialization(this);
 		startMyLoctionService();                      // start service
-		
 		setContentView(R.layout.activity_main);
-		m_LocationTencent = new LocationTencent(this);
+		TencentLocTool.getInstance().init(this);
+		m_LocationTencent =TencentLocTool.getInstance();
 		m_MyApp = MyApplication.getInstance();
 		m_Track = new Track(this);
 		mPoint = new Point2D();
@@ -156,6 +181,8 @@ public class MainActivity extends Activity implements OnClickListener{
 					Manifest.permission.READ_PHONE_STATE,
 					Manifest.permission.ACCESS_WIFI_STATE,
 					Manifest.permission.ACCESS_NETWORK_STATE,
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION,
+					Manifest.permission.FOREGROUND_SERVICE,
 					Manifest.permission.CHANGE_WIFI_STATE);
 			//没有授权，编写申请权限代码
 		} else {
@@ -193,12 +220,12 @@ public class MainActivity extends Activity implements OnClickListener{
 		m_Map.setCenter(new Point2D(12953693.6950684, 4858067.04711915));
 		m_Map.refresh();
 		
-		mNavigation = m_MapControl.getNavigation();
-		mNavigation.setEncryption(new SuperMapPatent());
+//		mNavigation = m_MapControl.getNavigation();
+//		mNavigation.setEncryption(new SuperMapPatent());
 		return true;
 	}
 
-   public void startMyLoctionService(){
+  public void startMyLoctionService(){
 	   new Thread(new Runnable() {
 		
 		@Override
@@ -206,6 +233,7 @@ public class MainActivity extends Activity implements OnClickListener{
 			// TODO Auto-generated method stub
 			Intent intentService = new Intent();
 			intentService.setAction("com.supermap.track.mylocationservice.START");
+			intentService.setPackage(getPackageName());
 			startService(intentService);
 		}
 	}).start();
@@ -229,7 +257,8 @@ public class MainActivity extends Activity implements OnClickListener{
 	private static int count = 0; 
 	public static void setGpsData(GPSData gpsData){
 		if(m_Track != null){
-			mPoint = mNavigation.encryptGPS(gpsData.dLongitude, gpsData.dLatitude);
+//			mPoint = mNavigation.encryptGPS(gpsData.dLongitude, gpsData.dLatitude);
+			mPoint = new Point2D(gpsData.dLongitude, gpsData.dLatitude);
 			gpsData.dLongitude = mPoint.getX();
 			gpsData.dLatitude = mPoint.getY();
 			m_Track.setGPSData(gpsData);            // 设置GPS数据 ，在setCustomLocation(true)时，设置的数据有效              
@@ -240,6 +269,12 @@ public class MainActivity extends Activity implements OnClickListener{
 		    count = 0;
 		}
 	}
+
+    @Override
+    public void onBackPressed() {
+//super.onBackPressed();
+        moveTaskToBack(true);
+    }
 	
 	/**
 	 * Initialize  view
@@ -290,10 +325,11 @@ public class MainActivity extends Activity implements OnClickListener{
 	 * 获取当前位置并显示在地图中心
 	 */
 	public static void locating(){
-		TencentMapLBSApiResult location = m_LocationTencent.getLocationInfo();
+		TencentLocation location = m_LocationTencent.getLocInfo();
 		if(location == null)
 			return;
-		Point2D point2D = mNavigation.encryptGPS(location.Longitude, location.Latitude);
+//		Point2D point2D = mNavigation.encryptGPS(location.getLongitude(), location.getLatitude());
+		Point2D point2D = new Point2D(location.getLongitude(), location.getLatitude());
 		PrjCoordSys Prj = m_Map.getPrjCoordSys();
 
 		// 当投影不是经纬坐标系时，则对点进行投影转换

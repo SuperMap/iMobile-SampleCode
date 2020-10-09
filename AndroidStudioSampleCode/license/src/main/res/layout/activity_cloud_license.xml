@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CloudLicenseActivity">
+
+
+        <com.supermap.mapping.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.supermap.mapping.MapView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+<Button
+    android:onClick="login"
+    android:text="登录"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+        <Button
+                android:onClick="logout"
+                android:text="登出"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    <Button
+        android:text="查询"
+        android:onClick="query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="激活"
+        android:onClick="active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:text="上一次"
+            android:onClick="lastlicense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <Button
+        android:text="归还"
+        android:onClick="recycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:text="地图"
+            android:onClick="openmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bubble_background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="5px"
+    android:paddingTop="5px"
+    android:paddingRight="5px"
+    android:paddingBottom="20px"
+    >
+
+    <TextView
+        android:id="@+id/map_bubbleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center_horizontal"
+        android:singleLine="true" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/map_bubbleText"-->
+<!--        android:layout_width="65dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/ic_info_outline_black_18dp"-->
+<!--        android:singleLine="false" />&lt;!&ndash;style可以没有,我这里第二个TextView表示描述信息,用的是大字体&ndash;&gt;-->
+
+    </LinearLayout>

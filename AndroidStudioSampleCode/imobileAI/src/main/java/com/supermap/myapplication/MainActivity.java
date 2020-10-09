@@ -172,7 +172,7 @@ public class MainActivity extends FragmentActivity{
         aiDetectViewInfo.modeFile = "detect.tflite";
         aiDetectViewInfo.lableFile = "labelmap.txt";
         aiDetectViewInfo.inputSize = 300;
-        aiDetectViewInfo.isQUANTIZED = true;
+        aiDetectViewInfo.isQuantized = true;
         mAIdetectView.setDetectInfo(aiDetectViewInfo);
         mAIdetectView.init();
 
@@ -404,12 +404,12 @@ public class MainActivity extends FragmentActivity{
     {
         if (mAIdetectView.isPolymerize())
         {
-            mAIdetectView.setisPolymerize(false);
+            mAIdetectView.setPolymerize(false);
             m_seekBarPoly.setVisibility(View.INVISIBLE);
         }
         else
         {
-            mAIdetectView.setisPolymerize(true);
+            mAIdetectView.setPolymerize(true);
             m_seekBarPoly.setVisibility(View.VISIBLE);
         }
     }
@@ -420,7 +420,7 @@ public class MainActivity extends FragmentActivity{
      */
     public void screenCapture(View view)
     {
-        mPreviewImage.setImageBitmap(mAIdetectView.ScreenCapture());
+        mPreviewImage.setImageBitmap(mAIdetectView.getScreenCapture());
     }
 
     /**

@@ -1,16 +1,37 @@
-/* Copyright 2016 Esri
+/**
+ * <p>
+ * Title:OSM在线图预缓存
+ * </p>
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * <p>
+ * Description:
+ * ============================================================================>
+ * ------------------------------版权声明----------------------------
+ * 此文件为SuperMap iMobile for Android 的示范代码
+ * 版权所有：北京超图软件股份有限公司
+ * ----------------------------------------------------------------
+ * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ * 1、范例简介：OSM在线图预缓存
+ * 2、示范数据： OSM在线图
+ * 3、关键类型/成员:
+ *      MapCacheListener() 事件监听
+ *      MapCacheService.startDownload() 类
+ *      MapCacheService.stopDownload() 类
+ *      MapCacheService.removeDownload() 类
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *
+ * 4、使用步骤：
+ *   (1)点击Onlication按钮，开始记录轨迹
+ *   (2)点击re-play按钮，回放轨迹
+ *
+ * ------------------------------------------------------------------------------
+ * ============================================================================>
+ * </p>
+ *
+ * <p>
+ * Company: 北京超图软件股份有限公司
+ * </p>
  *
  */
 

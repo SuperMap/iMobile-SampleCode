@@ -70,7 +70,7 @@ public class AdvancedActivity extends AppCompatActivity implements View.OnClickL
         //更新当前用户信息
         OnlineService.getAccountInfo(new OnlineService.AccountInfoCallback() {
             @Override
-            public void accountInfoSuccess(String nickName, String phoneNumber, String email) {
+            public void accountInfoSuccess(String nickName) {
                 OnlineService.getAccountInfoByType(nickName, AccountInfoType.values()[0], new OnlineService.AccountInfoByTypeCallback() {
                     @Override
                     public void accountInfoByTypeSuccess(String nickName, String userId) {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OfficialLicenseActivity">
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+    </com.supermap.mapping.MapView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/active"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="许可激活"/>
+        <Button
+            android:id="@+id/recycle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="许可归还"/>
+        <Button
+            android:id="@+id/queryCount"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="查询许可数量"/>
+        <Button
+            android:id="@+id/bind"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="绑定手机号"/>
+        <Button
+            android:id="@+id/recycle2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="许可归还(绑定手机号)"/>
+        <Button
+            android:id="@+id/clearinfo"
+            android:text="清除信息"
+            android:layout_width="80dp"
+            android:textSize="10sp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

@@ -10,12 +10,51 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.supermap.ar.arcartograph.ARRulerCallBack;
 import com.supermap.ar.arcartograph.ARCartographView;
-import com.supermap.ar.arcartograph.ArRulerCallBack;
+import com.supermap.ar.arcartograph.ARRulerCallBack;
+/**
+ * <p>
+ * Title:AR测量
+ * 可以测面积，测距离，显示景深。
+ * </p>
+ * <p>
+ * Description:
+ * ============================================================================>
+ * ------------------------------版权声明----------------------------
+ * 此文件为 SuperMap iMobile 演示Demo的代码
+ * 版权所有：北京超图软件股份有限公司
+ * ----------------------------------------------------------------
+ * ----------------------------SuperMap iMobile 演示Demo说明---------------------------
+ *
+ * 1、Demo简介：
+ *   	展示AI测图功能。
+ *
+ * 2、Demo数据：
+ *      许可目录："../SuperMap/License/"
+ *
+ * 3、关键类型/成员:
+ *    mARCartographView.isHitTest()			            方法
+ *    mARCartographView.setARRulerCallBack();	        方法
+ *    mARCartographView.finishMeasure();				方法
+ *    mARCartographView.setFeaturePointVisible(();		方法
+ *    mARCartographView.deleteRuler();				    方法
+ *    mARCartographView.setMeasreMode();		        方法
+ *
+ * 4、功能展示
+ *   (1)平视找到平面；
+ *   (2)添加测图标记；
+ *   (3)完成测图。
+ * ------------------------------------------------------------------------------
+ * ============================================================================>
+ * </p>
+ *
+ * <p>
+ * Company: 北京超图软件股份有限公司
+ * </p>
+ *
+ */
 
-
-public class ARCartographSampleActivity extends AppCompatActivity implements View.OnClickListener, ArRulerCallBack, ARCartographView.SceneDepthListener {
+public class ARCartographSampleActivity extends AppCompatActivity implements View.OnClickListener, ARRulerCallBack, ARCartographView.SceneDepthListener {
 
     private ARCartographView mARCartographView;
     private ImageView mAddImage;
@@ -28,8 +67,6 @@ public class ARCartographSampleActivity extends AppCompatActivity implements Vie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar_ruler);
-
-
         initPermission();
     }
 
@@ -84,7 +121,7 @@ public class ARCartographSampleActivity extends AppCompatActivity implements Vie
 
         mDeleteImage.setOnClickListener(this);
 
-        mARCartographView.setArRulerCallBack(this);
+        mARCartographView.setARRulerCallBack(this);
         mARCartographView.setSceneDepthListener(this);
 
 
@@ -117,31 +154,31 @@ public class ARCartographSampleActivity extends AppCompatActivity implements Vie
         switch (v.getId()) {
             case R.id.iv_ruler_add:
                 if (mARCartographView.isHitTest()) {
-                    //����һ����¼
+                    //添加一条记录
                     mARCartographView.addRuler();
                 }
                 break;
 
             case R.id.btnMeasureLength:
-                //���õ�ǰ����ģʽΪ���Ȳ���
+                //设置当前测量模式为长度测量
                 mARCartographView.setMeasreMode(ARCartographView.MeasureMode.MEASURE_LENGTH);
                 break;
 
 
             case R.id.btnMeasureArea:
-                //���õ�ǰ����ģʽΪ�������
+                //设置当前测量模式为面积测量
                 mARCartographView.setMeasreMode(ARCartographView.MeasureMode.MEASURE_AREA);
                 break;
 
 
             case R.id.iv_ruler_delete:
-                //ɾ��һ������
+                //删除一条测量
                 mARCartographView.deleteRuler();
                 break;
 
 
             case R.id.btnSetFeatureVisibility:
-                //����������Ƿ�ɼ�
+                //设置特诊点是否可见
                 mARCartographView.setFeaturePointVisible(mARCartographView.isFeaturePointVisible() == false ? true : false);
                 break;
 

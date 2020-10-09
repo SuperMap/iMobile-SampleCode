@@ -129,7 +129,7 @@ public class MainActivity extends FragmentActivity  implements OnClickListener {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // 当拖动条的滑块位置发生改变时触发该方法,在这里直接使用参数progress，即当前滑块代表的进度值
                 if (mArControl2 != null && mArControl2.mapControl != null) {
-                    mArControl2.mapControl.getMap().SetSlantAngle((double) progress);
+                    mArControl2.mapControl.getMap().setSlantAngle((double) progress);
                     mArControl2.mapControl.getMap().refresh();
                 }
             }

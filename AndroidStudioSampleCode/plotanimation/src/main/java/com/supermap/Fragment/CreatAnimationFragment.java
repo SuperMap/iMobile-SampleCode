@@ -297,6 +297,11 @@ public class CreatAnimationFragment extends Fragment implements View.OnClickList
             // TODO Auto-generated method stub
 
         }
+
+        @Override
+        public void geometryMultiSelectedCount(int i) {
+
+        }
     };
     private void initAlertDialog() {
         deleteDialog = new AlertDialog.Builder(getActivity());

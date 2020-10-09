@@ -1,6 +1,7 @@
 package com.supermap.imobile.dynamicshow;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.Manifest;
 import android.app.Activity;
@@ -18,6 +19,7 @@ import com.supermap.data.Point2D;
 import com.supermap.data.Workspace;
 import com.supermap.data.WorkspaceConnectionInfo;
 import com.supermap.data.WorkspaceType;
+import com.supermap.mapping.dyn.DynamicPolymerizer;
 import com.supermap.mapping.dyn.DynamicView;
 import com.supermap.mapping.MapControl;
 import com.supermap.mapping.MapView;
@@ -93,6 +95,7 @@ public class MainActivity extends Activity {
 			Manifest.permission.ACCESS_NETWORK_STATE,
 			Manifest.permission.CHANGE_WIFI_STATE,
 	};
+//	private DynamicView m_dynamicLayer2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +128,61 @@ public class MainActivity extends Activity {
 		m_btnClear.setOnClickListener(new Btnlistener());
 		
 		m_idList = new ArrayList<Integer>();
+
+		m_dynamicLayer.setPolymerize(true);
+		m_dynamicLayer.setEndPolymerListener(new DynamicView.EndPolymerListener() {
+			@Override
+			public void endPolymerElements(List<DynamicElement> dynamicPolymerizers) {
+				//不能做耗时操作
+				for (int i = 0; i < dynamicPolymerizers.size(); i++) {
+					DynamicPolymerizer ele = (DynamicPolymerizer) dynamicPolymerizers.get(i);
+
+					Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.airplane);
+					Bitmap m_bitmap = Bitmap.createScaledBitmap(bitmap, 80, 80, true);
+					DynamicStyle style = new DynamicStyle();
+
+//                            style.setScale(Integer.parseInt(ele.getText())%2);
+					style.setAngle(Integer.parseInt(ele.getText()) * 10);
+					style.setBackground(m_bitmap);
+
+
+					ele.setStyle(style);
+				}
+			}
+		});
+		m_dynamicLayer.setOnPolymerClickListenner(new DynamicView.OnPolymerClickListener() {
+
+			@Override
+			public void onClick(Point2D mapPoint, List<DynamicElement> dynamicElements) {
+
+
+//                        addCallout(mapPoint.getX(),mapPoint.getY());
+
+				Toast toast = Toast.makeText(MainActivity.this, "聚合个数：" + dynamicElements.size(), Toast.LENGTH_SHORT);
+				toast.show();
+			}
+		});
+
+//		Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(), R.drawable.airplane);
+//		Bitmap m_bitmap = Bitmap.createScaledBitmap(bitmap1, 80, 80, true);
+//		DynamicStyle style = new DynamicStyle();
+//		style.setAngle(60);
+//		style.setBackground(m_bitmap);
+//
+////				Bitmap bitmap2 = BitmapFactory.decodeResource(getResources(), R.drawable.icon_red);
+////				Bitmap m_bitmap2 = Bitmap.createScaledBitmap(bitmap2, 80, 80, true);
+////				DynamicStyle style2 = new DynamicStyle();
+////				style2.setBackground(m_bitmap2);
+//
+//
+//		m_dynamicLayer.setPolymerizeStyle(style);
+////				m_dynamicLayer2.setPolymerizeSelectedStyle(style2);
+//		m_dynamicLayer.setPolymerizeTextColor(android.graphics.Color.TRANSPARENT);
+//
+//		m_dynamicLayer.refresh();
+
+		m_mapview.getDynParams().setIsRealTimeCacheDraw(false);
+
 	}
 	
 	/**
@@ -248,28 +306,28 @@ public class MainActivity extends Activity {
 				break;
 			case R.id.btn_animation:
 				
-				for (int i = 0; i < m_idList.size(); i++) {
-					DynamicElement element = m_dynamicLayer.query(m_idList.get(i));
+//				for (int i = 0; i < m_idList.size(); i++) {
+//					DynamicElement element = m_dynamicLayer.query(m_idList.get(i));
+//
+//					element.addAnimator(new ZoomAnimator(2, 1000));
+//					element.addAnimator(new ZoomAnimator(0.5f, 1000));
+//
+//					Point2D pt = getPoint();
+//					double angle = calculatesAngle(element.getBounds().getCenter(), pt);
+//					float angle2 = element.getStyle().getAngle();
+//
+//					element.addAnimator(new RotateAnimator((float)(angle-angle2), 1000));
+//					element.addAnimator(new TranslateAnimator(pt, 1000));
+//
+//					Point2D pt2 = getPoint();
+//					double angle3 = calculatesAngle(pt, pt2);
+//
+//					element.addAnimator(new RotateAnimator((float)(angle3-angle), 1000));
+//					element.addAnimator(new TranslateAnimator(pt2, 1000));
+//				}
+//
+//				m_dynamicLayer.startAnimation();
 
-					element.addAnimator(new ZoomAnimator(2, 1000));
-					element.addAnimator(new ZoomAnimator(0.5f, 1000));
-					
-					Point2D pt = getPoint();
-					double angle = calculatesAngle(element.getBounds().getCenter(), pt);
-					float angle2 = element.getStyle().getAngle();
-					
-					element.addAnimator(new RotateAnimator((float)(angle-angle2), 1000));
-					element.addAnimator(new TranslateAnimator(pt, 1000));
-					
-					Point2D pt2 = getPoint();
-					double angle3 = calculatesAngle(pt, pt2);
-					
-					element.addAnimator(new RotateAnimator((float)(angle3-angle), 1000));
-					element.addAnimator(new TranslateAnimator(pt2, 1000));
-				}
-				
-				m_dynamicLayer.startAnimation();
-				
 				break;
 
 			case R.id.btn_clear:
