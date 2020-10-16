@@ -5,7 +5,6 @@
     android:id="@+id/text"
     android:layout_width="80dp"
     android:layout_height="30dp"
-    android:fontFamily="@font/lemonada_light"
     android:text="静清潭"
     android:textColor="#E7F35E"
     android:textSize="20dp"

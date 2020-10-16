@@ -20,9 +20,9 @@ android {
         targetCompatibility 1.8
     }
     defaultConfig {
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
+//        ndk {
+//            abiFilters "armeabi-v7a"
+//        }
     }
 
     sourceSets {

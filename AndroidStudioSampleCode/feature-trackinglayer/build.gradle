@@ -23,12 +23,12 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
-    defaultConfig {
-        ndk {
-//            abiFilters "armeabi-v7a","armeabi"
-            abiFilters  "armeabi-v7a"
-        }
-    }
+//    defaultConfig {
+//        ndk {
+////            abiFilters "armeabi-v7a","armeabi"
+//            abiFilters  "armeabi-v7a"
+//        }
+//    }
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']

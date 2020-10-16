@@ -118,7 +118,6 @@ public class ARVideoActivity extends AppCompatActivity implements EasyPermission
         requestPermissions();
 
         Environment.setLicensePath(SDCARD + "SuperMap/license/");
-//        Environment.setOpenGLMode(true);
         Environment.initialization(this);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -139,8 +138,8 @@ public class ARVideoActivity extends AppCompatActivity implements EasyPermission
     private void initARVideo() {
 
 //        glVideoRenderer = new GLVideoRenderer(this, "rain.mp4");
-        glVideoRenderer = new GLVideoRenderer(this, "winter_snow.mp4");
-
+//        glVideoRenderer = new GLVideoRenderer(this, "winter_snow.mp4");
+        glVideoRenderer = new GLVideoRenderer(this, "thunder.mp4");
         //Create renderer v_spring  v_summer   v_autumn  v_winter
         mGLSurfaceView = findViewById(R.id.glSurfaceView);
         mGLSurfaceView.setPreserveEGLContextOnPause(true);
@@ -150,6 +149,9 @@ public class ARVideoActivity extends AppCompatActivity implements EasyPermission
         mGLSurfaceView.setRenderer(glVideoRenderer);//Set up renderer
         mGLSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
         mGLSurfaceView.setWillNotDraw(false);
+
+        glVideoRenderer.setupAlpha(0.5f);
+        mGLSurfaceView.setAlpha(0.5f);
     }
 
 
@@ -178,34 +180,7 @@ public class ARVideoActivity extends AppCompatActivity implements EasyPermission
 
     private void initMap() {
         m_workspace = new Workspace();
-
-        //e.g  打开本地地图
-//        WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
-////    info.setServer(sdcard+"/SampleData/supermapIndoor/supermapindoor.smwu");
-//        info.setServer(sdcard+"/SampleData/SuperMap_7F/supermapindoor.smwu");
-//        //\SuperMap_7F
-//        info.setType(WorkspaceType.SMWU);
-//        if (m_workspace.open(info)) {
-//            m_mapView = (MapView)findViewById(R.id.testMapView);
-//            m_mapcontrol = m_mapView.getMapControl();
-//            m_mapcontrol.getMap().setWorkspace(m_workspace);
-//            String mapName = m_workspace.getMaps().get(2);    //supermap
-////			String mapName = m_workspace.getMaps().get(6);	  //supermpa_it_zone
-//            m_mapcontrol.getMap().open(mapName);
-//
-////            m_mapcontrol.getMap().setAlphaOverlay(true);
-////            m_mapcontrol.setMapOverlay(true);               //设置透明
-//
-//
-////			m_mapcontrol.getMap().setAngle(0.9);
-////			m_mapcontrol.getMap().refresh();
-//
-//            m_map = m_mapcontrol.getMap();
-////      m_map.viewEntire();
-//        }
-
-
-//        //e.g2 打开在线地图
+       //打开在线地图
         m_mapView = (MapView) findViewById(R.id.testMapView);
         DatasourceConnectionInfo info = new DatasourceConnectionInfo();
         info.setAlias("GoogleMapRoad");

@@ -5,7 +5,6 @@
     android:id="@+id/text"
     android:layout_width="80dp"
     android:layout_height="60dp"
-    android:fontFamily="@font/lemonada_light"
     android:text="2km"
     android:textColor="#F2F3E9"
     android:textSize="20dp"

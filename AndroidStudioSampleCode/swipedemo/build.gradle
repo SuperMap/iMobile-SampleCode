@@ -7,9 +7,9 @@ android {
         minSdkVersion 20
         targetSdkVersion 28
         multiDexEnabled true
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
+//        ndk {
+//            abiFilters "armeabi-v7a"
+//        }
 
     }
     buildTypes {

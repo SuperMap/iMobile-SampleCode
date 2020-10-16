@@ -8,14 +8,12 @@ android {
         applicationId "com.supermap.ar.arvideo.samples.arvideowithsnow"
 
         // Sceneform requires minSdkVersion >= 24.
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
     }
     // Sceneform libraries use language constructs from Java 8.
     // Add these compile options if targeting minSdkVersion < 26.
@@ -35,6 +33,12 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    packagingOptions {
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 
@@ -43,6 +47,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:28.0.0"
     implementation "com.android.support:design:28.0.0"
     implementation 'pub.devrel:easypermissions:2.0.1'
+    implementation 'com.android.support:multidex:1.0.2'
 }
 
 

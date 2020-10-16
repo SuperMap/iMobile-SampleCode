@@ -4,14 +4,14 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.supermap.arnavigation"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
+//        ndk {
+//            abiFilters "armeabi-v7a"
+//        }
     }
     buildTypes {
         release {
@@ -40,8 +40,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'com.google.ar:core:1.11.0'
     implementation 'com.google.ar.sceneform:core:1.11.0'
     implementation 'pub.devrel:easypermissions:2.0.1'
     implementation 'com.android.support:multidex:1.0.2'
+
 }

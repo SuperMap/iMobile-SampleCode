@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <array name="preloaded_fonts" translatable="false">
-        <item>@font/alex_brush</item>
-        <item>@font/lemonada_light</item>
-    </array>
-</resources>

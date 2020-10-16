@@ -70,7 +70,11 @@ import android.widget.Toast;
  * ----------------------------------------------------------------
  * ----------------------------SuperMap iMobile 演示Demo说明---------------------------
  * 
- * 1、功能展示
+ * 1、范例简介：示范GPS采集
+ * 2.示范数据：安装目录/SampleData/CollectorData/gpscollector.udb
+ * 3.关键类成员/方法
+ * MapControl.setAction(MapControl.setAction(
+ * 4、使用步骤
  *   (1)打开采集/关闭采集
  *   (2)采集点对象/线对象/面对象
  *   (3)设置采集对象的风格/属性

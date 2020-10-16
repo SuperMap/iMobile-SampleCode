@@ -42,8 +42,9 @@ import org.opencv.android.OpenCVLoader
  *            地图数据：Hunan.smwu,Hunan.udb,Hunan.udd
  *            许可目录："/SuperMap/License/"
  * 3、关键类型/成员:
- *
- *
+ *          OpenCVLoader.initDebug()                方法
+ *          OpenCVLoader.initAsync()                方法
+ *          BaseLoaderCallback.onManagerConnected() 方法
  * 4、使用步骤：
  * （1）左手控制左移和上移
  *

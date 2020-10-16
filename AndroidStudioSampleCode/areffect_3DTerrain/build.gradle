@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.supermap.areffect_3dterrain"
-        minSdkVersion 22
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -33,76 +33,30 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-
+    packagingOptions {
+        exclude 'META-INF/NOTICE' // will not include NOTICE file
+        exclude 'META-INF/LICENSE' // will not include LICENSE file
+        exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
+        exclude 'META-INF/DEPENDENCIES'
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
     implementation 'pub.devrel:easypermissions:2.0.1'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    // Sceneform
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.11.0'
-    implementation 'com.google.ar.sceneform:animation:1.11.0'
+
+    //ARCORE
+    api 'com.google.android.filament:filament-android:1.7.0'
+    api 'com.google.android.filament:gltfio-android:1.7.0'
+    api 'com.google.ar:core:1.16.0'
+    implementation ("com.google.ar.sceneform.ux:sceneform-ux:1.11.0"){transitive = false }
+    implementation ("com.google.ar.sceneform:core:1.11.0"){transitive = false }
+    implementation ("com.google.ar.sceneform:rendering:1.11.0")
+    implementation ("com.google.ar.sceneform:sceneform-base:1.11.0")
+
     implementation 'com.android.support:design:28.0.0'
- //   implementation files('libs/com.supermap.ar_v1010.jar')
 }
 
-
-sceneform.asset('sampledata/pic02/bambohouse.fbx',
-        'default',
-        'sampledata/pic02/bambohouse.sfa',
-        'src/main/res/raw/bambohouse')
-
-sceneform.asset('sampledata/pic01/ticdoor.fbx',
-        'default',
-        'sampledata/pic01/ticdoor.sfa',
-        'src/main/res/raw/ticdoor')
-
-
-
-sceneform.asset('sampledata/pic02/lt02arbor.fbx',
-        'default',
-        'sampledata/pic02/lt02arbor.sfa',
-        'src/main/res/raw/lt02arbor')
-
-sceneform.asset('sampledata/pic02/wharf.fbx',
-        'default',
-        'sampledata/pic02/wharf.sfa',
-        'src/main/res/raw/wharf')
-
-
-sceneform.asset('sampledata/terrain/road05.FBX',
-        'build/sceneform_sdk/default_materials/bluecp2.mat',
-        'sampledata/terrain/road05.sfa',
-        'src/main/res/raw/road05')
-
-sceneform.asset('sampledata/terrain/ship.fbx',
-        'default',
-        'sampledata/terrain/ship.sfa',
-        'src/main/res/raw/ship')
-
-sceneform.asset('sampledata/target/blue.obj',
-        'default',
-        'sampledata/target/blue.sfa',
-        'src/main/res/raw/blue')
-
-sceneform.asset('sampledata/target/routemarker.obj',
-        'build/sceneform_sdk/default_materials/bluecp2.mat',
-        'sampledata/target/routemarker.sfa',
-        'src/main/res/raw/routemarker')
-
-sceneform.asset('sampledata/terrain/line.FBX',
-        'default',
-        'sampledata/terrain/line.sfa',
-        'src/main/res/raw/line')
-
-sceneform.asset('sampledata/terrain/terrain/terrain2gltf03.gltf',
-        'default',
-        'sampledata/terrain/terrain/terrain2gltf03.sfa',
-        'src/main/res/raw/terrain2gltf03')
-
-sceneform.asset('sampledata/pic02/lt01arbor/lt01arbor.gltf',
-        'default',
-        'sampledata/pic02/lt01arbor/lt01arbor.sfa',
-        'src/main/res/raw/lt01arbor')

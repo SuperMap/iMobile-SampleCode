@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         manager = CloudLicenseManager.getInstance(this);
         manager.setLoginCallback(licenseLoginCallback);
-        manager.login("","");
+        manager.login("992275331@qq.com", "1995824lwh");
     }
 
     private void initView() {

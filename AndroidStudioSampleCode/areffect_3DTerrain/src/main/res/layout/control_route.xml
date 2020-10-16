@@ -6,7 +6,6 @@
     android:layout_width="240dp"
     android:layout_height="80dp"
     android:background="#B32196F3"
-    android:fontFamily="@font/lemonada_light"
     android:text="查看路线"
     android:textColor="#fff"
     android:textSize="36dp"

@@ -26,11 +26,11 @@
             />
 
 
-        <android.opengl.GLSurfaceView
-            android:id="@+id/glSurfaceView_Summer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+<!--        <android.opengl.GLSurfaceView-->
+<!--            android:id="@+id/glSurfaceView_Summer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            />-->
 
 
         <LinearLayout

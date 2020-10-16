@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.supermap.hpcollector"
-        minSdkVersion 26
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -27,6 +27,10 @@ android {
         exclude 'META-INF/LICENSE' // will not include LICENSE file
         exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
         exclude 'META-INF/DEPENDENCIES'
+    }
+    compileOptions{
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
     }
 }
 

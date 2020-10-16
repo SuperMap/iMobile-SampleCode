@@ -234,6 +234,11 @@ public class MainActivity extends Activity implements TencentLocTool.LocationCha
                                 public void onFinish() {
 
                                 }
+
+                                @Override
+                                public void Length(double v) {
+
+                                }
                             });
                     moveHelper.start();
                 } else {
@@ -283,6 +288,11 @@ public class MainActivity extends Activity implements TencentLocTool.LocationCha
                                 .OnDraw(new TrackingMoveHelper.onDraw() {
                                     @Override
                                     public void onFinish() {
+
+                                    }
+
+                                    @Override
+                                    public void Length(double v) {
 
                                     }
                                 });

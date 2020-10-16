@@ -36,7 +36,8 @@ import org.artoolkit.ar.base.rendering.ARRenderer;
  *            地图数据：supermapindoor.smwu,supermap.udb,supermap.udd
  *            许可目录："/SuperMap/License/"
  * 3、关键类型/成员:
- *
+ *				Map.setProjectMatrix()		方法
+ *				Map.setTransformMatrix()	方法
  * 4、使用步骤：
  * 	使用assets/hiro.png的Mark，摄像头识别mark后，添加地图数据。
  *

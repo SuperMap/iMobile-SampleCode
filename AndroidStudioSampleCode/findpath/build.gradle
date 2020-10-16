@@ -25,11 +25,11 @@ android {
             abortOnError false
         }
     }
-    defaultConfig {
-        ndk {
-            abiFilters "armeabi-v7a"
-        }
-    }
+//    defaultConfig {
+//        ndk {
+//            abiFilters "armeabi-v7a"
+//        }
+//    }
     compileOptions{
         sourceCompatibility 1.8
         targetCompatibility 1.8

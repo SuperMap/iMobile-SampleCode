@@ -5,7 +5,6 @@
     android:id="@+id/text"
     android:layout_width="80dp"
     android:layout_height="30dp"
-    android:fontFamily="@font/lemonada_light"
     android:text="湖心亭"
     android:textColor="#fff"
     android:textSize="15dp"

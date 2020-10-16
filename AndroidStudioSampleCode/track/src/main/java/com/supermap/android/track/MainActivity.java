@@ -171,6 +171,7 @@ public class MainActivity extends Activity implements OnClickListener{
 		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
 			return;
 		}
+//		Manifest.permission.ACCESS_BACKGROUND_LOCATION,
 		if (!checkPermissions(needPermissions)) {
 			EasyPermissions.requestPermissions(
 					this,
@@ -181,7 +182,6 @@ public class MainActivity extends Activity implements OnClickListener{
 					Manifest.permission.READ_PHONE_STATE,
 					Manifest.permission.ACCESS_WIFI_STATE,
 					Manifest.permission.ACCESS_NETWORK_STATE,
-                    Manifest.permission.ACCESS_BACKGROUND_LOCATION,
 					Manifest.permission.FOREGROUND_SERVICE,
 					Manifest.permission.CHANGE_WIFI_STATE);
 			//没有授权，编写申请权限代码
