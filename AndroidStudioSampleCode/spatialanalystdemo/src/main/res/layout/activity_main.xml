@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <com.supermap.mapping.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <!-- 左上角 -->
+        <!--路径分析按钮  -->
+        <ImageButton 
+            android:id="@+id/btn_path_analyst"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/btn_path_analyst"
+            android:background="@drawable/bg_white_round" 
+            android:scaleType="centerInside"          
+          />
+        
+        <!-- 路径分析的起点、终点设置，由路径分析按钮控制其显示或隐藏 -->
+        <LinearLayout 
+            android:id="@+id/PathAnalyst_DropDown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/btn_path_analyst"
+            android:layout_below="@id/btn_path_analyst"
+            
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+            
+            <!-- 按钮分隔线 -->
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/horizontal_split_line"
+                />
+
+            <!-- 设置起点按钮 -->
+            <ImageButton
+                android:id="@+id/btn_start_point"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_white"
+                android:src="@drawable/btn_start_point"
+                android:scaleType="centerInside"
+                />
+            
+            <!-- 按钮分隔线 -->
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/horizontal_split_line"
+                />
+            
+            <!-- 设置终点按钮 -->
+            <ImageButton
+                android:id="@+id/btn_end_point"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_white"
+                android:src="@drawable/btn_end_point"
+                android:scaleType="centerInside"
+                />
+            
+            <!-- 按钮分隔线 -->
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/horizontal_split_line"
+                />
+   
+            <!-- 开始分析路径按钮 -->
+            <ImageButton
+                android:id="@+id/btn_analyse_path"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_white"
+                android:src="@drawable/btn_analyse_path"
+                android:scaleType="centerInside"
+                />
+            
+            <!-- 按钮分隔线 -->
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/horizontal_split_line"
+                />
+            
+            <TextView
+                android:layout_width="72dp"
+                android:layout_height="5dp"
+                android:background="@drawable/bg_white_bottom_round"
+                />
+
+       </LinearLayout>
+        
+    
+       <!-- 建立缓冲区按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_create_buffer"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_path_analyst"
+            android:layout_alignTop="@id/btn_path_analyst"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/btn_create_buffer" 
+            android:background="@drawable/bg_white_round"
+            android:scaleType="centerInside"
+            android:visibility="gone"          
+          />
+       
+       <!-- 叠加分析按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_overlay_analyst"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_create_buffer"
+            android:layout_alignTop="@id/btn_create_buffer"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/btn_overlay_analyst" 
+            android:background="@drawable/bg_white_round"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+          />
+       <!-- 叠加分析影响面积 -->
+       <FrameLayout
+           android:id="@+id/frameLayout01" 
+           android:layout_width="200dp"
+           android:layout_height="75dp"    
+           android:layout_below="@id/btn_overlay_analyst"
+           android:layout_alignLeft="@id/btn_overlay_analyst" 
+           android:background="@drawable/bg_areatext"
+           android:visibility="gone">
+           
+           <RelativeLayout 
+               android:id="@+id/relativeLayout01"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               
+               >
+               
+               <TextView 
+                   android:id="@+id/title00"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" 
+                   android:layout_marginTop="15dp"
+                   android:layout_marginLeft="15dp"
+                   android:layout_alignParentLeft="true"
+                   android:layout_alignParentTop="true"
+                   
+                   android:text="影响面积:"
+                   android:textColor="#53ccc3"
+
+                   />
+               
+               <TextView 
+                   android:id="@+id/areaOverlayView"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" 
+                   android:layout_marginLeft="15dp"
+                   android:layout_alignParentLeft="true"                
+                   android:layout_below="@id/title00"
+                   android:textColor="#53ccc3"
+                                    
+                   />
+               </RelativeLayout>
+       </FrameLayout>
+       
+       <!-- 右上角 -->
+       <!-- 设置按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_setting"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/btn_setting" 
+            android:background="@drawable/bg_white_round"
+            android:scaleType="centerInside"          
+          />
+       <RelativeLayout
+           android:id="@+id/frameLayout00" 
+           android:layout_width="140dp"
+           android:layout_height="70dp"    
+           android:layout_below="@id/btn_setting"
+           android:layout_alignRight="@id/btn_setting" 
+           android:background="@drawable/bg_radiustext"
+           android:visibility="gone">
+            
+           <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentTop="true"
+               android:layout_marginTop="15dp"
+               android:orientation="vertical"
+               
+              >
+               
+               <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:text="缓冲区半径："
+                   android:textColor="#53ccc3"/>
+               <EditText 
+                   android:id="@+id/bufferRadiusText"
+                   android:layout_width="100dp"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"    
+                   android:background="@drawable/bg_white"
+                   android:hint="30"
+                   android:textColor="#000000"
+                   android:maxLength="6"
+                   android:numeric="integer"
+                  />
+               
+           </LinearLayout>
+ 
+           </RelativeLayout>
+
+       <!-- 清除按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_clear"
+           android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_toLeftOf="@id/btn_setting"
+            android:layout_alignTop="@id/btn_setting"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/btn_clear"
+            android:background="@drawable/bg_white_round"
+            android:scaleType="centerInside"
+          />       
+       
+       
+       <!-- 右下角  -->
+       <!-- 全幅按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_entire"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_entire"
+          />
+       <!-- 缩小按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_zoomOut"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_entire"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_zoom_out"
+          />
+       <!-- 放大按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_zoomIn"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_zoomOut"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_zoom_in"
+            
+          />
+       
+   
+    </RelativeLayout>
+    
+   
+</RelativeLayout>
+    

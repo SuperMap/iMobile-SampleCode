@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     >
+
+<!-- <include layout="@layout/topline"/> --> 
+	<RelativeLayout
+        android:layout_width="match_parent"
+    	android:layout_height="15dp"
+    	android:paddingTop="0dp"
+    	android:paddingBottom="0dp"
+    	android:background="#17aaf0" >
+        <!-- android:background="#f3f3f3" #4685f6 -->
+	    
+<!--         <Button
+            android:id="@+id/btn_set_dismiss"
+            android:layout_width="wrap_content"
+    	    android:layout_height="5dp"
+    	    android:layout_centerVertical="true"
+    	    android:background="@drawable/button_selector_back1"
+    	    android:layout_alignParentLeft="true"
+            />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+       		android:text="附近设施"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+ -->
+    </RelativeLayout> 
+<!--    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@drawable/cutline_gradient"/>
+ --> 
+    <GridView  
+         android:id="@+id/GridView1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:paddingTop="0dp"
+         android:numColumns="4"
+         android:verticalSpacing="5dp"
+         android:horizontalSpacing="5dp"
+         android:stretchMode="columnWidth"
+         android:background="#ffffff"
+         android:gravity="center"
+         />
+    <!-- android:columnWidth="90dp" -->
+    <!-- android:background="#ededed" -->
+     
+ </LinearLayout>

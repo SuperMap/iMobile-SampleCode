@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:weightSum="1"
+    android:background="#FFFFFF">
+    
+        <EditText android:layout_height="280dp"
+            android:layout_width="300dp"
+            android:layout_weight="5"
+            android:minLines="6"
+            android:inputType="textMultiLine"
+            android:gravity="left|top"
+            android:cursorVisible="true"
+            android:focusable="true"
+            android:textColor="#000000"
+            android:background="#ffffff"
+            android:id="@+id/textMessage"/>
+
+     
+    <!-- 
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+	    <Button
+	        android:id="@+id/send"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"                                                                                                                                
+	        android:text="发送" />
+	
+	    <Button
+	        android:id="@+id/cancel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="取消" />
+	</LinearLayout>
+	 -->
+</LinearLayout>

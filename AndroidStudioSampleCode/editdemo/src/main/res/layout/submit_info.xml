@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    
+        <ImageButton
+        android:id="@+id/btn_submit_confirm"
+        android:layout_width="300dip"
+        android:layout_height="128dip"
+        android:background="@drawable/bg_transparent"
+        android:src="@drawable/ic_bg_submitinfo"
+        android:scaleType="fitCenter"
+        
+        />
+    
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            
+            <TextView 
+                android:id="@+id/tv_submitInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:layout_marginLeft="16dp"
+                android:text="没有可编辑的该对象图层"
+                android:textSize="24sp"
+                android:textColor="#53ccc3"
+                />
+            <Button
+                android:id="@+id/btn_submitInfo_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/tv_submitInfo"
+                android:layout_below="@id/tv_submitInfo"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_transparent"
+                android:text="确认"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                
+                />
+        </RelativeLayout>
+    
+
+</FrameLayout>

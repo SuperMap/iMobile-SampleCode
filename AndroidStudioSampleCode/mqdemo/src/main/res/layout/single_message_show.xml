@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent" 
+    android:background="#ffffff">
+    
+    <LinearLayout 
+	     android:orientation="vertical"
+	     android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:id="@+id/ll_title">
+	     
+	   <RelativeLayout
+	    	android:layout_width="match_parent"
+	  		android:layout_height="wrap_content"
+	  		android:layout_marginTop="20dp"
+	  		android:paddingBottom="0dp"
+	  		android:background="#53ccc3"
+	  		>
+	      <Button
+	          	android:id="@+id/single_message_cancel"
+	          	android:layout_width="wrap_content"
+	  	    	android:layout_height="wrap_content"
+	  	    	android:layout_centerVertical="true"
+	  	    	android:background="@drawable/button_selector_back"
+	  	    	android:layout_alignParentLeft="true"
+	          />
+	
+	      <TextView
+	          android:id="@+id/tv_single_title"
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:layout_centerVertical="true"
+	          android:gravity="center_horizontal|center_vertical"
+	          android:textColor="#000"
+	          android:textSize="18dp"
+	          android:text="消息内容" />
+	
+	  	</RelativeLayout>
+    
+    </LinearLayout>
+   	<View 
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ll_title"
+	    android:background="@drawable/cutline_gradient"
+	    android:id="@+id/single_message_cutline"/>
+    
+    <LinearLayout 
+        android:layout_marginLeft="20dp"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/single_message_cutline"
+        android:orientation="vertical">
+       
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+           	android:orientation="horizontal"
+            android:background="@drawable/spotitem_state_normal">
+            
+	        <TextView android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/sender"
+	            android:textColor="#000000"
+	            android:textSize="20dp"
+	            android:padding="10dp"
+	            android:id="@+id/single_message_sender1"
+	            android:gravity="center_vertical"/>
+	        
+	        <TextView android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textColor="#000000"
+	            android:textSize="20dp"
+	            android:padding="10dp"
+	            android:id="@+id/single_message_sender2" 
+	            android:gravity="center_vertical"/>
+       </LinearLayout>
+       <!-- 
+       <View 
+        android:layout_height="3dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+	    android:background="@drawable/cutline_gradient"/>
+             -->
+       <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:orientation="horizontal"
+			android:background="@drawable/spotitem_state_normal" >
+	        
+ 	        <TextView android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/send_time"
+	            android:textColor="#000000"
+	            android:textSize="18dp"
+	            android:padding="10dp"
+	            android:id="@+id/single_send_time_1"/>          
+	            
+        
+	        <TextView android:layout_width="fill_parent"
+	            android:layout_height="40dp"
+	            android:textColor="#000000"
+	            android:textSize="18dp"
+	            android:padding="10dp"
+	            android:id="@+id/single_send_time_2"/>
+        
+       </LinearLayout>
+       <!-- 
+       <View 
+        android:layout_height="3dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+	    android:background="@drawable/cutline_gradient"/>
+	     -->
+       <TextView
+           android:id="@+id/single_message"
+           android:layout_width="match_parent"
+           android:layout_height="fill_parent"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="20dp"
+           android:paddingLeft="10dp"
+           android:paddingRight="10dp"
+           android:paddingTop="10dp"
+           android:background="@drawable/spotitem_state_normal"
+           android:ems="10"
+           android:textColor="#000000"
+           android:textSize="23dp" 
+           android:gravity="top">
+       </TextView>
+
+    </LinearLayout>
+    
+    <!-- 
+    <Button  
+    android:id="@+id/single_message_cancel"
+     android:layout_width="80dp"
+     android:layout_height="wrap_content"
+     android:layout_alignParentRight="true"
+     android:layout_alignParentBottom="true"
+     android:layout_marginRight="20dp"
+     android:layout_marginBottom="20dp"
+     android:text="@string/backup"
+     android:textSize="16sp"
+     android:textColor="#000000"/>
+ -->
+</RelativeLayout>

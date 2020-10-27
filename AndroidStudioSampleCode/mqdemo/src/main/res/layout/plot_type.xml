@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+<!-- <include layout="@layout/topline"/> --> 
+	<RelativeLayout
+        android:layout_width="match_parent"
+    	android:layout_height="15dp"
+    	android:paddingTop="0dp"
+    	android:paddingBottom="0dp"
+    	android:background="#17aaf0" >
+        <!-- android:background="#f3f3f3" #4685f6 -->
+	    
+    </RelativeLayout> 
+ <!--    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/cutline_gradient"/>
+ -->
+	<RelativeLayout
+	    android:id="@+id/relativelayout_2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#ffffff"
+	    android:paddingBottom="0dp" >
+<!--  android:background="#ededed" -->
+	    
+	<ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+	<LinearLayout
+	    android:id="@+id/relativeLayout_mapstate1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="0dp"
+	    android:layout_marginRight="0dp"
+	    android:background="#ffffff"
+	    android:gravity="center_horizontal"
+	    android:orientation="horizontal" >
+<!--  android:background="#ededed" -->
+
+	    <Button
+	        android:id="@+id/Button_Plot"
+	        android:layout_width="80dp"
+	        android:layout_height="80dp"
+	        android:drawablePadding="8dp"
+	        android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:textSize="15dp"
+            android:background="@drawable/button_selector_poi"
+	        android:text="点符号"
+	        android:textColor="#585f63" />
+	    <!-- android:background="@drawable/button_selector_poi" -->
+		<!-- 
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_weight="1.0"
+		 -->
+		<!-- android:drawablePadding="12dp" -->
+	    <Button
+	        android:id="@+id/Button_Line"
+	        android:layout_width="80dp"
+	        android:layout_height="80dp"
+	        android:drawablePadding="8dp"
+	        android:layout_marginLeft="20dp"
+            android:layout_marginRight="0dp"
+            android:textSize="16sp"
+            android:background="@drawable/button_selector_poi"
+	        android:text="手绘线"
+	        android:textColor="#585f63" />
+	    <Button
+	        android:id="@+id/Button_Region"
+	        android:layout_width="80dp"
+	        android:layout_height="80dp"
+	        android:drawablePadding="8dp"
+	        android:layout_marginLeft="20dp"
+            android:layout_marginRight="0dp"
+            android:textSize="16sp"
+            android:background="@drawable/button_selector_poi"
+	        android:text="手绘面"
+	        android:textColor="#585f63" />
+	</LinearLayout>
+	    
+	<LinearLayout
+	    android:id="@+id/relativeLayout_mapstate2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/relativeLayout_mapstate1"
+	    android:layout_marginTop="15dp"
+	    android:layout_marginLeft="0dp"
+	    android:layout_marginRight="0dp"
+	    android:background="#ffffff"
+	    android:gravity="center_horizontal"
+	    android:orientation="horizontal" >
+
+ <!--        <Button
+             android:id="@+id/Button_Sign"
+	         android:layout_width="80dp"
+	         android:layout_height="80dp"
+	         android:drawablePadding="8dp"
+             android:layout_marginRight="0dp"
+             android:textSize="16sp"
+             android:background="@drawable/button_selector_poi"
+             android:text="标志"
+	         android:textColor="#585f63" />
+ --> 
+         <Button
+             android:id="@+id/Button_Free"
+	         android:layout_width="80dp"
+	         android:layout_height="80dp"
+	         android:drawablePadding="8dp"
+	         android:layout_marginLeft="20dp"
+             android:layout_marginRight="0dp"
+             android:textSize="16sp"
+             android:background="@drawable/button_selector_poi"
+             android:text="涂鸦"
+	         android:textColor="#585f63" />
+         <Button
+             android:id="@+id/Button_Arrow"
+	         android:layout_width="80dp"
+	         android:layout_height="80dp"
+	         android:drawablePadding="8dp"
+	         android:layout_marginLeft="20dp"
+             android:layout_marginRight="0dp"
+             android:textSize="16sp"
+             android:background="@drawable/button_selector_poi"
+             android:text="箭头"
+	         android:textColor="#585f63" />
+    </LinearLayout>
+	</RelativeLayout>
+	
+</LinearLayout>

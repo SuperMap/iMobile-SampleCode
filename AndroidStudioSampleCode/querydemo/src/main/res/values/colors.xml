@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="listitem_bg">#f4f4f4</color>
+    <color name="listitem_bg_pressed">#53ccc3</color>
+    
+</resources>

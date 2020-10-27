@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/editdemo_bg_gray"
+    android:orientation="horizontal" >
+
+	<TextView
+	    android:layout_width="72dip"
+	    android:layout_height="match_parent"
+	    android:layout_gravity="top"
+	    android:drawableTop="@drawable/editdemo_ic_btn_top"
+	    android:gravity="center"
+	    android:maxLines="1"
+	    android:text="添加对象"
+	    android:textColor="#53ccc3"
+	    android:textSize="15sp" />
+	
+	<RadioButton
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:background="@drawable/editdemo_selector_btn_select"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:visibility="invisible" />
+
+    <RadioButton
+        android:id="@+id/btn_addpoint"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_point"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_addline"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_line"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_addregion"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_region"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_drawline"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_drawline"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_drawregion"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_drawregion"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_freedraw"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_freedraw"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_receivefocus2"
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:visibility="gone" />
+</RadioGroup>

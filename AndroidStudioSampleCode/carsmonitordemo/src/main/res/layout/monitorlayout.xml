@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".StartupActivity"
+    >
+    
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+     <!-- 开始监控按钮  -->
+    <ImageButton
+        android:id="@+id/btn_start_monitor"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_white_round"
+        android:src="@drawable/btn_start_monitor"
+        android:scaleType="centerInside"
+        />
+    <!-- 绘制围栏 -->
+    <ImageButton
+        android:id="@+id/btn_draw_fence"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignTop="@id/btn_start_monitor"
+        android:layout_toRightOf="@id/btn_start_monitor"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/bg_white_round"
+        android:src="@drawable/btn_draw_fence"
+        android:scaleType="centerInside"
+        />
+    <!-- 清除围栏 -->
+    <ImageButton
+        android:id="@+id/btn_clear_fence"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_white_round"
+        android:src="@drawable/btn_clear_fence"
+        android:scaleType="centerInside"
+        />
+    
+    <!-- 右下角  -->
+       <!-- 全幅按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_entire"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_entire"
+          />
+       
+       <!-- 缩小按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_zoomOut"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_entire"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_zoom_out"
+          />
+       
+       <!-- 放大按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_zoomIn"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_zoomOut"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_zoom_in"            
+          />       
+     <TextView 
+        android:id="@+id/warninginfo"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" 
+        android:layout_alignParentTop="true" 
+        android:visibility="gone"
+        />
+</RelativeLayout>
+

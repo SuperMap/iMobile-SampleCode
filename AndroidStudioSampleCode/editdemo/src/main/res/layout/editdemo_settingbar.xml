@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/editdemo_bg_gray"
+    android:orientation="horizontal" >
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_gravity="center_vertical" >
+        
+   <RadioButton
+        android:id="@+id/btn_size_1mm"
+        android:layout_width="52dip"
+        android:layout_height="52dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/editdemo_selector_setting_line1"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:checked="true"
+        android:gravity="center" 
+        android:padding="5dip"
+       />
+
+     <RadioButton
+         android:id="@+id/btn_size_2mm"
+         android:layout_width="52dip"
+         android:layout_height="52dip"
+         android:layout_marginLeft="10dip"
+         android:layout_marginRight="10dip"
+         android:background="@drawable/editdemo_selector_setting_line2"
+         android:button="@drawable/editdemo_bg_transparent"
+         android:gravity="center" 
+      />
+
+     <RadioButton
+        android:id="@+id/btn_size_3mm"
+        android:layout_width="52dip"
+        android:layout_height="52dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/editdemo_selector_setting_line3"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:gravity="center" 
+        />
+	</RadioGroup>
+	
+    
+    <RadioGroup
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    
+        >
+
+    <RadioButton
+        android:id="@+id/btn_clolor_g"
+        android:layout_width="52dip"
+        android:layout_height="52dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/editdemo_selector_setting_yellow"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:gravity="center" />
+
+    <RadioButton
+        android:id="@+id/btn_clolor_r"
+        android:layout_width="52dip"
+        android:layout_height="52dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/editdemo_selector_setting_red"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:checked="true"
+        android:gravity="center" 
+        android:padding="5dip" />
+
+     <RadioButton
+        android:id="@+id/btn_clolor_b"
+        android:layout_width="52dip"
+        android:layout_height="52dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/editdemo_selector_setting_blue" 
+        android:button="@drawable/editdemo_bg_transparent"
+       android:gravity="center" 
+        />
+     <!-- fix height  -->
+    <RadioButton
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:button="@drawable/editdemo_bg_transparent"
+        android:background="@drawable/editdemo_selector_btn_select"
+        android:visibility="invisible"/>
+    
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:drawableTop="@drawable/editdemo_ic_btn_top"
+        android:text="绘制风格"
+        android:gravity="center"
+        android:textColor="#53ccc3"
+        android:textSize="15sp" />
+
+</LinearLayout>

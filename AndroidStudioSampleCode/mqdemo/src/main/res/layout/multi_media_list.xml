@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView 
+        android:id="@+id/lv_multi_media_type_list"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:divider="#ededed"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none">
+    </ListView>
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ></RelativeLayout>
+</RelativeLayout>
+-->
+
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/multi_media_dialog"
+    android:orientation="horizontal" >
+
+	<RadioButton
+        android:layout_weight="1"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
+
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/multi_media_image"
+        />
+     
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_vedio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+         android:button="@drawable/multi_media_vedio"
+        />
+    
+    <RadioButton
+        android:id="@+id/btn_audio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@drawable/multi_media_audio"
+        android:gravity="center_horizontal" />
+   
+</RadioGroup>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+   <ImageButton 
+            android:id="@+id/btn_clear"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:src="@drawable/btn_clear"
+            android:scaleType="centerInside"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
+            />
+     
+     <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignLeft="@id/btn_clear"
+        android:layout_above="@id/btn_clear"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bg_white_round"
+        android:scaleType="centerInside"
+        android:src="@drawable/btn_back"
+        android:visibility="invisible"
+       />
+     <RelativeLayout 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_alignLeft="@id/btn_back"
+         android:layout_above="@id/btn_back"
+         >
+   <LinearLayout
+        android:id="@+id/LinearLayout00"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        >
+         <ImageButton
+            android:id="@+id/btn_start_point"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_start_point" 
+            />
+        
+        <ImageButton 
+            android:id="@+id/btn_end_point"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/btn_end_point"
+            android:scaleType="centerInside"
+            />
+        
+        <ImageButton
+            android:id="@+id/btn_path_analyst"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_path_analyst"
+     
+            />
+        
+         <ImageButton
+            android:id="@+id/btn_navi_simulation"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_navi_simulation"
+            android:visibility="gone"
+            />
+         
+         <ImageButton
+            android:id="@+id/btn_navi_real"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_navi_real"
+            android:visibility="gone"
+            />
+        
+         <ImageButton
+            android:id="@+id/btn_pause_navigation"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_pause_navigation"
+            android:visibility="gone"
+            />
+            
+         <ImageButton
+            android:id="@+id/btn_stop_navigation"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_stop_navigation"
+            android:visibility="gone"
+            />
+          
+         <ImageButton
+            android:id="@+id/btn_continue_navigation"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_white_round"
+            android:layout_marginBottom="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_continue_navigation"
+            android:visibility="gone"
+            />
+       
+         <TextView
+             android:layout_width="72dp"
+             android:layout_height="72dp"
+             />
+             
+    </LinearLayout>
+    
+    </RelativeLayout>
+    
+
+    <!-- 缩小按钮 -->
+
+    <ImageButton
+        android:id="@+id/btn_zoomOut"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_zoom_out" 
+        />
+
+    <!-- 放大按钮 -->
+
+    <ImageButton
+        android:id="@+id/btn_zoomIn"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_above="@id/btn_zoomOut"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_zoom_in" 
+        />
+    
+     <!-- 定位按钮 -->
+    <ImageButton
+        android:id="@+id/btn_location"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_above="@id/btn_zoomIn"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_location" 
+        />
+  
+</RelativeLayout>
+    

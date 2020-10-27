@@ -1,3 +1,18 @@
+//精品demo
+include ':3dnavi'
+include ':basedemo'
+include ':carsmonitordemo'
+include ':datavisualizationdemo'
+include ':editdemo'
+include ':glmapcachedemo'
+include ':mqdemo'
+include ':navidemo'
+include ':plotdemo'
+include ':querydemo'
+include ':spatialanalystdemo'
+include ':themedemo'
+//精品demo
+
 include ':3dar'
 include ':addlabel'
 include ':AImeasure'

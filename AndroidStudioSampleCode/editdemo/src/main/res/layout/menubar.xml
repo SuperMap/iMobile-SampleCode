@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_rect"
+    android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/btn_add"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_addnew"
+        android:button="@drawable/bg_rect_transparent"
+        
+        android:text="" />
+
+    <RadioButton
+        android:id="@+id/btn_edit"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:button="@drawable/bg_rect_transparent"
+        android:background="@drawable/selector_btn_edit" />
+    
+  <RadioButton
+        android:id="@+id/btn_measure"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:background="@drawable/selector_btn_measure"
+        android:button="@drawable/bg_rect_transparent"
+        
+        android:text="" />
+    <ImageButton
+        android:id="@+id/btn_undo"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:src="@drawable/bg_rect_transparent"
+        android:scaleType="centerInside"
+        android:background="@drawable/selector_btn_undo" />
+
+    <ImageButton
+        android:id="@+id/btn_redo"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:src="@drawable/bg_rect_transparent"
+        android:scaleType="centerInside"
+        android:background="@drawable/selector_btn_redo" />
+
+    <ImageButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:src="@drawable/bg_rect_transparent"
+        android:scaleType="centerInside"
+        android:background="@drawable/selector_btn_cancel" />
+
+    <ImageButton
+        android:id="@+id/btn_submit"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:src="@drawable/bg_rect_transparent"
+        android:scaleType="centerInside"
+        android:background="@drawable/selector_btn_submit" />
+
+    <RadioButton
+        android:id="@+id/btn_setting"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:button="@drawable/bg_rect_transparent"
+        android:background="@drawable/selector_btn_setting" />
+    
+	<RadioButton
+        android:id="@+id/btn_receivefocus1"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:visibility="gone" />
+</RadioGroup>

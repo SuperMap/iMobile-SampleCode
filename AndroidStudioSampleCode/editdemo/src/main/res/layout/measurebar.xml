@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_gray"
+    android:orientation="horizontal" >
+	
+    <RadioButton
+        android:layout_width="144dip"
+        android:layout_height="72dip"
+        android:button="@drawable/bg_transparent"
+        android:background="@drawable/selector_btn_select"
+        android:visibility="invisible"
+        />
+    
+	<TextView
+	    android:layout_width="72dip"
+	    android:layout_height="match_parent"
+	    android:layout_gravity="top"
+	    android:drawableTop="@drawable/ic_btn_top"
+	    android:gravity="center"
+	    android:maxLines="1"
+	    android:text="量算"
+	    android:textColor="#53ccc3"
+	    android:textSize="15sp" />
+    
+    <RadioButton
+        android:id="@+id/btn_measurelength"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/bg_transparent"
+        android:background="@drawable/selector_btn_measure_distance"
+        android:gravity="center"
+        />
+
+    <RadioButton
+        android:id="@+id/btn_measurearea"
+        android:layout_width="52dip"
+        android:layout_height="64dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:button="@drawable/bg_transparent"
+        android:background="@drawable/selector_btn_measure_area"
+        android:gravity="center"
+        />
+    
+    <RadioButton
+        android:id="@+id/btn_fixheight"
+        android:layout_width="1dip"
+        android:layout_height="72dip"
+        android:visibility="invisible" />
+    
+	<RadioButton
+        android:id="@+id/btn_receivefocus4"
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:visibility="gone" />
+ 
+	<EditText
+	    android:id="@+id/edt_measureresult"
+	    android:layout_width="200dp"
+	    android:layout_height="35dp"
+	    android:layout_marginLeft="5dp"
+	    android:layout_marginRight="10dp"
+	    android:background="@drawable/round_rect"
+	    android:textSize="22sp"
+	    android:textColor="#000000"
+	    android:gravity="center_vertical"
+	    android:enabled="false"
+	    android:maxLines="1" 
+	    />
+	
+</RadioGroup>

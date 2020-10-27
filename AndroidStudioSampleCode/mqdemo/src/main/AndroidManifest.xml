@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.supermap.demo.mqdemo"
+    android:versionCode="2"
+    android:versionName="1.1" >
+    
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>   
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
+
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <application
+        android:name="com.supermap.mqdemo.mqdemo.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/messagequeue"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <!-- 腾讯导航定位key -->
+        <meta-data 
+            android:name="TencentMapSDK"
+            android:value="VAJBZ-N6ZRR-5PTWG-WZTO7-LGYRZ-IKFRX"/>
+        
+        <activity
+            android:name="com.supermap.mqdemo.mqdemo.MainActivity"
+            android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize"><!-- 避免键盘遮挡 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    
+    
+</manifest>

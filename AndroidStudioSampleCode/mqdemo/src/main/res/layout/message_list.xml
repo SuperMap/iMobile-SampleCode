@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:baselineAligned="false"
+    android:background="#f3f3f3">
+ 
+     
+    <LinearLayout 
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+         
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:paddingTop="0dp"
+	    	android:paddingBottom="0dp"
+	    	android:background="#53ccc3"
+	        >
+	        <Button
+	            android:id="@+id/btn_hide"
+	            android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_centerVertical="true"
+	    	    android:background="@drawable/button_selector_back"
+	    	    android:layout_alignParentLeft="true"
+	            />
+	
+	        <TextView
+	            android:id="@+id/tv_title"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:gravity="center_horizontal"
+	            android:textColor="#000"
+	            android:textSize="18dp"
+	            android:text="消息列表" />
+	
+	    </RelativeLayout>
+
+	    
+	    <View 
+	        android:layout_width="match_parent"
+	        android:layout_height="1dp"
+	        android:background="@drawable/cutline_gradient"/>
+	    <ListView 
+	        android:id="@+id/lv_message_list"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="12dp"
+	        android:divider="#ededed"
+	        android:dividerHeight="12dp"
+	        android:fadingEdge="none">
+	    </ListView>
+	     
+    </LinearLayout>
+     
+       <!-- 
+     <Button  
+         android:id="@+id/message_list_cancel"
+          android:layout_width="80dp"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentBottom="true"
+          android:layout_marginRight="20dp"
+          android:layout_marginBottom="20dp"
+          android:text="@string/backup"
+          android:textSize="16sp"
+          android:textColor="#000000"/>
+ -->
+
+</RelativeLayout>

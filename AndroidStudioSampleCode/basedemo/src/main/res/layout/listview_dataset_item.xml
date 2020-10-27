@@ -1,0 +1,18 @@
+<CheckBox
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/check_dataset"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:textColor="#363a3d"
+    android:gravity="left|center_vertical"
+    android:paddingLeft="12dip"
+    android:paddingRight="5dip"
+    android:layout_marginRight="8dip"
+    android:lines="1"
+    android:ellipsize="end"
+    android:textSize="20sp"
+    android:background="@drawable/selector_bg_map_item"
+    android:button="@null" 
+    android:drawableLeft="@drawable/selector_dataset_checked"
+    />

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_heigth">50dip</dimen>
+    <dimen name="maplist_item_height">45dip</dimen>
+    
+</resources>

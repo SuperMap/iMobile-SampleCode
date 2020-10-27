@@ -1,0 +1,51 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="btn_size_wh">48dp</dimen>
+    <dimen name="popup_top_icon_margin_left1">36dp</dimen>
+    <dimen name="popup_top_icon_margin_left2">108dp</dimen>
+    
+    <dimen name="menu_bar_margin_top">20dp</dimen>
+    <dimen name="menu_bar_margin_left">20dp</dimen>
+    
+    <dimen name="btn_menu_bar_width">90dp</dimen>
+    <dimen name="btn_menu_bar_height">52dp</dimen>
+    <dimen name="menu_bar_textsize">18sp</dimen>
+    
+    <dimen name="btn_menu_bar1_width">66dp</dimen>
+    <dimen name="btn_menu_bar1_height">60dp</dimen>
+    <dimen name="menu_bar1_margin_top">10dp</dimen>
+    <dimen name="menu_bar1_margin_left">10dp</dimen>
+    <dimen name="menu_bar1_textsize">18sp</dimen>
+    <dimen name="menu_bar1_padding_lr">5dp</dimen>
+    
+    <dimen name="gridview_image_w">52dp</dimen>
+    <dimen name="gridview_image_h">52dp</dimen>
+    <dimen name="gridview_w">300dp</dimen>
+    <dimen name="gridview_h">400dp</dimen>
+    
+    <dimen name="edit_bar_w">208dp</dimen>
+    <dimen name="edit_bar_h">80dp</dimen>
+    <dimen name="edit_bar_btn_w">100dp</dimen>
+    <dimen name="edit_bar_btn_h">52dp</dimen>
+    <dimen name="edit_bar_padding">15dp</dimen>
+    <dimen name="edit_bar_padding_l">8dp</dimen>
+    <dimen name="edit_bar_padding_t">15dp</dimen>
+    <dimen name="edit_bar_padding_b">5dp</dimen>
+    <dimen name="edit_bar_btn_textsize">22sp</dimen>
+    <dimen name="edit_bar_btn_padding">8dp</dimen>
+    <dimen name="edit_bar_btns_margin">30dp</dimen>
+    
+    <dimen name="zoombtn_padding_left">20dp</dimen>
+    <dimen name="zoombtn_padding_bottom">20dp</dimen>
+    <dimen name="zoombtn_gap">10dp</dimen>
+        
+    <dimen name="locatebtn_margin_left">20dp</dimen>
+    <dimen name="locatebtn_margin_bottom">25dp</dimen>
+   <dimen name="pic_gridview_padding_top">10dp</dimen>
+   <dimen name="pic_gridview_padding_bottom">10dp</dimen>
+   <dimen name="pic_gridview_column_width">50dp</dimen>
+   <dimen name="pic_gridview_horizontal_spaccing">3dp</dimen>
+   <dimen name="pic_gridview_vertical_spacing">10dp</dimen>
+</resources>

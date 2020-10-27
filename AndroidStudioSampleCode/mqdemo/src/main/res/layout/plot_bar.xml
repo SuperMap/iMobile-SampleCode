@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/plot_dialog"
+    android:orientation="horizontal" >
+
+	<RadioButton
+        android:layout_weight="1"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
+
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_plot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/plot_point_symbol"
+        />
+     
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/plot_hand_painted_line"
+        />
+    
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/plot_hand_painted_polygon"
+        />
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_scrawl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/plot_scrawl"
+        />
+    
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/plot_arrow"
+        />
+
+    <RadioButton
+        android:layout_weight="1"
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:button="@drawable/plot_clear"
+        />
+    
+</RadioGroup>

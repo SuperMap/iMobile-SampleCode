@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f3f3f3"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+        <LinearLayout 
+	     android:orientation="vertical"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:id="@+id/ll_title">
+	     
+	   <RelativeLayout
+	    	android:layout_width="match_parent"
+	  		android:layout_height="wrap_content"
+	  		android:layout_marginTop="20dp"
+	  		android:paddingBottom="0dp"
+	  		android:background="#f3f3f3"
+	  		>
+	      <Button
+	          	android:id="@+id/audio_cancel"
+	          	android:layout_width="wrap_content"
+	  	    	android:layout_height="wrap_content"
+	  	    	android:layout_centerVertical="true"
+	  	    	android:background="@drawable/button_selector_back"
+	  	    	android:layout_alignParentLeft="true"
+	          />
+	
+	      <TextView
+	          android:id="@+id/tv_audio_title"
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:layout_centerVertical="true"
+	          android:gravity="center_horizontal|center_vertical"
+	          android:textColor="#000"
+	          android:textSize="18sp"
+	          android:text="录音" />
+	
+	  	</RelativeLayout>
+    
+    </LinearLayout>
+   	<View 
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ll_title"
+	    android:background="@drawable/cutline_gradient"/>
+    
+  
+    <Chronometer
+        android:id="@+id/chronometer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:format="%s"
+        android:gravity="center"
+        android:text="Chronometer"
+        android:textColor="#ff0000"
+        android:textSize="120sp" />
+    
+    <Button
+        android:id="@+id/stop_record"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/vedio_stop"/>
+
+
+    <Button
+        android:id="@+id/start_record"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignBaseline="@+id/stop_record"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/vedio_capture"/>
+
+
+    <Button
+        android:id="@+id/audio_record_ok"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_alignBaseline="@+id/stop_record"
+        android:layout_alignBottom="@+id/stop_record"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/image_ok" />
+
+</RelativeLayout>

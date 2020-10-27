@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <com.supermap.mapping.MapView
+            android:id="@+id/mapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+        
+        <!-- 创建标签专题图的按钮  -->
+        <ImageButton 
+            android:id="@+id/btn_label"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/btn_label"
+            android:background="@drawable/bg_white_left_round"
+            android:scaleType="centerInside"
+          />
+        
+        <!-- 创建分度设色专题图的按钮 -->
+        <ImageButton 
+            android:id="@+id/btn_range"
+            android:layout_width="110dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_label"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/btn_range"
+            android:background="@drawable/bg_white"
+            android:scaleType="centerInside"
+          />
+    
+        <!-- 创建单值专题图的按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_unique"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_range"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/btn_unique"
+            android:background="@drawable/bg_white"
+            android:scaleType="centerInside"
+          />
+          
+       <!-- 创建饼图的按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_pie"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_unique"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/btn_pie"
+            android:background="@drawable/bg_white"
+            android:scaleType="centerInside"
+          />
+             
+       <!-- 创建柱状图的按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_bar"
+            android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_pie"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/btn_bar"
+            android:background="@drawable/bg_white"
+            android:scaleType="centerInside"
+          />
+          
+       <!-- 清除专题图按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_clear"
+           android:layout_width="100dp"
+            android:layout_height="72dp"
+            android:layout_toRightOf="@id/btn_bar"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/btn_clear"
+            android:background="@drawable/bg_white_right_round"
+            android:scaleType="centerInside"
+          />
+       
+       <TextView
+	    android:id="@+id/chartName"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:gravity="center"
+	    android:layout_centerInParent="true"
+	    android:textColor="#8f8f8f"
+	    android:textSize="25sp" 
+	    android:layout_below="@id/btn_clear"
+	    android:layout_marginTop="10dp"
+	    android:text="2012年化肥使用量统计专题图"
+	    android:visibility="gone" />
+       
+       <!-- 右下角  -->
+       <!-- 全幅按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_entire"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_entire"
+          />
+       
+       <!-- 缩小按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_zoomOut"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_entire"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_zoom_out"
+          />
+       
+       <!-- 放大按钮 -->
+       <ImageButton 
+            android:id="@+id/btn_zoomIn"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/btn_zoomOut"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_zoom_in"
+            
+          />       
+   
+    </RelativeLayout>
+       
+</RelativeLayout>
+    

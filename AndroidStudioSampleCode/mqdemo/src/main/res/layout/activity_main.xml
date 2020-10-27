@@ -1,0 +1,199 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity" >
+
+    <!-- 地图显示 -->
+    <RelativeLayout android:id = "@+id/map_show"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+ 			<com.supermap.mapping.MapView 
+ 			    android:id="@+id/mapview"
+ 			    android:layout_width="fill_parent"
+ 			    android:layout_height="fill_parent"/>
+ 			
+         <Button
+             android:id="@+id/fullscreen"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentRight="true"
+             android:layout_marginBottom="15dp"
+             android:layout_marginRight="15dp"
+             android:background="@drawable/fullscreen" />
+
+         <Button
+             android:id="@+id/zoomout"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_above="@+id/fullscreen"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="15dp"
+             android:background="@drawable/zoomout" />
+
+         <Button
+             android:id="@+id/zoomin"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_above="@+id/zoomout"
+             android:layout_alignParentRight="true"
+             android:layout_marginRight="15dp"
+             android:background="@drawable/zoomin" />
+
+         <Button
+             android:id="@+id/delete"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_above="@+id/zoomin"
+             android:layout_marginRight="15dp"
+             android:background="@drawable/delete"
+             android:visibility="invisible" />
+         
+         <Button
+             android:id="@+id/message_switch"
+             style="?android:attr/buttonStyle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_alignParentTop="true"
+             android:layout_marginRight="20sp"
+             android:layout_marginTop="10sp"
+             android:background="@drawable/btn_message_switch_noselect" />
+
+           <Button
+             android:id="@+id/position_upload"
+             style="?android:attr/buttonStyle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_toLeftOf="@+id/message_switch"
+             android:layout_marginRight="10sp"
+             android:layout_marginTop="10sp"
+             android:background="@drawable/main_position_upload" />
+           
+           <LinearLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:gravity="center_vertical"
+	        android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10sp"
+	        android:background="#ffffff"
+	        android:id="@+id/main_item" >
+			
+			<TextView 
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+        		android:background="@drawable/main_cutline"/>
+   	         <Button
+	             android:id="@+id/multi_media"
+	             style="?android:attr/buttonStyle"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:background="@drawable/main_multi_media" />
+			<TextView 
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+        		android:background="@drawable/main_cutline"/>	
+	         <Button
+	             android:id="@+id/plot"
+	             style="?android:attr/buttonStyle"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:background="@drawable/main_plot" />
+
+			<TextView 
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+        		android:background="@drawable/main_cutline"/>
+			<Button
+	             android:id="@+id/send_message"
+	             style="?android:attr/buttonStyle"
+	              android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:background="@drawable/main_send_data"/>
+	
+			<TextView 
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+        		android:background="@drawable/main_cutline"/>
+			<RelativeLayout 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    >
+              <Button
+	             android:id="@+id/consult_message"
+	             style="?android:attr/buttonStyle"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:background="@drawable/main_message_consult"
+	             />
+              <!-- 新消息提醒-->
+<!-- 
+			    <com.supermap.demo.mqdemo.MyImageButton
+			        android:id="@+id/new_message"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:background="@drawable/newmessage_64"
+			        android:layout_alignParentTop="true"
+			        android:layout_marginTop="0dp"
+			        android:layout_marginLeft="35dp"
+			        android:visibility="visible" />
+	              	 -->	
+	              	 <TextView 
+	              	     android:id="@+id/new_message"
+	              	     android:layout_width="wrap_content"
+			        	android:layout_height="wrap_content"
+			        	android:background="@drawable/newmessage_64"
+			        	android:layout_alignParentTop="true"
+			        	android:layout_marginTop="0dp"
+			        	android:layout_marginLeft="35dp"
+			        	android:textColor="#ffffff"
+			        	android:textSize="18dp"
+			        	android:gravity="center"
+			        	android:visibility="invisible"/>    
+			</RelativeLayout>	         	
+			<TextView 
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+        		android:background="@drawable/main_cutline"/>
+
+			
+	         <Button
+	             android:id="@+id/text_message"
+	             style="?android:attr/buttonStyle"
+	             android:layout_width="wrap_content"
+	             android:layout_height="wrap_content"
+	             android:background="@drawable/main_text_message" />
+			<TextView 
+        		android:layout_width="wrap_content"
+       			android:layout_height="wrap_content"
+        		android:background="@drawable/main_cutline"/>
+		</LinearLayout>
+		
+
+
+    </RelativeLayout>
+         
+         <Button
+             android:id="@+id/locate"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_marginLeft="15sp"
+             android:layout_marginBottom="35dp"
+             android:layout_alignParentBottom="true"
+             android:background="@drawable/main_locate" />
+         <Button
+             android:id="@+id/clear"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentLeft="true"
+             android:layout_marginLeft="15sp"
+             android:layout_above="@+id/locate"
+             android:background="@drawable/main_clear_noselect"
+              />
+</RelativeLayout>

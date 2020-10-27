@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/topline"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingTop="12dip"
+    	android:paddingBottom="12dip"
+    	android:background="#ffffff"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_hide"
+            android:gravity="center_horizontal"
+            android:text="@string/queryresult"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_hide"
+            android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_centerVertical="true"
+    	    android:background="@drawable/ic_btn_closeresult"
+    	    android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/cutline_gradient"/>
+    
+    <ExpandableListView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_queryresult"
+        android:divider="#acacac"
+       
+        android:groupIndicator="@null"
+        android:dividerHeight="1dp"
+        android:childDivider="@drawable/cutline_gradient"
+        android:background="#ffffff"
+        android:cacheColorHint="#00000000"
+        android:listSelector="#00000000" 
+        
+        />
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:drawableLeft="@drawable/ic_query_nodata"
+        android:gravity="center_vertical"
+        android:textSize="25sp"
+        android:visibility="gone"
+        android:text="@string/query_nodata"
+        />
+
+</LinearLayout>

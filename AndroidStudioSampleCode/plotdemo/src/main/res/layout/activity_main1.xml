@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:id="@+id/v_mainactivity">
+    
+    <com.supermap.mapping.MapView
+        android:id="@+id/v_MapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <ImageButton
+        android:id="@+id/btn_Locate"
+        android:layout_width="@dimen/btn_size_wh"
+        android:layout_height="@dimen/btn_size_wh"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/btn_location"
+        android:layout_marginBottom="@dimen/locatebtn_margin_bottom"
+        android:layout_marginLeft="@dimen/locatebtn_margin_left"
+        android:scaleType="centerInside" />
+    <include
+        android:id="@+id/menu_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/menu_bar_margin_top"
+        android:layout_marginLeft="@dimen/menu_bar_margin_left"
+        layout="@layout/menu_bar1"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/zoombtn_padding_left"
+        android:paddingBottom="@dimen/zoombtn_padding_bottom"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btn_ZoomIn"
+            android:layout_width="@dimen/btn_size_wh"
+            android:layout_height="@dimen/btn_size_wh"
+            android:background="@drawable/btn_zoom_in"
+            android:scaleType="centerInside"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_ZoomOut"
+            android:layout_width="@dimen/btn_size_wh"
+            android:layout_height="@dimen/btn_size_wh"
+            android:background="@drawable/btn_zoom_out"
+            android:layout_marginTop="@dimen/zoombtn_gap"
+            android:scaleType="centerInside"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_ViewEntire"
+            android:layout_width="@dimen/btn_size_wh"
+            android:layout_height="@dimen/btn_size_wh"
+            android:background="@drawable/btn_entire"
+            android:layout_marginTop="@dimen/zoombtn_gap"
+            android:scaleType="centerInside"
+            />
+
+    </LinearLayout>
+    
+
+</RelativeLayout>

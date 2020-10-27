@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+	<!-- 设置起点按钮 -->
+	<Button
+	    android:id="@+id/btn_start_point"
+	    android:layout_width="72dp"
+	    android:layout_height="72dp"
+	    android:text="起点"
+
+	    />
+	<!-- 设置终点按钮 -->
+	<Button
+	    android:id="@+id/btn_end_point"
+	    android:layout_width="72dp"
+	    android:layout_height="72dp"
+	    android:text="终点"
+	
+	    />
+	<Button
+	    android:id="@+id/btn_way_point"
+	    android:layout_width="72dp"
+	    android:layout_height="72dp"
+	    android:text="途经点"
+	    android:visibility="visible"
+	    />
+	<!-- 开始分析路径按钮 -->
+	<Button
+	    android:id="@+id/btn_analyse_path"
+	    android:layout_width="72dp"
+	    android:layout_height="72dp"
+	    android:text="分析"
+	    />
+	<!-- 导航 -->
+	<Button
+	    android:id="@+id/btn_navi"
+	    android:layout_width="72dp"
+	    android:layout_height="72dp"
+	    android:text="导航"
+	    />
+	<Button
+	    android:id="@+id/btn_clear"
+	    android:layout_width="72dp"
+	    android:layout_height="72dp"
+	    android:text="清除"
+
+	    />
+</LinearLayout>

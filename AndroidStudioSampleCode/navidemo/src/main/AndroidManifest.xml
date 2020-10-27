@@ -1,0 +1,46 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.supermap.navidemo">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:name="com.supermap.navidemo.app.MyApplication"
+        android:theme="@style/AppTheme" >
+    <activity
+        android:name="com.supermap.navidemo.app.StartupActivity"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar"
+        android:configChanges="orientation|keyboardHidden"
+        android:screenOrientation="landscape" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.supermap.navidemo.navi.MainActivity"
+        android:theme="@android:style/Theme.Black.NoTitleBar"
+        android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+        android:screenOrientation="landscape"
+        />
+    <meta-data
+        android:name="TencentMapSDK"
+        android:value="YSGBZ-3XD3P-W6MDB-V6YPH-RDKUT-EIFUR" />
+    </application>
+</manifest>

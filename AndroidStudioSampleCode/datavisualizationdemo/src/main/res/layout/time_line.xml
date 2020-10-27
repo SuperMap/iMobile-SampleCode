@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/timeline"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c8c0c0c0"
+    android:padding="5dp"
+    android:gravity="center_vertical"
+    >
+
+
+    <Button
+        android:id="@+id/btn_timeline_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_timeline_backword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_timeline_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+        <com.supermap.mapping.imChart.TimeLineView
+            android:id="@+id/btn_timeline_centerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_toLeftOf="@id/btn_timeline_forward"
+            >
+
+            <!--<Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chart_slide_cur"
+                android:tag="btn"
+                android:layout_marginLeft="16dp"
+                />-->
+
+            <!--<Button-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:tag="btn"-->
+                <!--/>-->
+
+        </com.supermap.mapping.imChart.TimeLineView>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

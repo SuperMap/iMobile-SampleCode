@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">iMobile地图编辑</string>
+    <string name="add">添加对象</string>
+    <string name="edit">编辑对象</string>
+    <string name="undo">撤销</string>
+    <string name="redo">重做</string>
+    <string name="cancel">取消</string>
+    <string name="submit">提交</string>
+    <string name="setting">风格设置</string>
+    <string name="addpoint">添加点</string>
+    <string name="addline">添加线</string>
+    <string name="addregion">添加面</string>
+    <string name="drawline">自由线</string>
+    <string name="drawregion">自由面</string>
+    <string name="freedraw">涂   鸦</string>
+    <string name="select">选择对象</string>
+    <string name="editnode">编辑节点</string>
+    <string name="addnode">添加节点</string>
+    <string name="deletenode">删除节点</string>
+    <string name="deleteobject">删除对象</string>
+</resources>

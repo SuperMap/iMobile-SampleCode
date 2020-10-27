@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- <string name="app_name">PlotDemo</string> -->
+    <string name="app_name">iMobile态势标绘</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="workspace_path0">/Workspace/SuperMapCloud.smwu</string>
+    <string name="path_libJY">/Symbol/JY.plot</string>
+    <string name="path_libTY">/Symbol/TY.plot</string>
+    <string name="path_symbol_icon_JY">/SymbolIcon/警用标号</string>
+    <string name="path_symbol_icon_TY">/SymbolIcon/常用标号</string>
+    </resources>
