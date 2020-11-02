@@ -35,4 +35,4 @@ CoordSysTranslator
 
 ## 效果展示
 
-![CoordSysTranslator](coordsystranslator.png)
+![coordSysTranslator APP](coordsystranslator.png)
