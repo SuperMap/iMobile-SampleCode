@@ -35,4 +35,4 @@ CoordSysTranslator
 
 ## 效果展示
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/coordsystranslator/coordsystranslator.png)
+![CoordSysTranslator](coordsystranslator.png)
