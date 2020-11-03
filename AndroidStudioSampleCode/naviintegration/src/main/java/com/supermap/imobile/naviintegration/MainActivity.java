@@ -1,4 +1,4 @@
-package com.supermap.imobile.naviintegration;
+﻿package com.supermap.imobile.naviintegration;
 
 import android.Manifest;
 import android.os.Build;
@@ -54,7 +54,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  * ----------------------------------------------------------------
  * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
  *
- * 1、范例简介：示范如何运用行业导航模块实现路径导航
+ * 1、范例简介：示范增量路网以及室内外一体化导航。
  * 2、示例数据：导航数据目录："/sdcard/SampleData/SupermapNaviData/"
  *          地图数据：supermapindoor.smwu, bounds.udb, bounds.udd,supermap.udb, supermap.udd,
  IT产业园.udb, IT产业园.udd, NetworkModel.snm
@@ -70,13 +70,13 @@ import pub.devrel.easypermissions.EasyPermissions;
  *      Navigation2.cleanPath();              方法
  *      Navigation2.startGuide();             方法
  *      Navigation2.routeAnalyst();           方法
- *		NavigationEx.setStartPoint();         方法
- *      NavigationEx.setDestinationPoint();   方法
- *      NavigationEx.isGuiding();             方法
- *      NavigationEx.cleanPath();             方法
- *      NavigationEx.startGuide();            方法
- *      NavigationEx.routeAnalyst();          方法
- *		mFloorListView.setCurrentFloorId();	  方法
+ *		Navigation3.setStartPoint();         方法
+ *      Navigation3.setDestinationPoint();   方法
+ *      Navigation3.isGuiding();             方法
+ *      Navigation3.cleanPath();             方法
+ *      Navigation3.startGuide();            方法
+ *      Navigation3.routeAnalyst();          方法
+ *		FloorListView.setCurrentFloorId();	  方法
  *
  * 4、使用步骤：
  *	增量路网：
@@ -94,7 +94,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  *  (8)点击【清除】按钮，可以清除现有路径结果，再重新分析路径
  *
  * 5、注意：
- *	如果运行本范例失败，常见原因是缺少语音资源。
+ *	如果缺少语音播报，原因是缺少语音资源。
  *  解决办法：请将产品包中Resource文件夹下的voice文件夹拷贝到工程目录中的assets文件夹下。
  * ------------------------------------------------------------------------------
  * ============================================================================>

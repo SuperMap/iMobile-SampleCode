@@ -31,4 +31,4 @@ Scene
 
 ## 效果展示
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/indoornavigation3D/3DNavi.png)
+![image](3DNavi.png)
