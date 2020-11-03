@@ -29,4 +29,4 @@ GPSData
 
 ## 效果展示
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/collector/Collector.png)
+![image](Collector.png)

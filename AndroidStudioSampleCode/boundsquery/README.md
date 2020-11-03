@@ -31,4 +31,4 @@ DatasetVector
 
 ## 效果展示
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/BoundsQuery/BoundsQuery.png)
+![image](BoundsQuery.png)

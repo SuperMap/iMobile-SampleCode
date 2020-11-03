@@ -33,4 +33,4 @@ GeoStyle
 
 ## 效果展示
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/bufferanalyst/BufferQuery.png)
+![image](BufferQuery.png)

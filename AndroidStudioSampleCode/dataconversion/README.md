@@ -28,7 +28,7 @@ DataConversion
 
 ## 效果展示
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/coordsystranslator/ImportData1.png)
+![image](ImportData1.png)
 
-![image](https://github.com/SuperMap/iMobile-SampleCode/blob/master/AndroidStudioSampleCode/coordsystranslator/ImportData2.png)
+![image](ImportData2.png)
 
