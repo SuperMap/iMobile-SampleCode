@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     DatasourceConnectionInfo info = new DatasourceConnectionInfo();
     info.setAlias("GOOGLE");
-    info.setEngineType(EngineType.IMAGEPLUGINS);
+    info.setEngineType(EngineType.GoogleMaps);
     String url3 = "http://www.google.cn/maps";
 //    String url3 = RootPath + "/sampledata/img/img.sci";
 //    String url3 = "http://192.168.13.111:8090/iserver/services/map-Population/rest/maps/PopulationDistribution";

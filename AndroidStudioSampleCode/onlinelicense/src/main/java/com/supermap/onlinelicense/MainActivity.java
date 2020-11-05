@@ -39,9 +39,10 @@ import pub.devrel.easypermissions.EasyPermissions;
  * 1、范例简介：示范如何查询私有云许可模块，以及激活
  * 2、示例数据：数据目录："/sdcard/SampleData/Changhun"
  * 3、关键类型/成员:
- *   CloudLicenseManager.getInstance().querylicense(); //设置私有云许可地址
- *   PrivateCloudLicenseManager.getInstance().queryFormalLicense(); //查询模块
- *   PrivateCloudLicenseManager.getInstance().ApplyFormalLicense();//激活许可
+ *   CloudLicenseManager.loginAccount 方法
+ *   CloudLicenseManager.queryLicense 方法
+ *   CloudLicenseManager.activeLicense 方法
+ *   CloudLicenseManager.logoutAccount 方法
  *
  * 4、使用步骤：
  *  (1)点击"查询模块"按钮，查询许可模块，
@@ -50,7 +51,6 @@ import pub.devrel.easypermissions.EasyPermissions;
  *  (4)激活成功后，点击"打开地图"按钮，打开地图
  * 5、注意事项
  *   必须开启WIFI
- *   必须与许可服务处于同一局域网下
  *   如果许可网络断开连接，许可将进行回收，无法使用移动端功能
  *   如果为正式许可，需要勾选"核心开发模块"、"核心运行模块"进行开发
  *

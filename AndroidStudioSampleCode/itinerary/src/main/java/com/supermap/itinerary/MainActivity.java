@@ -60,7 +60,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  * ----------------------------------------------------------------
  * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
  *
- * 1、范例简介：示范行程记录功能
+ * 1、范例简介：示范GPS采集行程，并对行程回放展示功能
  * 2、示范数据： google在线图
  * 3、关键类型/成员:
  *      TrackingMoveData 类
