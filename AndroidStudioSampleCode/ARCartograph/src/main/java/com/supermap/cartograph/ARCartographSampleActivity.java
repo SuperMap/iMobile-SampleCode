@@ -27,18 +27,18 @@ import com.supermap.ar.arcartograph.ARRulerCallBack;
  * ----------------------------SuperMap iMobile 演示Demo说明---------------------------
  *
  * 1、Demo简介：
- *   	展示AI测图功能。
+ *   	展示AR测量功能。
  *
  * 2、Demo数据：
  *      许可目录："../SuperMap/License/"
  *
  * 3、关键类型/成员:
- *    mARCartographView.isHitTest()			            方法
- *    mARCartographView.setARRulerCallBack();	        方法
- *    mARCartographView.finishMeasure();				方法
- *    mARCartographView.setFeaturePointVisible(();		方法
- *    mARCartographView.deleteRuler();				    方法
- *    mARCartographView.setMeasreMode();		        方法
+ *    ARCartographView.isHitTest()			            方法
+ *    ARCartographView.setARRulerCallBack();	        方法
+ *    ARCartographView.finishMeasure();				方法
+ *    ARCartographView.setFeaturePointVisible(();		方法
+ *    ARCartographView.deleteRuler();				    方法
+ *    ARCartographView.setMeasreMode();		        方法
  *
  * 4、功能展示
  *   (1)平视找到平面；

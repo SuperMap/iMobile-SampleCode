@@ -37,7 +37,7 @@ import org.opencv.android.OpenCVLoader
  * ----------------------------------------------------------------
  * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
  *
- * 1、范例简介：示范如何通过自定义控件，设置文本大小，颜色，旋转角度
+ * 1、范例简介：示范通过姿态控制地图缩放
  * 2、示例数据：数据目录："/SampleData/Hunan/Hunan.smwu/"
  *            地图数据：Hunan.smwu,Hunan.udb,Hunan.udd
  *            许可目录："/SuperMap/License/"
@@ -46,7 +46,8 @@ import org.opencv.android.OpenCVLoader
  *          OpenCVLoader.initAsync()                方法
  *          BaseLoaderCallback.onManagerConnected() 方法
  * 4、使用步骤：
- * （1）左手控制左移和上移
+ * （1）点击【缩放姿态】按钮，左手和右手缩放控制地图缩放。
+ * （2）点击【漫游姿态】按钮，左手控制左移和上移。
  *
  * ------------------------------------------------------------------------------
  * ============================================================================>
