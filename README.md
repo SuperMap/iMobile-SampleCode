@@ -4,7 +4,7 @@ iMobile-SampleCode是SuperMap iMobile的示范代码，用于展示iMobile的基
 
 部署方式:
 1. 配置libs文件
-在每个Moudle中libs文件夹下添加产品包。
+在每个Moudle中libs文件夹下添加所需产品包。
 
 2. 配置许可文件 
 在官网申请三个月的试用许可。http://support.supermap.com.cn/ ，根据产品包版本选择申请许可版本SuperMap iMobile 9D&10i或者11i
