@@ -11,7 +11,7 @@ iMobile-SampleCode是SuperMap iMobile的示范代码，用于展示iMobile的基
 
 3. 配置离线数据
 离线数据获取方式： 百度网盘下载离线数据, 链接：https://pan.baidu.com/s/1L-iQ3VM6s0SNS73T7fRgNQ 提取码：y3f1
-拷贝到数据/sdcard/sampledata/目录下
+拷贝到数据/sdcard/sampledata/目录下(根据代码中路径存放位置设置)
 
 4. 帮助文档
 在官方帮助文档查看范例程序说明： http://support.supermap.com.cn/DataWarehouse/WebDocHelp/iMobileForAndroid/SuperMapObjectsEmbeddedHelp.htm
