@@ -7,7 +7,7 @@ iMobile-SampleCode是SuperMap iMobile的示范代码，用于展示iMobile的基
 在每个Moudle中libs文件夹下添加产品包。
 
 2. 配置许可文件 
-在官网申请三个月的试用许可。http://support.supermap.com.cn/ ，适用产品选择SuperMap iMobile 9D&10i
+在官网申请三个月的试用许可。http://support.supermap.com.cn/ ，根据产品包版本选择申请许可版本SuperMap iMobile 9D&10i或者11i
 
 3. 配置离线数据
 离线数据获取方式： 百度网盘下载离线数据, 链接：https://pan.baidu.com/s/1L-iQ3VM6s0SNS73T7fRgNQ 提取码：y3f1
