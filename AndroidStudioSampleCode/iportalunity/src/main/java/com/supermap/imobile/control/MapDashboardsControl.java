@@ -39,10 +39,10 @@ public class MapDashboardsControl {
      */
     public void getMapDashboards() {
         try {
-            IPortalService.getInstance().addOnResponseListener(listener);
+
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
-            IPortalService.getInstance().getMapDashboards(searchParameter);
+            IPortalService.getInstance().getMapDashboards(searchParameter,listener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,10 +55,10 @@ public class MapDashboardsControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(listener);
+
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
-                IPortalService.getInstance().getMapDashboards(searchParameter);
+                IPortalService.getInstance().getMapDashboards(searchParameter,listener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -70,7 +70,7 @@ public class MapDashboardsControl {
      */
     private OnResponseListener listener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(final Exception exception) {
             if (exception != null) {
                 Log.e("onFailed", exception.getMessage());
             }
@@ -85,7 +85,7 @@ public class MapDashboardsControl {
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             String responseBody = null;
             MyMapDashboards myMapDashboards = null;
             try {

@@ -4,9 +4,11 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.supermap.data.Environment;
 import com.supermap.data.LicenseStatus;
@@ -31,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.ACCESS_WIFI_STATE,
             Manifest.permission.ACCESS_NETWORK_STATE,
+            Manifest.permission.RECORD_AUDIO,
             Manifest.permission.CHANGE_WIFI_STATE,
     };
     @Override
@@ -75,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                     Manifest.permission.READ_PHONE_STATE,
                     Manifest.permission.ACCESS_WIFI_STATE,
                     Manifest.permission.ACCESS_NETWORK_STATE,
+                    Manifest.permission.RECORD_AUDIO,
                     Manifest.permission.CHANGE_WIFI_STATE);
             //没有授权，编写申请权限代码
         } else {

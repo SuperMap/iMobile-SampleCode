@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+    <com.supermap.mapping.MapView
+        android:layout_width="460dp"
+        android:layout_height="310dp"
+        android:id="@+id/map_view"/>
+    <com.supermap.ar.areffect.AREffectView
+        android:id="@+id/ar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

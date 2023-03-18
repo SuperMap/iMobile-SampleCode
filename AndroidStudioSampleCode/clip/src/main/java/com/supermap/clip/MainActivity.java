@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.supermap.analyst.spatialanalyst.OverlayAnalyst;
+import com.supermap.data.Dataset;
 import com.supermap.data.DatasetVector;
 import com.supermap.data.DatasetVectorInfo;
 import com.supermap.data.Datasource;
@@ -136,6 +137,7 @@ public class MainActivity extends Activity implements ReactLinListener{
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.button:
+                    view.removeView(gameView);
                     gameView = new GameView(MainActivity.this);
                     RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                             ViewGroup.LayoutParams.MATCH_PARENT);
@@ -149,18 +151,28 @@ public class MainActivity extends Activity implements ReactLinListener{
                 case R.id.button2:
                     String testname = "clipData";
                     Datasource datasource = glDs;
-                    // 裁剪数据集
-                    String ClipData = ClipDataName;
-                    DatasetVector dataClip = (DatasetVector) datasource.getDatasets().get(
-                            ClipData);
-                    // 创建矢量数据集，用来存储裁剪后的数据
-                    if (datasource.getDatasets().contains(testname)) {
-                        datasource.getDatasets().delete(testname);
+                    boolean isTrue;
+                    if (ClipDataName.contains(testname)){
+                        //若需裁剪的数据集名为“clipData”（即上次裁剪的结果），创建临时的结果集
+                        DatasetVector source = (DatasetVector) datasource.getDatasets().get(testname);
+                        DatasetVectorInfo tempInfo = new DatasetVectorInfo("temp_123", source);
+                        DatasetVector sourceDV = datasource.getDatasets().create(tempInfo);
+                        sourceDV.setPrjCoordSys(source.getPrjCoordSys());
+                        isTrue = OverlayAnalyst.clipEx(source, region, sourceDV, true, false, 0);
+                        datasource.getDatasets().delete(testname);//清除数据源中的源数据集（clipData）
+                        datasource.getDatasets().get("temp_123").setName(testname);//修改临时的数据集名称为“clipData”
+                    }else {
+                        String ClipData = ClipDataName;
+                        DatasetVector dataClip = (DatasetVector) datasource.getDatasets().get(ClipData);
+                        // 创建矢量数据集，用来存储裁剪后的数据
+                        if (datasource.getDatasets().contains(testname)) {
+                            datasource.getDatasets().delete(testname);
+                        }
+                        DatasetVectorInfo datasetResultInfo = new DatasetVectorInfo(testname, dataClip);
+                        DatasetVector SrcDataset = datasource.getDatasets().create(datasetResultInfo);
+                        SrcDataset.setPrjCoordSys(dataClip.getPrjCoordSys());
+                        isTrue = OverlayAnalyst.clipEx(dataClip, region, SrcDataset, true, false, 0);
                     }
-                    DatasetVectorInfo datasetResultInfo = new DatasetVectorInfo(testname, dataClip);
-                    DatasetVector SrcDataset = datasource.getDatasets().create(datasetResultInfo);
-                    SrcDataset.setPrjCoordSys(dataClip.getPrjCoordSys());
-                    boolean isTrue= OverlayAnalyst.clipEx(dataClip, region, SrcDataset, true, false, 0);
                     if(isTrue){
                         mapControl.getMap().getLayers().clear();
                         mapControl.getMap().getLayers().add(glDs.getDatasets().get("clipData"), true);

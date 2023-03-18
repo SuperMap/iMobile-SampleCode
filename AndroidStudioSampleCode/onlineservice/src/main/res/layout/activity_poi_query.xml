@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_selector"
@@ -113,13 +113,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
 
-        <com.supermap.mapping.MapView
-            android:id="@+id/mapView_apq"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </com.supermap.mapping.MapView>
 
         <Button
             android:id="@+id/btnIn_apq"
@@ -168,4 +163,4 @@
             android:text="@string/clear" />
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

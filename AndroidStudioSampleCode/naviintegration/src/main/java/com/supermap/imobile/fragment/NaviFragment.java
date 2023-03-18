@@ -3,7 +3,7 @@ package com.supermap.imobile.fragment;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.supermap.data.CoordSysTransMethod;
 import com.supermap.data.CoordSysTransParameter;

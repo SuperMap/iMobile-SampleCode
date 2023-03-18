@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 //    buildToolsVersion "29.0.2"
 
 
@@ -13,6 +13,9 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
 
     buildTypes {
@@ -39,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar',"*.aar"])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.android.support:multidex:1.0.3'

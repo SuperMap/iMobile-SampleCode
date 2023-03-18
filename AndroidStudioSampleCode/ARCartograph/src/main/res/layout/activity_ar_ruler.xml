@@ -46,12 +46,12 @@
         android:textColor="@android:color/black"
         android:textSize="14sp" />
 
-    <android.support.constraint.Group
-        android:id="@+id/group_ruler_prompt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:constraint_referenced_ids="iv_ruler_prompt,tv_ruler_prompt" />
+<!--    <Group-->
+<!--        android:id="@+id/group_ruler_prompt"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        app:constraint_referenced_ids="iv_ruler_prompt,tv_ruler_prompt" />-->
 
 
     <LinearLayout

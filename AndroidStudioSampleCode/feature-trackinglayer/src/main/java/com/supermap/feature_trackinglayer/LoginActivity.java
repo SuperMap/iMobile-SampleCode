@@ -4,9 +4,11 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.supermap.data.Environment;
 import com.supermap.data.LicenseStatus;

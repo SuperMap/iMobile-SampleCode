@@ -73,7 +73,8 @@ import pub.devrel.easypermissions.EasyPermissions;
  *  (3)点击【路径分析】按钮，进行路径分析
  *  (4)路径分析结束后，点击【开始引导】按钮，进行引导，引导过程将在地图上显示出来
  *  
- * 5、注意： 
+ * 5、注意：
+ * 	需要依赖navigationplus.aar包
  *	如果运行本范例失败，常见原因是缺少语音资源。解决办法：请将产品包中Resource文件夹下的voice文件夹拷贝到工程目录中的assets文件夹下。
  * ------------------------------------------------------------------------------
  * ============================================================================>
@@ -240,13 +241,13 @@ public class Main extends Activity implements OnClickListener{
     private void initData(){
     	mWorkspace = new Workspace();
     	mNavi = mMapControl.getNavigation();
-    	
-    	DatasourceConnectionInfo info = new DatasourceConnectionInfo();
-    	String dataServer = "http://supermapcloud.com";
-		info.setEngineType(EngineType.SuperMapCloud);
-		info.setAlias("SuperMapCloud");
-		info.setServer(dataServer);
-		Datasource datasource = mWorkspace.getDatasources().open(info);
+
+		//加载高德矢量图 作为地图。0为矢量，1为影像
+		DatasourceConnectionInfo dsInfo = new DatasourceConnectionInfo();
+		dsInfo.setEngineType(EngineType.GaoDeMaps);
+		dsInfo.setDriver("WMTS");
+		dsInfo.setAlias("gaode");
+		Datasource datasource = mWorkspace.getDatasources().open(dsInfo);
     	
     	mMapControl.getMap().setWorkspace(mWorkspace);
     	mMapControl.getMap().setFullScreenDrawModel(true);               // 使用导航中地图旋转功能前，需提前设置整屏刷新，导航中点击界面左上方的"指南针"按钮即可实现地图旋转，但不支持网络地图，仅矢量地图可用

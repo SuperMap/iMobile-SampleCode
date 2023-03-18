@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="theme_button">#008577</color>
-    <color name="color_check_bg">#D81B60</color>
-    <color name="login_button">#FFFFFF</color>
-    <color name="download_button">#FFFFFF</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="a999">#333</color>
+    <color name="a333">#999</color>
+    <color name="red">#FB1403</color>
+    <color name="blue">#00BCD4</color>
+    <color name="my_yellow">#FBDA79</color>
+    <color name="my_green">#1CB979</color>
 </resources>

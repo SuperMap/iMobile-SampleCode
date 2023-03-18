@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity"
+    tools:ignore="MissingDefaultResource">
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:onClick="toMainActivity"
+            android:textSize="12sp"
+            android:text="(旧)导航指引示例"
+            android:layout_width="120dp"
+            android:layout_height="50dp"/>
+        <Button
+            android:onClick="toFlowElementActivity"
+            android:textSize="12sp"
+            android:text="流动指引示例"
+            android:layout_width="120dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="AR导航指引：\n
+ 1、通过路径分析功能获取路径的节点\n
+ 2、将路径分析结果转换为AR场景坐标\n
+ 3、根据AR场景坐标点集放置箭头指引"
+        android:textSize="12sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -6,16 +6,18 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.view.KeyEvent;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.navigation.NavigationView;
 import com.supermap.data.Datasource;
 import com.supermap.data.DatasourceConnectionInfo;
 import com.supermap.data.EngineType;
@@ -203,29 +205,15 @@ public class  MainActivity extends AppCompatActivity
         mWorkspace = new Workspace();
         mMapControl.getMap().setWorkspace(mWorkspace);
 
-        String url = RootPath + "/sampledata/DataConversion/World.udb";
-        DatasourceConnectionInfo info = new DatasourceConnectionInfo();
-        info.setAlias("OSM");
-        info.setEngineType(EngineType.UDB);
-        info.setServer(url);
-//        info.setDriver("WMTS");
-
-        Datasource datasource = mWorkspace.getDatasources().open(info);
-        if(datasource != null){
-            mMapControl.getMap().getLayers().add(datasource.getDatasets().get("dxfimport_3"),true);
+        WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
+        info.setServer(RootPath + "/sampledata/ThematicMaps/Thematicmaps.smwu");
+        info.setType(WorkspaceType.SMWU);
+        if (mWorkspace.open(info)) {
+            mMapControl.getMap().setWorkspace(mWorkspace);
+            String mapname = mWorkspace.getMaps().get(1);
+            mMapControl.getMap().open(mapname);
+            mMapControl.getMap().viewEntire();
         }
-        mMapControl.getMap().viewEntire();
-//        WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
-//        info.setServer(RootPath + "/sampledata/ThematicMaps/Thematicmaps.smwu");
-//        info.setServer(RootPath + "/sampledata/DataConversion/World.smwu");
-//        info.setType(WorkspaceType.SMWU);
-//        if (mWorkspace.open(info)) {
-//            mMapControl.getMap().setWorkspace(mWorkspace);
-////            mMapControl.getMap().getLayers().add(mWorkspace.getDatasources().get(0).getDatasets().get("dxfimport_3"), true);
-//            String mapname = mWorkspace.getMaps().get(1);
-//            mMapControl.getMap().open(mapname);
-//            mMapControl.getMap().viewEntire();
-//        }
 
     }
 

@@ -47,6 +47,8 @@ FloorListView
 	点击【清除】按钮，可以清除现有路径结果，再重新分析路径
 
 ##注意
+	需要依赖navigationplus.aar包
+
 	如果缺少语音播报，原因是缺少语音资源。
 
 	解决办法: 请将产品包中Resource文件夹下的voice文件夹拷贝到工程目录中的assets文件夹下。

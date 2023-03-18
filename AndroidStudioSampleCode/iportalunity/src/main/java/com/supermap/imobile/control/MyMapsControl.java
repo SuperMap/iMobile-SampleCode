@@ -39,10 +39,10 @@ public class MyMapsControl {
     public void getMyMaps() {
         try {
             mPullToRefreshView.setRefreshing(true);
-            IPortalService.getInstance().addOnResponseListener(listener);
+
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
-            IPortalService.getInstance().getMyMaps(searchParameter);
+            IPortalService.getInstance().getMyMaps(searchParameter,listener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,10 +55,10 @@ public class MyMapsControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(listener);
+
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
-                IPortalService.getInstance().getMyMaps(searchParameter);
+                IPortalService.getInstance().getMyMaps(searchParameter,listener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -70,7 +70,7 @@ public class MyMapsControl {
      */
     private OnResponseListener listener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(final Exception exception) {
             mMainActivity.runOnUiThread(() -> {
                 Toast.makeText(mMainActivity,"刷新失败：" + exception.getMessage(), Toast.LENGTH_SHORT).show();
                 mPullToRefreshView.setRefreshing(false);
@@ -78,7 +78,7 @@ public class MyMapsControl {
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             String responseBody = null;
             MapsBean mapsBean = null;
             try {

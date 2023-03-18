@@ -109,14 +109,14 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                             Toast.makeText(UserScrollingActivity.this, "昵称不能为空", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        IPortalService.getInstance().addOnResponseListener(new OnResponseListener() {
+                        IPortalService.getInstance().updateNickname(trim, new OnResponseListener() {
                             @Override
-                            public void onFailed(Exception exception) {
-                                runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
+                            public void onError(Exception e) {
+
                             }
 
                             @Override
-                            public void onResponse(Response response) {
+                            public void onComplete(Response response) {
                                 JSONObject root;
                                 try {
                                     String responseBody = response.body().string();
@@ -144,7 +144,6 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                                 }
                             }
                         });
-                        IPortalService.getInstance().updateNickname(trim);
                         break;
                     case R.id.rb_password:
                         String originPassword = edt_origin_password.getText().toString().trim();
@@ -166,14 +165,14 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                             Toast.makeText(UserScrollingActivity.this, "两次输入的新密码不一致", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        IPortalService.getInstance().addOnResponseListener(new OnResponseListener() {
+                        IPortalService.getInstance().updatePassword(newPassword, originPassword, new OnResponseListener() {
                             @Override
-                            public void onFailed(Exception exception) {
-                                runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
+                            public void onError(Exception e) {
+
                             }
 
                             @Override
-                            public void onResponse(Response response) {
+                            public void onComplete(Response response) {
                                 JSONObject root;
                                 try {
                                     String responseBody = response.body().string();
@@ -206,7 +205,6 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                                 }
                             }
                         });
-                        IPortalService.getInstance().updatePassword(newPassword, originPassword);
                         break;
                     case R.id.rb_question:
                         String security_answer = edt_security_answer.getText().toString().trim();
@@ -214,35 +212,7 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                             Toast.makeText(UserScrollingActivity.this, "答案不能为空", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        IPortalService.getInstance().addOnResponseListener(new OnResponseListener() {
-                            @Override
-                            public void onFailed(Exception exception) {
-                                runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
-                            }
 
-                            @Override
-                            public void onResponse(Response response) {
-                                JSONObject root;
-                                try {
-                                    String responseBody = response.body().string();
-                                    root = new JSONObject(responseBody);
-                                    if (root.has("succeed")) {
-                                        boolean succeed = root.getBoolean("succeed");
-                                        if (succeed) {
-                                            runOnUiThread(() -> {
-                                                Toast.makeText(UserScrollingActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
-                                            });
-                                        } else {
-                                            runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, "更新失败", Toast.LENGTH_SHORT).show());
-                                        }
-                                    }
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });
                         int selectedItemPosition = mSpinner.getSelectedItemPosition();
                         String pwdQuestion = "";
                         switch (selectedItemPosition) {
@@ -274,7 +244,36 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                                 pwdQuestion = "home";
                                 break;
                         }
-                        IPortalService.getInstance().updateSecurityQuestion(pwdQuestion, security_answer);
+                        IPortalService.getInstance().updateSecurityQuestion(pwdQuestion, security_answer, new OnResponseListener() {
+                            @Override
+                            public void onError(Exception exception) {
+                                runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
+
+                            }
+
+                            @Override
+                            public void onComplete(Response response) {
+                                JSONObject root;
+                                try {
+                                    String responseBody = response.body().string();
+                                    root = new JSONObject(responseBody);
+                                    if (root.has("succeed")) {
+                                        boolean succeed = root.getBoolean("succeed");
+                                        if (succeed) {
+                                            runOnUiThread(() -> {
+                                                Toast.makeText(UserScrollingActivity.this, "更新成功", Toast.LENGTH_SHORT).show();
+                                            });
+                                        } else {
+                                            runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, "更新失败", Toast.LENGTH_SHORT).show());
+                                        }
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
                         break;
                     case R.id.rb_email:
                         String email = edt_email.getText().toString().trim();
@@ -282,14 +281,16 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                             Toast.makeText(UserScrollingActivity.this, "邮箱地址不能为空", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        IPortalService.getInstance().addOnResponseListener(new OnResponseListener() {
+
+                        IPortalService.getInstance().updateEmail(email, new OnResponseListener() {
                             @Override
-                            public void onFailed(Exception exception) {
+                            public void onError(Exception exception) {
                                 runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
+
                             }
 
                             @Override
-                            public void onResponse(Response response) {
+                            public void onComplete(Response response) {
                                 JSONObject root;
                                 try {
                                     if (response.code() != 200) {
@@ -318,7 +319,6 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
                                 }
                             }
                         });
-                        IPortalService.getInstance().updateEmail(email);
                         break;
                 }
             }
@@ -361,8 +361,8 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
             }
         });
 
-        IPortalService.getInstance().addOnResponseListener(this);
-        IPortalService.getInstance().getMyAccount();
+
+        IPortalService.getInstance().getMyAccount(this);
     }
 
     @Override
@@ -384,8 +384,8 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
             logout();
             return true;
         } else if (id == R.id.update_account) {
-            IPortalService.getInstance().addOnResponseListener(this);
-            IPortalService.getInstance().getMyAccount();
+
+            IPortalService.getInstance().getMyAccount(this);
             return true;
         }
 
@@ -393,19 +393,29 @@ public class UserScrollingActivity extends AppCompatActivity implements OnRespon
     }
 
     private void logout() {
-        IPortalService.getInstance().logout("http://" + IPortalService.getInstance().getIPortalServiceHost() + "/services");
+        IPortalService.getInstance().logout("http://" + IPortalService.getInstance().getIPortalServiceHost() + "/services", new OnResponseListener() {
+            @Override
+            public void onError(Exception e) {
+
+            }
+
+            @Override
+            public void onComplete(Response response) {
+
+            }
+        });
         finish();
         EventBus.getDefault().post(new LogoutEvent.Builder().setMode("MainActivity").build());
         startActivity(new Intent(UserScrollingActivity.this, LoginActivity.class));
     }
 
     @Override
-    public void onFailed(Exception exception) {
+    public void onError(Exception exception) {
         runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     @Override
-    public void onResponse(Response response) {
+    public void onComplete(Response response) {
         try {
             if (response.code() != 200) {
                 runOnUiThread(() -> Toast.makeText(UserScrollingActivity.this, "请检查服务地址是否正确:\n" + response.code() + ": " + response.request().url(), Toast.LENGTH_LONG).show());

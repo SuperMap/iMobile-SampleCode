@@ -45,42 +45,31 @@ package com.supermap.arnavigation;
  *
  */
 
-import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.are.sceneform.ARPlatForm;
+import com.google.are.sceneform.rendering.ModelRenderable;
 import com.supermap.ar.arlayer.ARLayerView;
-import com.supermap.data.DatasourceConnectionInfo;
-import com.supermap.data.EngineType;
 import com.supermap.data.Environment;
 import com.supermap.data.Point3D;
-import com.supermap.data.Workspace;
-import com.supermap.data.Datasource;
 import com.supermap.data.Point2D;
-import com.supermap.mapping.CallOut;
-import com.supermap.mapping.CalloutAlignment;
-import com.supermap.mapping.Map;
-import com.supermap.mapping.MapControl;
-import com.supermap.mapping.MapView;
+import com.supermap.hiar.ARCamera;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.net.Uri;
-import android.os.Build;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Button;
+import android.widget.Toast;
 
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-
-import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -90,72 +79,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //存储路线点坐标
     private ArrayList<Point3D> mNaviRoutePoints = new ArrayList<>();
-    private ImageButton mIsUserPositionBtn;
+    private ImageView mIsUserPositionBtn;
     private boolean showLine = true;
     public boolean isUserPosition = false; //是否接受第三方坐标输入
 
     private ModelRenderable mFinalDesModelRenderable = null;
     private ModelRenderable mArrowMarkerModelRenderable = null;
-    private ImageButton mModule;
-    /**
-     * 需要申请的权限数组
-     */
-    protected String[] needPermissions = {
-            Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.READ_PHONE_STATE,
-            Manifest.permission.ACCESS_WIFI_STATE,
-            Manifest.permission.ACCESS_NETWORK_STATE,
-            Manifest.permission.CHANGE_WIFI_STATE,
-            Manifest.permission.CAMERA,
-    };
+    private ImageView mModule;
 
     /**
-     * 检测权限
-     * return true:已经获取权限
-     * return false: 未获取权限，主动请求权限
+     * 偏移角度
      */
-
-    public boolean checkPermissions(String[] permissions) {
-        return EasyPermissions.hasPermissions(this, permissions);
-    }
-
-    /**
-     * 申请动态权限
-     */
-    private void requestPermissions() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return;
-        }
-        if (!checkPermissions(needPermissions)) {
-            EasyPermissions.requestPermissions(
-                    this,
-                    "为了应用的正常使用，请允许以下权限。",
-                    0,
-
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.READ_PHONE_STATE,
-                    Manifest.permission.ACCESS_WIFI_STATE,
-                    Manifest.permission.ACCESS_NETWORK_STATE,
-                    Manifest.permission.CHANGE_WIFI_STATE,
-                    Manifest.permission.CAMERA);
-            //没有授权，编写申请权限代码
-        } else {
-            //已经授权，执行操作代码
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // Forward results to EasyPermissions
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
+    private float offsetAngle = 0.0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestPermissions() ;
+
+        //针对即支持ARCore，又支持AREngine的设备，通过AREngine.enforceARCore()可强制使用ARCore
+        //在2020年之前的华为设备会支持ARCore，详情参考ARCore支持列表。
+//        AREngine.enforceARCore();
+
 
         //组件功能必须在 Environment 初始化之后才能调用
         Environment.initialization(this);
@@ -163,12 +107,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initView();
 
-        initNaviLine();
 
-        initParam();
+        /**
+         * 注意事项：
+         * AREngine与ARCore在场景初始化时，场景的世界坐标系的X轴的朝向有所不同
+         * ARCore场景启动时，X轴为右方。
+         * AREngine场景启动时，X轴方向与正右方之间有一个偏移角度。
+         * 在AREngine场景启动后，通过ARCamera.getOffsetAngle()可获取到这个偏移角度。或是通过ARCamera.setInitCallback()设置回调事件
+         * */
+        ARCamera.setInitCallback(new ARCamera.InitCallback() {
+            @Override
+            public void complete(float angle) {
+                offsetAngle = angle;
+                Toast.makeText(mContext, "当前平台："+ ARPlatForm.getEngineType() +"\n偏移角:" + offsetAngle, Toast.LENGTH_SHORT).show();
 
-        //刷新场景位置
-        updatePosition();
+                initNaviLine(offsetAngle);//onCreate
+                initParam();
+                //刷新场景位置
+                updatePosition();
+            }
+        });
+
     }
 
     private void initView() {
@@ -189,12 +148,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //设置场景刷新间隔，默认1000ms,单位ms
         mARLayerView.setRefreshInterval(1000);
         /**
-         * 通过异步加载导航箭头，终点模型;  修改sampleData文件下对应的.sfa文件调整模型颜色，透明度，大小等。
+         * 通过异步加载导航箭头，终点模型;  可通过三方软件（如：Blender）编辑glb模型，不再使用sfa/sfb
          */
-        CompletableFuture<ModelRenderable> finalDesFuture = ModelRenderable.builder().setSource(mContext,
-                Uri.parse("file:///android_asset/blue.sfb")).build();
-        CompletableFuture<ModelRenderable> arrowFuture = ModelRenderable.builder().setSource(mContext,
-                Uri.parse("file:///android_asset/arrowv6.sfb")).build();
+        CompletableFuture<ModelRenderable> finalDesFuture = ModelRenderable.builder()
+                .setSource(mContext, R.raw.targetv2)
+                .setIsFilamentGltf(true)/*使用GLTF模型，此处设置为true*/
+                .build();
+        CompletableFuture<ModelRenderable> arrowFuture = ModelRenderable.builder().setSource(mContext,R.raw.arrowv9)
+                .setIsFilamentGltf(true)
+                .build();
         CompletableFuture.allOf(finalDesFuture, arrowFuture).handle(
                 (notUsed, throwable) -> {
                     try
@@ -211,27 +173,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     return null;
                 });
 
-
     }
 
     /**
      * 添加导航箭头位置点
      */
-    private void initNaviLine() {
+    private void initNaviLine(float offsetAngle) {
 
-        mNaviRoutePoints.add(new Point3D(0.127096980,0.57685166,0));
-        mNaviRoutePoints.add(new Point3D(0.047429360,1.058599591,0));
-        mNaviRoutePoints.add(new Point3D(-0.4301927,5.4954524040,0));
-        mNaviRoutePoints.add(new Point3D(-1.0029597, 11.6404361724,0));
-        mNaviRoutePoints.add(new Point3D(1.985295534, 12.197192192,0));
-        mNaviRoutePoints.add(new Point3D(5.752028465, 9.786989212,0));
-        mNaviRoutePoints.add(new Point3D(5.520273685, 12.614511911,0));
-        mNaviRoutePoints.add(new Point3D(6.569637200, 8.17261314,0));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(0.127096980f,0.57685166f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(0.047429360f,1.058599591f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(-0.4301927f,5.4954524040f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(-1.0029597f, 11.6404361724f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(1.985295534f, 12.197192192f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(5.752028465f, 9.786989212f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(5.520273685f, 12.614511911f,0)));
+        mNaviRoutePoints.add(Utils.correctPosition(offsetAngle,new Point3D(6.569637200f, 8.17261314f,0)));
     }
-
 
     private static final int TIMER = 999;
     private boolean flag = true;
+    @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -276,6 +237,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
         mARLayerView.onResume();
         showLine = true;
+
     }
 
     @Override
@@ -297,18 +259,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (null == mARLayerView) {
                     break;
                 }
-
-                if (isUserPosition == true) {
-                    isUserPosition = false;
-                    //依赖AR场景位置更新，不依赖GPS等第三方数据
-                    mARLayerView.setUserPosition(isUserPosition);
-                    mIsUserPositionBtn.setBackgroundResource(R.drawable.arcity_enable);
-                } else {
-                    isUserPosition = true;
-                    //接受第三方坐标输入，依赖GPS位置进行AR场景更新，受GPS精度和地磁影响
-                    mARLayerView.setUserPosition(isUserPosition);
-                    mIsUserPositionBtn.setBackgroundResource(R.drawable.arcity_disable);
-                }
+                /**
+                 * 注：
+                 * 当需要设置外部的三方GPS数据时，
+                 * 通过{@link ARLayerView#setUserPosition(boolean)}方法，
+                 * 参数设置为true，通过{@link ARLayerView#setCurrentPosition(Point2D)}
+                 * 传入当前的位置点。
+                 */
+                Toast.makeText(mContext, "请参考源码注释，接入三方数据！", Toast.LENGTH_SHORT).show();
+//                if (isUserPosition) {
+//                    isUserPosition = false;
+//                    //依赖AR场景位置更新，不依赖GPS等第三方数据
+//                    mARLayerView.setUserPosition(isUserPosition);
+//                    mIsUserPositionBtn.setBackgroundResource(R.drawable.arcity_enable);
+//                } else {
+//                    isUserPosition = true;
+//                    //接受第三方坐标输入，依赖GPS位置进行AR场景更新，受GPS精度和地磁影响
+//                    mARLayerView.setUserPosition(isUserPosition);
+//                    mIsUserPositionBtn.setBackgroundResource(R.drawable.arcity_disable);
+//                }
                 break;
 
             case R.id.btn_module:
@@ -320,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 } else {
                     showLine = true;
-                    initNaviLine();
+                    initNaviLine(offsetAngle);
                     mModule.setBackgroundResource(R.drawable.enable_guide_arrow);
                 }
 

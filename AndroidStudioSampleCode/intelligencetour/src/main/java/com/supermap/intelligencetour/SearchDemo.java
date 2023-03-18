@@ -98,10 +98,15 @@ public class SearchDemo extends AppCompatActivity implements View.OnClickListene
 
         DatasourceConnectionInfo info = new DatasourceConnectionInfo();
 
-        info.setAlias("GoogleMaps");
-        info.setEngineType(EngineType.GoogleMaps);
-        info.setReadOnly(false);
-        info.setServer("http://www.google.cn/maps");
+//        info.setAlias("GoogleMaps");
+//        info.setEngineType(EngineType.GoogleMaps);
+//        info.setReadOnly(false);
+//        info.setServer("http://www.google.cn/maps");
+
+        info.setServer("http://t0.tianditu.gov.cn/vec_c/wmts?tk=58ac8e6ae418fcf77eece945a3ec4feb");
+        info.setAlias("tianditu");
+        info.setDriver("WMTS");
+        info.setEngineType(EngineType.OGC);
 
 
         //打开数据源

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/box"
+    android:layout_width="66dp"
+    android:layout_height="96dp">
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="6dp"
+            android:layout_height="120dp"
+            android:background="@drawable/building_line"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/bg_opacity_roundcorner"
+        android:layout_width="match_parent"
+        android:layout_height="66dp">
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="3dp">
+        </View>
+        <TextView
+            android:id="@+id/title_poi"
+            android:text="loading..."
+            android:gravity="center"
+            android:textSize="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="3dp"/>
+
+        <ScrollView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="123dp">
+            <TextView
+                android:id="@+id/content_poi"
+                android:layout_width="match_parent"
+                android:textSize="6sp"
+                android:layout_height="match_parent"
+                android:text="loading..."/>
+        </ScrollView>
+
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="3dp">
+        </View>
+    </RelativeLayout>
+
+
+<!--    <TextView
+        android:id="@+id/close_btn"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:background="@drawable/poi_element_btn_bg"
+        android:text="X"
+        android:layout_marginTop="8dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+    <TextView
+        android:id="@+id/change_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:background="@drawable/poi_element_btn_bg"
+        android:text="——"
+        android:layout_marginTop="8dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>-->
+</RelativeLayout>

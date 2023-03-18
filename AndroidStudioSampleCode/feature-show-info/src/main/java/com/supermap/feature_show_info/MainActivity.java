@@ -1,35 +1,25 @@
 package com.supermap.feature_show_info;
 
-import android.graphics.Color;
-import android.graphics.Point;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.supermap.data.CursorType;
-import com.supermap.data.DatasetVector;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.supermap.data.Datasource;
 import com.supermap.data.DatasourceConnectionInfo;
 import com.supermap.data.EngineType;
 import com.supermap.data.Point2D;
-import com.supermap.data.QueryParameter;
-import com.supermap.data.Recordset;
 import com.supermap.data.Workspace;
-import com.supermap.data.WorkspaceConnectionInfo;
-import com.supermap.data.WorkspaceType;
 import com.supermap.mapping.CallOut;
 import com.supermap.mapping.CalloutAlignment;
-import com.supermap.mapping.Layer;
 import com.supermap.mapping.Map;
 import com.supermap.mapping.MapControl;
 import com.supermap.mapping.MapView;
@@ -95,9 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         DatasourceConnectionInfo info = new DatasourceConnectionInfo();
         info.setAlias("GOOGLE");
-        info.setEngineType(EngineType.GoogleMaps);
-        String url3 = "http://www.google.cn/maps";
-        info.setServer(url3);
+        info.setEngineType(EngineType.GaoDeMaps);
         Datasource datasourcegoogle = mWorkspace.getDatasources().open(info);
 
 

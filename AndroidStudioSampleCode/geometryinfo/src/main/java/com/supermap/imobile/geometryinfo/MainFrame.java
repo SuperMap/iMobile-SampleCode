@@ -319,10 +319,10 @@ public class MainFrame extends Activity implements OnTouchListener{
 			ptInner = geometry.getInnerPoint();
 			
         	LayoutInflater lfCallOut = getLayoutInflater();
-    		View calloutLayout = lfCallOut.inflate(R.layout.callout2, null);
+    		View calloutLayout = lfCallOut.inflate(R.layout.layout_poi, null);
     		
-    		Button btnSelected = (Button)calloutLayout.findViewById(R.id.btnSelected);
-    		btnSelected.setText(geometry.getID() + "");
+    		TextView btnSelected = (TextView)calloutLayout.findViewById(R.id.tv_poiname);
+    		btnSelected.setText(recordset.getString("国家"));
     		btnSelected.setTag(geometry.getID());
     		btnSelected.setOnClickListener(new detailClickListener());	
 			

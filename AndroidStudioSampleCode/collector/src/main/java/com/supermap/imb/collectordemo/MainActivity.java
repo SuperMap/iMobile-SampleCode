@@ -88,7 +88,7 @@ import android.widget.Toast;
  * </p>
  * 
  */
-public class MainActivity extends Activity implements OnClickListener, OnTouchListener{
+public class MainActivity extends Activity implements OnClickListener, OnTouchListener, TencentLocTool.LocationChangedListener{
 	private MapView mMapView = null;
 	private MapControl mMapControl = null;
 	private DynamicView mDynamicView = null;
@@ -109,7 +109,7 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
 	/*private*/ Point2D mPoint2D = new Point2D(0, 0);//(116.499861111,39.9833333333)
 	/*private*/ double mAccuracy = 0;
 	
-	TencentLocation m_MyLocation = null;
+
 	Point2D mCurrentPnt2D = new Point2D(0, 0);//0,0
 	//几何计算30米范围对应的度数 *2
 	final public double dUnit = 2.694945898329385 * 2 * Math.pow(10, -4);
@@ -347,6 +347,8 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
 			break;
 		//添加对象
 		case R.id.btnObject:
+//			collector.finishSubmit();
+			collector.finshSubmit();
 			mMapControl.setAction(Action.CREATEPOLYGON);
 			mMapControl.getMap().getLayers().get(0).setEditable(true);
 			break;
@@ -610,7 +612,8 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
 		startSensor();
 
 		//腾讯定位
-		m_MyLocation = new TencentLocation(this);
+		TencentLocTool.getInstance().init(this);
+		TencentLocTool.getInstance().setLocationManager(this::locationChangedListener);
 	}
 	
 	/**
@@ -890,5 +893,26 @@ public class MainActivity extends Activity implements OnClickListener, OnTouchLi
 		((RadioButton)findViewById(R.id.btn_edit)).setChecked(false);
 		((RadioButton)findViewById(R.id.btn_setting)).setChecked(false);
 		((RadioButton)findViewById(R.id.btn_measure)).setChecked(false);
+	}
+
+	@Override
+	public void locationChangedListener(Point2D point2D, double accuracy, float bearing) {
+		PrjCoordSys Prj = mMapControl.getMap().getPrjCoordSys();
+		if (Prj.getType() != PrjCoordSysType.PCS_EARTH_LONGITUDE_LATITUDE) {
+			Point2Ds points = new Point2Ds();
+			points.add(point2D);
+			PrjCoordSys desPrjCoorSys = new PrjCoordSys();
+			desPrjCoorSys.setType(PrjCoordSysType.PCS_EARTH_LONGITUDE_LATITUDE);
+			CoordSysTranslator.convert(points, desPrjCoorSys, Prj,
+					new CoordSysTransParameter(),
+					CoordSysTransMethod.MTH_GEOCENTRIC_TRANSLATION);
+			mPoint2D.setX(points.getItem(0).getX());
+			mPoint2D.setY(points.getItem(0).getY());
+			mAccuracy = accuracy;
+
+			//绘制当前定位的位置
+			drawCircleOnDyn(mPoint2D, mAzimuth, mAccuracy);
+			showInfo("位置发生变化");
+		}
 	}
 }

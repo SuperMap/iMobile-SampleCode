@@ -9,6 +9,10 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
+
+        ndk{
+            abiFilters 'armeabi-v7a'
+        }
     }
     sourceSets {
         main {
@@ -41,5 +45,18 @@ dependencies {
     implementation "com.android.support:design:28.0.0"
     implementation 'com.android.support:multidex:1.0.2'
 
+    /**提示：
+     * 在项目的gradle.properties中添加可自动将Android三方依赖转换为AndroidX
+     * android.useAndroidX=true
+     * android.enableJetifier=true
+     * */
+
+//    implementation 'androidx.appcompat:appcompat:1.3.0'
+//    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.0.0-alpha1'
+//    implementation 'com.google.android.material:material:1.4.0'
+
+    implementation project(path: ':plot')
+    implementation files('libs\\com.supermap.data_v1100.jar')
+    implementation files('libs\\com.supermap.mapping_v1100.jar')
 
 }

@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.are.sceneform.Scene;
 import com.supermap.ar.Point3D;
+import com.supermap.data.Environment;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -69,6 +71,9 @@ import pub.devrel.easypermissions.EasyPermissions;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "AREffectSample";
+    public static final String SDCARD = android.os.Environment.getExternalStorageDirectory().getAbsolutePath().toString();
+    public static final String LICENSE_PATH = SDCARD + "/SuperMap/license/";
+
     private AREffectView arFragment;//特效控件
 
     ARAnimationGroup animationGroup;//动画组
@@ -89,12 +94,14 @@ public class MainActivity extends AppCompatActivity {
 //        super.onPause();
 //        arFragment.onPause();
 //    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestPermissions();//请求权限
+
+        //许可设置,注意：11i之后的版本，需要设置许可
+        Environment.setLicensePath(/*许可路径*/LICENSE_PATH);
+        Environment.initialization(this);
 
         setContentView(R.layout.activity_main);
         arFragment = findViewById(R.id.ar_effect);
@@ -221,7 +228,14 @@ public class MainActivity extends AppCompatActivity {
         }
         String[] needPermissions = {
                 Manifest.permission.CAMERA,
-                Manifest.permission.READ_PHONE_STATE
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.CHANGE_WIFI_STATE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
         };
         if (!checkPermissions(needPermissions)) {
             EasyPermissions.requestPermissions(

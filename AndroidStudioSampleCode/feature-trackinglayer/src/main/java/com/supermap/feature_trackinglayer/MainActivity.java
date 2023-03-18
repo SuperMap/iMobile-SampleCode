@@ -1,28 +1,22 @@
 package com.supermap.feature_trackinglayer;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-import com.supermap.data.Color;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.supermap.data.Datasource;
 import com.supermap.data.DatasourceConnectionInfo;
 import com.supermap.data.EngineType;
-import com.supermap.data.GeoPoint;
-import com.supermap.data.GeoStyle;
 import com.supermap.data.Point2D;
-import com.supermap.data.Size2D;
 import com.supermap.data.Workspace;
-import com.supermap.data.WorkspaceConnectionInfo;
-import com.supermap.data.WorkspaceType;
 import com.supermap.mapping.CallOut;
 import com.supermap.mapping.CalloutAlignment;
 import com.supermap.mapping.MapControl;
 import com.supermap.mapping.MapView;
-import com.supermap.mapping.TrackingLayer;
 /**
  * <p>
  * Title:要素展示
@@ -75,9 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         DatasourceConnectionInfo info = new DatasourceConnectionInfo();
         info.setAlias("GOOGLE");
-        info.setEngineType(EngineType.GoogleMaps);
-        String url3 = "http://www.google.cn/maps";
-       info.setServer(url3);
+        info.setEngineType(EngineType.GaoDeMaps);
         Datasource datasourcegoogle = mWorkspace.getDatasources().open(info);
 
 

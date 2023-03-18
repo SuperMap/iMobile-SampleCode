@@ -45,7 +45,14 @@ package com.supermap.indoornavigation;
  * 
  */
 
+import com.supermap.data.CursorType;
+import com.supermap.data.Dataset;
+import com.supermap.data.DatasetVector;
 import com.supermap.data.Environment;
+import com.supermap.data.FieldInfos;
+import com.supermap.data.GeoPoint;
+import com.supermap.data.Geometry;
+import com.supermap.data.Recordset;
 import com.supermap.data.Workspace;
 import com.supermap.data.WorkspaceConnectionInfo;
 import com.supermap.data.WorkspaceType;
@@ -71,12 +78,18 @@ import android.Manifest;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 import android.widget.Button;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -90,7 +103,8 @@ public class MainActivity extends Activity {
 	private FloorListView m_floorListView = null;
 	
 	private boolean bLongPressEnable = false;	//地图长按状态（true：长按可添加控制点，falae:不可添加控制点）
-	
+	private Datasource datasource;
+
 	//当前操作状态，包括添加起点、添加途径点、添加终点、分析、导航、无状态
 	private enum NAVI_STATE {STATE_ADDSTARTPOINT, STATE_ADDVIAPOINT, 
 							STATE_ADDENDPOINT, STATE_ANALYSE, 
@@ -106,6 +120,10 @@ public class MainActivity extends Activity {
 	Button m_btnAnalyse;
 	Button m_btnNavi;
 	Button m_btnClear;
+	Button modeChangeBtn;
+	private boolean mode = true;
+
+
 	/**
 	 * 需要申请的权限数组
 	 */
@@ -131,14 +149,32 @@ public class MainActivity extends Activity {
         Environment.initialization(this);
 
         setContentView(R.layout.activity_main);
-          
-        //打开工作空间
+
+        //模式切换
+		modeChangeBtn = findViewById(R.id.change_btn);
+		modeChangeBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//切换路径分析模式：ture时，分析路径经过始终点的最近门
+				mode = !mode;
+				if (mode){
+					Toast.makeText(getApplicationContext(),"分析路径通过最近门",Toast.LENGTH_SHORT).show();
+					((Button)v).setText("模式（T）");
+				}else {
+					Toast.makeText(getApplicationContext(),"分析路径不通过最近门",Toast.LENGTH_SHORT).show();
+					((Button)v).setText("模式（F）");
+				}
+				m_NavigationEx.setNearestDoorMode(mode);
+			}
+		});
+
+		//打开工作空间
         m_wokspace = new Workspace();
         WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
         info.setServer(sdcard+"/SampleData/IndoorNavigationData/beijing.smwu");
         info.setType(WorkspaceType.SMWU);
         m_wokspace.open(info);
-              
+
         //将地图显示控件和工作空间关联
         m_mapView = (MapView)findViewById(R.id.Map_view);
         m_mapControl =  m_mapView.getMapControl();
@@ -153,6 +189,8 @@ public class MainActivity extends Activity {
         m_mapControl.getMap().refresh();
       
         m_NavigationEx = m_mapControl.getNavigation3();
+		m_NavigationEx.setNearestDoorMode(mode);//设置路径分析时是否查找最近门
+		
         m_floorListView = (FloorListView)findViewById(R.id.floor_list_view);
         m_floorListView.linkMapControl(m_mapControl);
         m_mapControl.setGestureDetector(new GestureDetector(m_mapControl.getContext(), mGestrueListener));
@@ -228,7 +266,7 @@ public class MainActivity extends Activity {
         m_btnNavi = (Button)findViewById(R.id.buttonNavigation);
         m_btnClear = (Button)findViewById(R.id.buttonClear);
    }
-    
+
     //起点按钮事件
     public void buttonStart_Click(View view)
     {
@@ -283,6 +321,7 @@ public class MainActivity extends Activity {
 		m_NavigationEx.setDatasource(datasource);
 		
     	//路径分析
+//		m_NavigationEx.setNearestDoorMode(true);//设置自动找最近门的模式
     	boolean bResult = m_NavigationEx.routeAnalyst();
     	if(bResult){
     		Toast.makeText(m_mapControl.getContext(), "分析成功", Toast.LENGTH_SHORT).show();
@@ -327,7 +366,7 @@ public class MainActivity extends Activity {
     
     private GestureDetector.SimpleOnGestureListener mGestrueListener = new SimpleOnGestureListener(){
 		public void onLongPress(MotionEvent e) {
-			
+
 			//非长按状态（添加起点、终点或途径点状态），返回，不操作
 			if(!bLongPressEnable){
 				return;
@@ -352,7 +391,8 @@ public class MainActivity extends Activity {
 				CoordSysTranslator.convert(points, m_mapControl.getMap().getPrjCoordSys(), desPrjCoorSys, new CoordSysTransParameter(), CoordSysTransMethod.MTH_GEOCENTRIC_TRANSLATION);
 				pt = points.getItem(0);
 			}
-			
+
+
 			switch (m_naviState){
 			case STATE_ADDSTARTPOINT:	
 				//设置起点：可以连续设置，保留最后一次设置的值
@@ -410,4 +450,13 @@ public class MainActivity extends Activity {
 		// Forward results to EasyPermissions
 		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
 	}
+
+
+
+	private static final String ROOM_RELATION_TABLE_NAME = "FloorRelationTable";//楼层关系表名称
+	private static final String FL_ID_FIELD = "FL_ID";//楼层ID
+	private static final String ROOM_NAME_FILED = "RoomName";//对应楼层的房间数据集名称
+	private static final String DOOR_NAME_FILED = "DoorName";//对应楼层的门数据集名称
+	private static final String ROOM_ID_FILED = "ROOM_ID";//房间ID（同一房间，不同门的“房间ID”相同）
+
 }

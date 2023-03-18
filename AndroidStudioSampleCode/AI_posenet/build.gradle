@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.edvard.poseestimation"
         minSdkVersion 20
-        targetSdkVersion 28
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -17,9 +17,9 @@ android {
                 cppFlags "-std=c++11","-frtti", "-fexceptions"
             }
         }
-//        ndk {
-//            abiFilters 'armeabi-v7a'
-//        }
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
     }
 
 //    externalNativeBuild {

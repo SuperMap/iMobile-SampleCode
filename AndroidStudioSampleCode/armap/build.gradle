@@ -1,51 +1,68 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
     compileSdkVersion 28
+    buildToolsVersion "30.0.3"
+
     defaultConfig {
-        applicationId "com.supermap.imobile.myapplication"
-        minSdkVersion 20
+        applicationId "com.supermap.ar.armap"
+        minSdkVersion 26
         targetSdkVersion 28
-        multiDexEnabled true
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
+
+        ndk{
+            abiFilters 'armeabi-v7a'
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
         }
     }
-    compileOptions{
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
-    }
-//    defaultConfig {
-//        ndk {
-//            abiFilters "armeabi-v7a"
-//        }
-//    }
-    packagingOptions {
-        exclude 'META-INF/NOTICE' // will not include NOTICE file
-        exclude 'META-INF/LICENSE' // will not include LICENSE file
-        exclude 'META-INF/INDEX.LIST' // will not include INDEX.LIST file
-        exclude 'META-INF/DEPENDENCIES'
-    }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'pub.devrel:easypermissions:2.0.1'
-    implementation 'com.android.support:multidex:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    /**
+     * 产品包依赖
+     *      so:
+     *          libimb2d.so 或 libimb.so(注：libimb.so包含imb2d和imb3d)
+     *      jar：
+     *          com.supermap.ar_v1101.jar
+     *          com.supermap.data_v1101.jar
+     *      aar:
+     *          sceneform-sm-11.1.0.aar
+     *
+     * libs目录示例：
+     *      -armeabi-v7a
+     *          -libimb2d_v1101.so
+     *      -com.supermap.data_v1101.jar
+     *      -com.supermap.ar_v1101.jar
+     *      -sceneform-sm-11.1.0.aar
+     */
+    implementation files('libs\\sceneform-sm-11.1.0.aar')
+    implementation files('libs\\com.supermap.ar_v1101.jar')
+    implementation files('libs\\com.supermap.data_v1101.jar')
+    implementation files('libs\\com.supermap.mapping_v1101.jar')
+    implementation files('libs\\com.supermap.navigation_v1101.jar')
+    implementation files('libs\\com.supermap.analyst_v1101.jar')
+
 }
-
-

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="50dp"
+    android:layout_height="50dp">
+    <ImageView
+        android:layout_centerInParent="true"
+        android:background="@drawable/building_line"
+        android:layout_width="5dp"
+        android:layout_height="40dp"/>
+    <TextView
+        android:gravity="center"
+        android:id="@+id/name_tag_content"
+        android:background="@drawable/name_tag_bg"
+        android:layout_width="100dp"
+        android:textColor="#FF9800"
+        android:layout_height="20dp"/>
+
+</RelativeLayout>

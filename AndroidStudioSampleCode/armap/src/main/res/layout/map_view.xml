@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:background="#09143E"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content">
+
+    <com.supermap.mapping.MapView
+        android:layout_width="match_parent"
+        android:id="@+id/map_view1"
+        android:background="#010101"
+        android:layout_height="match_parent">
+
+    </com.supermap.mapping.MapView>
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:id="@+id/map_image"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:onClick="load_image"
+        android:visibility="gone"
+        android:text="加载图片"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:id="@+id/delivery_center"
+        android:onClick="centerPoint"
+        android:text="配送中心"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="170dp"
+        android:id="@+id/delivery_target"
+        android:onClick="targetPoint"
+        android:text="配送目标"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="240dp"
+        android:id="@+id/road_analyst"
+        android:onClick="roadAnalyst"
+        android:text="分析结果"/>
+
+
+</RelativeLayout>

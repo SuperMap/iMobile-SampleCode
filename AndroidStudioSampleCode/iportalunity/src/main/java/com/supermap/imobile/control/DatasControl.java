@@ -7,9 +7,10 @@ import com.supermap.imobile.adapter.DatasAdapter;
 import com.supermap.imobile.bean.DownloadDataEvent;
 import com.supermap.imobile.bean.GetDataEvent;
 import com.supermap.imobile.bean.DatasBean;
+import com.supermap.iportalservices.DownloadListener;
 import com.supermap.iportalservices.IPortalService;
 import com.supermap.iportalservices.OnResponseListener;
-import com.supermap.iportalservices.ProgressResponseBody;
+
 import com.supermap.imobile.iportalservices.MainActivity;
 import com.yalantis.phoenix.PullToRefreshView;
 import okhttp3.Response;
@@ -62,12 +63,11 @@ public class DatasControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(updateListViewlistener);
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
                 searchParameter.put("orderBy", "LASTMODIFIEDTIME");
                 searchParameter.put("orderType", "DESC");;
-                IPortalService.getInstance().getDatas(searchParameter);
+                IPortalService.getInstance().getDatas(searchParameter,updateListViewlistener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -79,21 +79,20 @@ public class DatasControl {
      */
     public void getDatas() {
         try {
-            IPortalService.getInstance().addOnResponseListener(updateListViewlistener);
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
             searchParameter.put("orderBy", "LASTMODIFIEDTIME");
             searchParameter.put("orderType", "DESC");
-            IPortalService.getInstance().getDatas(searchParameter);
+            IPortalService.getInstance().getDatas(searchParameter,updateListViewlistener);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     //下载回调
-    private OnResponseListener downloadListener = new OnResponseListener() {
+    private OnResponseListener downloadListener=new OnResponseListener() {
         @Override
-        public void onFailed(Exception exception) {
+        public void onError(Exception exception) {
             DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
                     .isSuccess(false)
                     .setError(exception.getMessage())
@@ -103,7 +102,7 @@ public class DatasControl {
         }
 
         @Override
-        public void onResponse(Response response) {
+        public void onComplete(Response response) {
             if (response.isSuccessful()) {
                 try {
                     ResponseBody body = response.body();
@@ -138,34 +137,42 @@ public class DatasControl {
     };
 
     //下载进度回调
-    private ProgressResponseBody.ProgressListener downloadProgressListener = (bytesRead, contentLength, done) -> {
-        double value = (float) bytesRead / contentLength * 100;
-        DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
-                .isDownloading(true)
-                .isSuccess(false)
-                .setProgress((int) Math.round(value))
-                .setFilePath(filePath)
-                .setMode("DatasResourceFragment")
-                .build();
-        EventBus.getDefault().post(downloadDataEvent);
-        adapter.isDownloading(true);
-        if (done) {
-            try {
-                //防止数据量很小的时候，界面一闪而过或者不出现
-                Thread.sleep(1000);
-                EventBus.getDefault().post(new DownloadDataEvent.Builder()
-                        .isSuccess(true)
-                        .isDownloading(false)
-                        .setFilePath(filePath)
-                        .setMode("DatasResourceFragment")
-                        .build());
-                adapter.isDownloading(false);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    private DownloadListener downloadProgressListener =new DownloadListener() {
+        @Override
+        public void getProgress(int progress, int dataid) {
+            DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
+                    .isDownloading(true)
+                    .isSuccess(false)
+                    .setProgress(progress)
+                    .setFilePath(filePath)
+                    .setMode("DatasResourceFragment")
+                    .build();
+            EventBus.getDefault().post(downloadDataEvent);
+            adapter.isDownloading(true);
+            if (progress==100) {
+                try {
+                    //防止数据量很小的时候，界面一闪而过或者不出现
+                    Thread.sleep(1000);
+                    EventBus.getDefault().post(new DownloadDataEvent.Builder()
+                            .isSuccess(true)
+                            .isDownloading(false)
+                            .setFilePath(filePath)
+                            .setMode("DatasResourceFragment")
+                            .build());
+                    adapter.isDownloading(false);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
+        @Override
+        public void onFailure(String s, int i) {
+
+        }
     };
+
+
 
     /**
      * 下载数据
@@ -174,8 +181,7 @@ public class DatasControl {
         try {
             filePath = path;
 
-            IPortalService.getInstance().addOnResponseListener(downloadListener);
-            IPortalService.getInstance().downloadData(ID, downloadProgressListener);
+            IPortalService.getInstance().downloadData(ID,filePath, downloadProgressListener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -186,12 +192,12 @@ public class DatasControl {
      */
     private OnResponseListener updateListViewlistener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(final Exception exception) {
             EventBus.getDefault().post(new GetDataEvent.Builder().isSucess(false).setError(exception.getMessage()).build());
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             String responseBody = null;
             DatasBean datasBean = null;
             try {

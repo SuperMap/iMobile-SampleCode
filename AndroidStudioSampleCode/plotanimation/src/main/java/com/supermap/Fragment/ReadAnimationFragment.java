@@ -2,12 +2,13 @@ package com.supermap.Fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.supermap.mapping.MapControl;
 import com.supermap.plot.AnimationManager;
@@ -80,7 +81,7 @@ public class ReadAnimationFragment extends Fragment implements View.OnClickListe
         }
     }
     private void readxml(){
-        File file=new File(MainActivity.RootPath+"SampleData/Fujian/plot/TourLineFile.xml");
+        File file=new File(MainActivity.xmlPath);
         mapControl.setAnimations();
         boolean isread= AnimationManager.getInstance().getAnimationFromXML(file.getAbsolutePath());
         if (isread){

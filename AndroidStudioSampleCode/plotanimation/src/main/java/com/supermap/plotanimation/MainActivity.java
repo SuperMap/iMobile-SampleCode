@@ -4,20 +4,21 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Build;
-import android.os.Process;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.navigation.NavigationView;
 import com.supermap.Fragment.CreatAnimationFragment;
 import com.supermap.Fragment.MyMapFragment;
 import com.supermap.Fragment.ReadAnimationFragment;
@@ -28,6 +29,10 @@ import com.supermap.data.WorkspaceType;
 import com.supermap.mapping.MapControl;
 import com.supermap.mapping.MapView;
 import com.supermap.plot.AnimationManager;
+import com.supermap.plot.AnimationPlayBeginEvent;
+import com.supermap.plot.AnimationPlayBeginListener;
+import com.supermap.plot.AnimationPlayFinishEvent;
+import com.supermap.plot.AnimationPlayFinishListener;
 
 import pub.devrel.easypermissions.EasyPermissions;
 /**
@@ -76,6 +81,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class MainActivity extends AppCompatActivity {
 
     public static String RootPath=android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/";
+    public static String xmlPath=MainActivity.RootPath+"SampleData/Fujian/plot/TourLineFile.xml";
 
     private Toolbar mToolbar;
     private DrawerLayout layout_drawer;
@@ -171,6 +177,21 @@ public class MainActivity extends AppCompatActivity {
         //
         navigationView.setCheckedItem(R.id.my_map);//默认选中我的地图
         showMyMapFragment();
+
+        AnimationManager instance = AnimationManager.getInstance();
+        //设置动画播放的监听事件
+        instance.addAnimationPlayBeginListener(new AnimationPlayBeginListener() {
+            @Override
+            public void playBegin(AnimationPlayBeginEvent animationPlayBeginEvent){
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "playBegin", Toast.LENGTH_SHORT).show());
+            }
+        });
+        instance.addAnimationPlayFinishListener(new AnimationPlayFinishListener() {
+            @Override
+            public void playFinish(AnimationPlayFinishEvent animationPlayFinishEvent){
+                runOnUiThread(() -> Toast.makeText(MainActivity.this, "finish", Toast.LENGTH_SHORT).show());
+            }
+        });
     }
     NavigationView.OnNavigationItemSelectedListener itemSelectedListener=new NavigationView.OnNavigationItemSelectedListener() {
         @Override

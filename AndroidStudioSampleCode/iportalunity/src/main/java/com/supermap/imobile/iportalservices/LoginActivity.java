@@ -145,12 +145,11 @@ public class LoginActivity extends AppCompatActivity implements OnResponseListen
         showProgress(true);
 
         // 设置回调监听
-        IPortalService.getInstance().addOnResponseListener(this);
 //            String portalUrl = "rdc.ispeco.com";
 //            String portalUrl = "http://rdc.ispeco.com";
 //            String portalUrl = "http://192.168.169.121";
 //            String portalUrl = "http://192.168.169.121:80";
-        IPortalService.getInstance().login(portalUrl, user, password, true);
+        IPortalService.getInstance().login(portalUrl, user, password, true,this);
 
 //            IPortalService.getInstance().login("192.168.169.121", "80","", user, password, true);
 //            IPortalService.getInstance().login("rdc.ispeco.com", "80", "", user, password, true);
@@ -194,7 +193,7 @@ public class LoginActivity extends AppCompatActivity implements OnResponseListen
 
     /*网络请求回调***************************************************************************************************/
     @Override
-    public void onFailed(final Exception exception) {
+    public void onError (final Exception exception) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -205,7 +204,7 @@ public class LoginActivity extends AppCompatActivity implements OnResponseListen
     }
 
     @Override
-    public void onResponse(Response response) {
+    public void onComplete(Response response) {
         JSONObject root;
         try {
             if (response.code() != 200) {

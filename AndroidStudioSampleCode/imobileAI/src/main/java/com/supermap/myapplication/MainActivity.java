@@ -5,8 +5,10 @@ import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AlertDialog;
+//import android.support.v4.app.FragmentActivity;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentActivity;
+//import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -302,7 +304,7 @@ public class MainActivity extends FragmentActivity{
                 itemsChecked[i+1] = false;
             }
         }
-        final android.support.v7.app.AlertDialog.Builder alertBuilder = new android.support.v7.app.AlertDialog.Builder(this);
+        final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setTitle("设置分类");
 
         /**

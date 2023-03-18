@@ -149,7 +149,7 @@ public class ARVideoActivity extends AppCompatActivity implements EasyPermission
         mGLSurfaceView.setRenderer(glVideoRenderer);//Set up renderer
         mGLSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
         mGLSurfaceView.setWillNotDraw(false);
-
+		mGLSurfaceView.setZOrderOnTop(true);
         glVideoRenderer.setupAlpha(0.5f);
         mGLSurfaceView.setAlpha(0.5f);
     }

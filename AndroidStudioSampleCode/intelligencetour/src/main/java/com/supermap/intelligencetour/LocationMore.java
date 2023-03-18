@@ -192,10 +192,16 @@ public class LocationMore extends AppCompatActivity implements View.OnClickListe
         workspace = new Workspace();
 
         DatasourceConnectionInfo dcInfo = new DatasourceConnectionInfo();
-        dcInfo.setAlias("GoogleMaps");
-        dcInfo.setEngineType(EngineType.GoogleMaps);
-        dcInfo.setReadOnly(false);
-        dcInfo.setServer("http://www.google.cn/maps");
+//        dcInfo.setAlias("GoogleMaps");
+//        dcInfo.setEngineType(EngineType.GoogleMaps);
+//        dcInfo.setReadOnly(false);
+//        dcInfo.setServer("http://www.google.cn/maps");
+
+        dcInfo.setServer("http://t0.tianditu.gov.cn/vec_c/wmts?tk=58ac8e6ae418fcf77eece945a3ec4feb");
+        dcInfo.setAlias("tianditu");
+        dcInfo.setDriver("WMTS");
+        dcInfo.setEngineType(EngineType.OGC);
+
         mapControl.getMap().setWorkspace(workspace);
         datasource = workspace.getDatasources().open(dcInfo);
         if (datasource != null) {

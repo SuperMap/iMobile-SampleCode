@@ -22,6 +22,13 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
+import okhttp3.Response;
+
 /**
  * 数据资源界面
  */
@@ -164,7 +171,42 @@ public class DatasResourceFragment extends Fragment implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn_cancel_download:
                 //取消下载
-                IPortalService.getInstance().cancelDownload();
+                IPortalService.getInstance().cancelDownload(new Call() {
+                    @Override
+                    public Request request() {
+                        return null;
+                    }
+
+                    @Override
+                    public Response execute() throws IOException {
+                        return null;
+                    }
+
+                    @Override
+                    public void enqueue(Callback callback) {
+
+                    }
+
+                    @Override
+                    public void cancel() {
+
+                    }
+
+                    @Override
+                    public boolean isExecuted() {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean isCanceled() {
+                        return false;
+                    }
+
+                    @Override
+                    public Call clone() {
+                        return null;
+                    }
+                });
                 layout_progress.setVisibility(View.GONE);
                 Toast.makeText(mContext, "取消下载", Toast.LENGTH_SHORT).show();
 

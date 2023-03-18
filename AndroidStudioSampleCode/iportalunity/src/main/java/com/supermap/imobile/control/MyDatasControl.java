@@ -66,10 +66,9 @@ public class MyDatasControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(updateListViewlistener);
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
-                IPortalService.getInstance().getMyDatas(searchParameter);
+                IPortalService.getInstance().getMyDatas(searchParameter,updateListViewlistener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -81,90 +80,95 @@ public class MyDatasControl {
      */
     public void getMyDatas() {
         try {
-            IPortalService.getInstance().addOnResponseListener(updateListViewlistener);
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
-            IPortalService.getInstance().getMyDatas(searchParameter);
+            IPortalService.getInstance().getMyDatas(searchParameter, updateListViewlistener);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+//
+//    //下载回调
+//    private OnResponseListener downloadListener  = new OnResponseListener() {
+//        @Override
+//        public void onFailed(Exception exception) {
+//            DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
+//                    .isSuccess(false)
+//                    .setError(exception.getMessage())
+//                    .setMode("MyDatasFragment")
+//                    .build();
+//            EventBus.getDefault().post(downloadDataEvent);
+//        }
+//
+//        @Override
+//        public void onResponse(Response response) {
+//            if (response.isSuccessful()) {
+//                try {
+//                    ResponseBody body = response.body();
+//                    InputStream is = body.byteStream();
+//
+//                    File file = new File(filePath);
+//                    file.getParentFile().mkdirs();
+//                    FileOutputStream fileout = new FileOutputStream(file);
+//                    /**
+//                     * 根据实际运行效果 设置缓冲区大小
+//                     */
+//                    byte[] buffer = new byte[1024];
+//                    int ch = 0;
+//                    while ((ch = is.read(buffer)) != -1) {
+//                        fileout.write(buffer, 0, ch);
+//                    }
+//                    is.close();
+//                    fileout.flush();
+//                    fileout.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            } else {
+//                DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
+//                        .isSuccess(false)
+//                        .setMode("MyDatasFragment")
+//                        .setError("下载失败-" + response.code() + ": " + response.request().url())
+//                        .build();
+//                EventBus.getDefault().post(downloadDataEvent);
+//            }
+//        }
+//    };
 
-    //下载回调
-    private OnResponseListener downloadListener  = new OnResponseListener() {
+    //下载进度回调
+    private DownloadListener downloadProgressListener=new DownloadListener() {
         @Override
-        public void onFailed(Exception exception) {
+        public void getProgress(int progress, int dataid) {
             DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
+                    .isDownloading(true)
                     .isSuccess(false)
-                    .setError(exception.getMessage())
+                    .setProgress(progress)
+                    .setFilePath(filePath)
                     .setMode("MyDatasFragment")
                     .build();
             EventBus.getDefault().post(downloadDataEvent);
+            adapter.isDownloading(true);
+            if (progress==100) {
+                try {
+                    //防止数据量很小的时候，界面一闪而过或者不出现
+                    Thread.sleep(1000);
+                    EventBus.getDefault().post(new DownloadDataEvent.Builder()
+                            .isSuccess(true)
+                            .isDownloading(false)
+                            .setFilePath(filePath)
+                            .setMode("MyDatasFragment")
+                            .build());
+                    adapter.isDownloading(false);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         @Override
-        public void onResponse(Response response) {
-            if (response.isSuccessful()) {
-                try {
-                    ResponseBody body = response.body();
-                    InputStream is = body.byteStream();
+        public void onFailure(String s, int i) {
 
-                    File file = new File(filePath);
-                    file.getParentFile().mkdirs();
-                    FileOutputStream fileout = new FileOutputStream(file);
-                    /**
-                     * 根据实际运行效果 设置缓冲区大小
-                     */
-                    byte[] buffer = new byte[1024];
-                    int ch = 0;
-                    while ((ch = is.read(buffer)) != -1) {
-                        fileout.write(buffer, 0, ch);
-                    }
-                    is.close();
-                    fileout.flush();
-                    fileout.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
-                        .isSuccess(false)
-                        .setMode("MyDatasFragment")
-                        .setError("下载失败-" + response.code() + ": " + response.request().url())
-                        .build();
-                EventBus.getDefault().post(downloadDataEvent);
-            }
         }
-    };
-
-    //下载进度回调
-    private ProgressResponseBody.ProgressListener downloadProgressListener = (bytesRead, contentLength, done) -> {
-        double value = (float)bytesRead / contentLength * 100;
-        DownloadDataEvent downloadDataEvent = new DownloadDataEvent.Builder()
-                .isDownloading(true)
-                .isSuccess(false)
-                .setProgress((int) Math.round(value))
-                .setFilePath(filePath)
-                .setMode("MyDatasFragment")
-                .build();
-        EventBus.getDefault().post(downloadDataEvent);
-        adapter.isDownloading(true);
-        if (done) {
-            try {
-                //防止数据量很小的时候，界面一闪而过或者不出现
-                Thread.sleep(1000);
-                EventBus.getDefault().post(new DownloadDataEvent.Builder()
-                        .isSuccess(true)
-                        .isDownloading(false)
-                        .setFilePath(filePath)
-                        .setMode("MyDatasFragment")
-                        .build());
-                adapter.isDownloading(false);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
     };
 
     /**
@@ -173,9 +177,7 @@ public class MyDatasControl {
     public void downLoadData(String path, int ID) {
         try {
             filePath = path;
-
-            IPortalService.getInstance().addOnResponseListener(downloadListener);
-            IPortalService.getInstance().downloadMyData(ID, downloadProgressListener);
+            IPortalService.getInstance().downloadMyData(ID,path, downloadProgressListener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -192,8 +194,8 @@ public class MyDatasControl {
 //            String type = "WORKSPACE";
 
             //获取ID
-            IPortalService.getInstance().addOnResponseListener(getIDListener);
-            IPortalService.getInstance().getMyDataID(fileName, tags, DataItemType.WORKSPACE);
+
+            IPortalService.getInstance().getMyDataID(fileName, tags,"", DataItemType.WORKSPACE,getIDListener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -204,12 +206,12 @@ public class MyDatasControl {
      */
     private OnResponseListener getIDListener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception e) {
+        public void onError(final Exception e) {
             Log.e("getMyDataID", e.getMessage());
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             if (response.isSuccessful()) {
                 String responseBody = null;
                 try {
@@ -220,7 +222,6 @@ public class MyDatasControl {
                         int childID = root.getInt("childID");
                         if (filePath != null && !filePath.isEmpty()) {
                             //上传
-                            IPortalService.getInstance().addOnResponseListener(uploadListener);
                             IPortalService.getInstance().uploadData(filePath, childID, uploadProgressListener);
                         }
                     } else {
@@ -237,61 +238,42 @@ public class MyDatasControl {
     };
 
     //上传进度(子线程)
-    private ProgressRequestBody.ProgressListener uploadProgressListener = (length, size) -> {
-        double value = (float)size / length * 100;
-        UploadDataEvent uploadDataEvent = new UploadDataEvent.Builder()
-                .isUploading(true)
-                .isSuccess(false)
-                .setFilePath(filePath)
-                .setProgress((int) Math.round(value))
-                .build();
-        EventBus.getDefault().post(uploadDataEvent);
-        if (length == size) {
-            try {
-                Thread.sleep(1000);
-                EventBus.getDefault().post(new UploadDataEvent.Builder().isSuccess(true).isUploading(false).build());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    };
-
-    /**
-     * 数据上传回调
-     */
-    private OnResponseListener uploadListener = new OnResponseListener() {
+    private UploadListener uploadProgressListener=new UploadListener() {
         @Override
-        public void onFailed(final Exception e) {
+        public void getProgress(int progress, int i1) {
             UploadDataEvent uploadDataEvent = new UploadDataEvent.Builder()
+                    .isUploading(true)
                     .isSuccess(false)
-                    .setError("上传数据失败" + e.getMessage())
+                    .setFilePath(filePath)
+                    .setProgress(progress)
                     .build();
             EventBus.getDefault().post(uploadDataEvent);
+            if (progress == 100) {
+                try {
+                    Thread.sleep(1000);
+                    EventBus.getDefault().post(new UploadDataEvent.Builder().isSuccess(true).isUploading(false).build());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         @Override
-        public void onResponse(final Response response) {
-            if (!response.isSuccessful()) {
-                UploadDataEvent uploadDataEvent = new UploadDataEvent.Builder()
-                        .isSuccess(false)
-                        .setError(response.message())
-                        .build();
-                EventBus.getDefault().post(uploadDataEvent);
-            }
+        public void onFailure(String s, int i) {
+
         }
     };
-
     /**
      * 联网刷新界面回调
      */
-    private OnResponseListener updateListViewlistener = new OnResponseListener() {
+    private OnResponseListener updateListViewlistener=new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(Exception exception) {
             EventBus.getDefault().post(new GetDataEvent.Builder().isSucess(false).setError(exception.getMessage()).build());
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(Response response) {
             String responseBody = null;
             DatasBean datasBean = null;
             try {
@@ -331,6 +313,7 @@ public class MyDatasControl {
         }
     };
 
+
     //删除数据
     public void deleteItem(int ID) {
         try {
@@ -338,8 +321,7 @@ public class MyDatasControl {
                 ll_progesssbar.setVisibility(View.VISIBLE);
             });
             deleteID = ID;
-            IPortalService.getInstance().addOnResponseListener(deleteListener);
-            IPortalService.getInstance().deleteMyContentItem(MyContentType.MY_DATA, ID);
+            IPortalService.getInstance().deleteMyContentItem(MyContentType.MY_DATA, ID,deleteListener);
         } catch (Exception e) {
             e.printStackTrace();
             mMainActivity.runOnUiThread(() -> {
@@ -368,7 +350,7 @@ public class MyDatasControl {
 
     private OnResponseListener deleteListener = new OnResponseListener() {
         @Override
-        public void onFailed(Exception exception) {
+        public void onError(Exception exception) {
             if (exception != null) {
                 Log.e(TAG, "" + exception.getMessage());
             }
@@ -379,7 +361,7 @@ public class MyDatasControl {
         }
 
         @Override
-        public void onResponse(Response response) {
+        public void onComplete(Response response) {
             if (response.isSuccessful()) {
                 try {
                     String string = response.body().string();
@@ -405,7 +387,7 @@ public class MyDatasControl {
 
     private OnResponseListener publishListener = new OnResponseListener() {
         @Override
-        public void onFailed(Exception exception) {
+        public void onError(Exception exception) {
             if (exception != null) {
                 Log.e(TAG, "" + exception.getMessage());
             }
@@ -416,7 +398,7 @@ public class MyDatasControl {
         }
 
         @Override
-        public void onResponse(Response response) {
+        public void onComplete(Response response) {
             try {
                 String responseBody = response.body().string();
                 JSONObject root = new JSONObject(responseBody);

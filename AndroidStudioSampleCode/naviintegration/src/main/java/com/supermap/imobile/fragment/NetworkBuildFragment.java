@@ -2,11 +2,12 @@ package com.supermap.imobile.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.supermap.analyst.TopologyProcessing;
 import com.supermap.analyst.TopologyProcessingOptions;

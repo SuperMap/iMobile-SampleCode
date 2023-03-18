@@ -160,7 +160,7 @@ public class AnimationSettingDialog extends Dialog implements View.OnClickListen
             animationScale.setEndScaleFactor(endscale);
             animationScale.setName(String.valueOf(geometry.getID()));
             animationScale.setGeometry((GeoGraphicObject) geometry,mapControl.getHandle(),mapControl.getEditLayer().getName());
-            AnimationGroup.getInstance().getGroup().addAnimation(animationScale);
+//            AnimationGroup.getInstance().getGroup().addAnimation(animationScale);
             animationlist.add(animationScale);
         }
         else if (checkGeometryTtype().equals(GraphicObjectType.SYMBOL_ALGO)){
@@ -171,10 +171,17 @@ public class AnimationSettingDialog extends Dialog implements View.OnClickListen
             animationGrow.setEndLocation(endscale);
             animationGrow.setName(String.valueOf(geometry.getID()));
             animationGrow.setGeometry((GeoGraphicObject) geometry,mapControl.getHandle(),mapControl.getEditLayer().getName());
-            AnimationGroup.getInstance().getGroup().addAnimation(animationGrow);
+//            AnimationGroup.getInstance().getGroup().addAnimation(animationGrow);
+
+            com.supermap.plot.AnimationGroup plotGroup = AnimationManager.getInstance().addAnimationGroup("PlotGroup");
+            plotGroup.addAnimation(animationGrow);
+
             animationlist.add(animationGrow);
         }
+
         animationListListener.getList(animationlist);
+
+        AnimationManager.getInstance().saveAnimationToXML(MainActivity.xmlPath);
     }
     public void addAnimationListListener(AnimationListListener listListener){
         this.animationListListener=listListener;

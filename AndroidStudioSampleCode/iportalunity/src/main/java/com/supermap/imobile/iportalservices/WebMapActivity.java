@@ -84,24 +84,7 @@ public class WebMapActivity extends AppCompatActivity implements OnResponseListe
 
         update = findViewById(R.id.update);
         update.setOnClickListener(v -> {
-            IPortalService.getInstance().addOnResponseListener(new OnResponseListener() {
-                @Override
-                public void onFailed(Exception exception) {
 
-                }
-
-                @Override
-                public void onResponse(Response response) {
-                    try {
-                        String string = response.body().string();
-                        runOnUiThread(() -> {
-                            Toast.makeText(WebMapActivity.this, string, Toast.LENGTH_SHORT).show();
-                        });
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
 
             //更新WebMapBean
             webMapBean.setTitle(maptitle.getText().toString());
@@ -115,7 +98,24 @@ public class WebMapActivity extends AppCompatActivity implements OnResponseListe
             Log.e("JSONREQUEST","-------------------------");
 //            IPortalService.getInstance().updateWebMap(mapId, responseBody);
             Log.e("JSONREQUEST", responseBody);
-            IPortalService.getInstance().updateWebMap(mapId, json);
+            IPortalService.getInstance().updateWebMap(mapId, json, new OnResponseListener() {
+                @Override
+                public void onError(Exception e) {
+
+                }
+
+                @Override
+                public void onComplete(Response response) {
+                    try {
+                        String string = response.body().string();
+                        runOnUiThread(() -> {
+                            Toast.makeText(WebMapActivity.this, string, Toast.LENGTH_SHORT).show();
+                        });
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         });
 
         Intent intent = getIntent();
@@ -133,8 +133,8 @@ public class WebMapActivity extends AppCompatActivity implements OnResponseListe
                 });
 
         if (mapId != -1) {
-            IPortalService.getInstance().addOnResponseListener(this);
-            IPortalService.getInstance().getWebMap(mapId);
+
+            IPortalService.getInstance().getWebMap(mapId,this);
         } else {
             Toast.makeText(this, "获取资源失败", Toast.LENGTH_SHORT).show();
         }
@@ -160,8 +160,8 @@ public class WebMapActivity extends AppCompatActivity implements OnResponseListe
             switchMode();
             return true;
         } else if (id == R.id.update) {
-            IPortalService.getInstance().addOnResponseListener(this);
-            IPortalService.getInstance().getWebMap(mapId);
+
+            IPortalService.getInstance().getWebMap(mapId,this);
             return true;
         }
 
@@ -169,13 +169,13 @@ public class WebMapActivity extends AppCompatActivity implements OnResponseListe
     }
 
     @Override
-    public void onFailed(Exception exception) {
+    public void onError(Exception exception) {
         runOnUiThread(() -> Toast.makeText(WebMapActivity.this, exception.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     String responseBody = null;
     @Override
-    public void onResponse(Response response) {
+    public void onComplete(Response response) {
         try {
             if (response.code() != 200) {
                 runOnUiThread(() -> Toast.makeText(WebMapActivity.this, "请检查服务地址是否正确:\n" + response.code() + ": " + response.request().url(), Toast.LENGTH_LONG).show());

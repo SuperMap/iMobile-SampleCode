@@ -1,17 +1,19 @@
-﻿package com.supermap.imobile.naviintegration;
+package  com.supermap.imobile.naviintegration;
 
 import android.Manifest;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.navigation.NavigationView;
 import com.supermap.data.Color;
 import com.supermap.data.CursorType;
 import com.supermap.data.DatasetVector;
@@ -94,6 +96,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  *  (8)点击【清除】按钮，可以清除现有路径结果，再重新分析路径
  *
  * 5、注意：
+ *  需要依赖navigationplus.aar包
  *	如果缺少语音播报，原因是缺少语音资源。
  *  解决办法：请将产品包中Resource文件夹下的voice文件夹拷贝到工程目录中的assets文件夹下。
  * ------------------------------------------------------------------------------

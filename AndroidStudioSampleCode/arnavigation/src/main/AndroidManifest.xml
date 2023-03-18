@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -24,7 +25,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FlowElementActivity"
+            android:exported="false" />
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,6 +43,5 @@
             android:name="com.google.ar.core"
             android:value="required" />
     </application>
-
 
 </manifest>

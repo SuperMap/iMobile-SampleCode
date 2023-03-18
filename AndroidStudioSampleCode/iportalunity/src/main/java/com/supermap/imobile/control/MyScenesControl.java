@@ -39,10 +39,9 @@ public class MyScenesControl {
      */
     public void getMyScenes() {
         try {
-            IPortalService.getInstance().addOnResponseListener(listener);
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
-            IPortalService.getInstance().getMyScenes(searchParameter);
+            IPortalService.getInstance().getMyScenes(searchParameter,listener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,10 +54,10 @@ public class MyScenesControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(listener);
+
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
-                IPortalService.getInstance().getMyScenes(searchParameter);
+                IPortalService.getInstance().getMyScenes(searchParameter,listener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -70,7 +69,7 @@ public class MyScenesControl {
      */
     private OnResponseListener listener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(final Exception exception) {
             if (exception != null) {
                 Log.e("onFailed", exception.getMessage());
             }
@@ -85,7 +84,7 @@ public class MyScenesControl {
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             String responseBody = null;
             ScenesBean scenesBean = null;
             try {

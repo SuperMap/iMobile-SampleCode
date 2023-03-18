@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.supermap.Adapter.ImageAdapter;
 import com.supermap.Dialog.AnimationSettingDialog;
@@ -36,6 +38,10 @@ import com.supermap.plot.AnimationGO;
 import com.supermap.plot.AnimationGroup;
 import com.supermap.plot.AnimationGrow;
 import com.supermap.plot.AnimationManager;
+import com.supermap.plot.AnimationPlayBeginEvent;
+import com.supermap.plot.AnimationPlayBeginListener;
+import com.supermap.plot.AnimationPlayFinishEvent;
+import com.supermap.plot.AnimationPlayFinishListener;
 import com.supermap.plot.GeoGraphicObject;
 import com.supermap.plotanimation.MainActivity;
 import com.supermap.plotanimation.R;
@@ -191,6 +197,7 @@ public class CreatAnimationFragment extends Fragment implements View.OnClickList
                 mapControl.submit();
                 break;
             case R.id.btn_submit:
+                //保存按钮
                 resetView();
                 if (checkSubmit()){
                      mapControl.submit();
@@ -360,7 +367,6 @@ public class CreatAnimationFragment extends Fragment implements View.OnClickList
                 }
             },0,500);
         }
-
 
         AnimationManager.getInstance().play();
     }

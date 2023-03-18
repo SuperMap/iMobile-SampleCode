@@ -1,0 +1,4 @@
+说明：
+sfa\sfb格式已过时，最新模型文件在res/raw/目录下
+当前版本使用gltf2.0
+（gltf（嵌入式）或gltf（分离式）或glb（gltf二进制文件））

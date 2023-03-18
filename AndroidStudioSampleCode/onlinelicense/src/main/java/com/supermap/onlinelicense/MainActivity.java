@@ -3,9 +3,11 @@ package com.supermap.onlinelicense;
 import android.Manifest;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.supermap.data.CloudLicenseManager;
 import com.supermap.data.Datasource;
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         manager = CloudLicenseManager.getInstance(this);
         manager.setLoginCallback(licenseLoginCallback);
-        manager.login("992275331@qq.com", "1995824lwh");
+        manager.login("**********", "*******");
     }
 
     private void initView() {
@@ -194,9 +196,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mMapControl.getMap().setWorkspace(mWorkspace);
         DatasourceConnectionInfo info = new DatasourceConnectionInfo();
         info.setAlias("GOOGLE");
-        info.setEngineType(EngineType.GoogleMaps);
-        String url3 = "http://www.google.cn/maps";
-        info.setServer(url3);
+        info.setEngineType(EngineType.GaoDeMaps);
         Datasource datasourcegoogle = mWorkspace.getDatasources().open(info);
         mMapControl.getMap().getLayers().add(datasourcegoogle.getDatasets().get(0),false);
 //        mMapControl.getMap().setCenter(new Point2D(12969338.6207241,4863846.35831212));

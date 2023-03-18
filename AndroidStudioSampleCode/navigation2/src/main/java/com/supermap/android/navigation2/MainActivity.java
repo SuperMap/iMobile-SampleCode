@@ -20,6 +20,9 @@ import com.supermap.data.CoordSysTransMethod;
 import com.supermap.data.CoordSysTransParameter;
 import com.supermap.data.CoordSysTranslator;
 import com.supermap.data.DatasetVector;
+import com.supermap.data.Datasource;
+import com.supermap.data.DatasourceConnectionInfo;
+import com.supermap.data.EngineType;
 import com.supermap.data.Environment;
 import com.supermap.data.Point;
 import com.supermap.data.Point2D;
@@ -134,7 +137,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestPermissions() ;
 		Environment.setLicensePath(MyApplication.SDCARD + "SuperMap/License");
-		Environment.setWebCacheDirectory(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/SuperMap/WebCahe/");
 		Environment.initialization(this);
 		//Environment.setOpenGLMode(true);
 		
@@ -145,7 +147,7 @@ public class MainActivity extends Activity {
 		if(isOpen){
 			initView();
 			initNavigation2();
-			startDefaultNavi();
+//			startDefaultNavi();
 		}
 	}
 	/**
@@ -206,8 +208,16 @@ public class MainActivity extends Activity {
 		m_MapControl = m_MapView.getMapControl();
 		m_Map     = m_MapControl.getMap();
 		m_Map.setWorkspace(m_Workspace);
-    	m_Map.open(m_Workspace.getMaps().get(0));    // open map
-    	m_Map.setScale(1/229492.1875);
+
+		//加载高德矢量图 作为地图。0为矢量，1为影像
+		DatasourceConnectionInfo dsInfo = new DatasourceConnectionInfo();
+		dsInfo.setEngineType(EngineType.GaoDeMaps);
+		dsInfo.setDriver("WMTS");
+		dsInfo.setAlias("gaode");
+		Datasource ds = m_Workspace.getDatasources().open(dsInfo);
+		m_Map.getLayers().add(ds.getDatasets().get(0),true);
+
+		m_Map.setScale(1/229492.1875);
     	m_Map.setCenter(new Point2D(12953693.6950684, 4858067.04711915));
     	m_Map.refresh();
     	m_MapControl.setGestureDetector(new GestureDetector(longTouchListener));

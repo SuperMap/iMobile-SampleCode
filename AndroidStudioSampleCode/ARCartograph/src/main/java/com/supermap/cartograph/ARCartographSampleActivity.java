@@ -1,17 +1,28 @@
 package com.supermap.cartograph;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.Group;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.annotation.NonNull;
+//import android.support.constraint.Group;
+//import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.Group;
+
+import com.google.are.sceneform.ARPlatForm;
 import com.supermap.ar.arcartograph.ARCartographView;
 import com.supermap.ar.arcartograph.ARRulerCallBack;
+import com.supermap.data.Environment;
+import com.supermap.hiar.ARCamera;
+import com.supermap.hiar.AREngine;
+
 /**
  * <p>
  * Title:AR测量
@@ -65,9 +76,34 @@ public class ARCartographSampleActivity extends AppCompatActivity implements Vie
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        initPermission();
+//        AREngine.enforceARCore();
+        androidx.core.app.ActivityCompat.requestPermissions(this,new String[]{
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.CHANGE_WIFI_STATE,
+                Manifest.permission.CAMERA
+        }, PackageManager.PERMISSION_GRANTED);
+        Environment.setLicensePath(android.os.Environment.getExternalStorageDirectory().getAbsolutePath() +
+                "/SuperMap/license/");
+        Environment.initialization(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar_ruler);
-        initPermission();
+
+        ARCamera.setInitCallback(new ARCamera.InitCallback() {
+            @Override
+            public void complete(float v) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(ARCartographSampleActivity.this, "当前AR平台：" + ARPlatForm.getEngineType(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
     }
 
     @Override

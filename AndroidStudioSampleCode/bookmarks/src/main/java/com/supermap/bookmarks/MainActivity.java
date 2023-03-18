@@ -5,11 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-//import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+
 import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +14,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.supermap.data.Environment;
 import com.supermap.data.Point2D;
 import com.supermap.data.Workspace;

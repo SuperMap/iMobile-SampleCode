@@ -40,11 +40,11 @@ public class MapsControl {
     public void getMaps() {
         try {
             mPullToRefreshView.setRefreshing(true);
-            IPortalService.getInstance().addOnResponseListener(listener);
+
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
             searchParameter.put("orderBy", "[{orderField:VISITCOUNT,orderType:DESC}]");
-            IPortalService.getInstance().getMaps(searchParameter);
+            IPortalService.getInstance().getMaps(searchParameter,listener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,11 +57,11 @@ public class MapsControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(listener);
+
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
                 searchParameter.put("orderBy", "[{orderField:VISITCOUNT,orderType:DESC}]");
-                IPortalService.getInstance().getMaps(searchParameter);
+                IPortalService.getInstance().getMaps(searchParameter,listener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -73,7 +73,7 @@ public class MapsControl {
      */
     private OnResponseListener listener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(final Exception exception) {
             if (exception != null) {
                 Log.e("onFailed", exception.getMessage());
             }
@@ -88,7 +88,7 @@ public class MapsControl {
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             String responseBody = null;
             MapsBean mapsBean = null;
             try {

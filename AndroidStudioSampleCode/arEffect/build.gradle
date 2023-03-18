@@ -9,6 +9,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk{
+            abiFilters 'armeabi-v7a'
+        }
     }
     buildTypes {
         release {
@@ -27,20 +30,55 @@ android {
         exclude 'META-INF/DEPENDENCIES'
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation fileTree(dir: 'libs', include: ['*.aar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    //ARCORE
-    api 'com.google.android.filament:filament-android:1.7.0'
-    api 'com.google.android.filament:gltfio-android:1.7.0'
-    api 'com.google.ar:core:1.16.0'
-
-    implementation ("com.google.ar.sceneform:rendering:1.11.0")
-    //other
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //许可权限
     implementation 'pub.devrel:easypermissions:2.0.1'
+    //产品包
+    implementation files('libs\\com.supermap.ar_v1100.jar')
+    implementation files('libs\\com.supermap.data_v1100.jar')
+
+    //注意：当前版本的sceneform-sm，需在filament 1.12.0版本上运行
+//    implementation files('lib\\sceneform-sm-11.0.0.aar')
+    //依赖谷歌filament渲染引擎
+//    def filament_version = '1.12.0'
+//    api "com.google.android.filament:filament-android:$filament_version"
+//    api "com.google.android.filament:gltfio-android:$filament_version"
+//    api "com.google.android.filament:filament-utils-android:$filament_version"
+//    //支持ARCore的手机（如小米、onePlus等安卓设备）
+//    api "com.google.ar:core:1.25.0"
+//    //支持AREngine的设备（华为系列手机）//备注：此项需要确保在项目的build.gradle引用了华为repo，示例如下：
+//    /**
+//     *buildscript {
+//     *   ...
+//     *   repositories {
+//     *         maven {url "https://developer.huawei.com/repo/"}
+//     *         }
+//     *    ...
+//     */
+//    api 'com.huawei.hms:arenginesdk:3.7.0.3'
 
 
+    //注意：当前版本的sceneform-sm，需在filament 1.9.25版本上运行
+//    implementation files('lib\\sceneform-sm_v1.19.8.aar')
+//    //ARCORE
+//    api 'com.google.android.filament:filament-android:1.9.25'
+//    api 'com.google.android.filament:gltfio-android:1.9.25'
+//    api 'com.google.android.filament:filament-utils-android:1.9.25'
+//    implementation 'com.google.ar:core:1.25.0'
+//    implementation 'com.huawei.hms:arenginesdk:3.0.0.11'
+
+
+    //注意：在12834版本（2022年10月8日）后，对三方依赖进行了整合，仅用依赖一个aar即可
+    implementation files('libs/sceneform-sm-11.0.1.aar')
 }

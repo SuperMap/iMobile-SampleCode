@@ -1,14 +1,16 @@
 package com.supermap.trackingmap;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.supermap.data.Color;
 import com.supermap.data.Environment;
@@ -93,8 +95,8 @@ public class MainActivity extends AppCompatActivity {
         m_workspace = new Workspace();
         WorkspaceConnectionInfo info = new WorkspaceConnectionInfo();
 //
-//        info.setServer(sdcard+"/SampleData/GeometryInfo/World.smwu");
-        info.setServer(sdcard+"/SampleData/city/changchun.smwu");
+        info.setServer(sdcard+"/SampleData/GeometryInfo/World.smwu");
+//        info.setServer(sdcard+"/SampleData/City/Changchun.smwu");
 
         info.setType(WorkspaceType.SMWU);
         boolean isOpen = m_workspace.open(info);

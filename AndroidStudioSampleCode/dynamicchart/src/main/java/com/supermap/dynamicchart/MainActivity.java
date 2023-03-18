@@ -23,17 +23,17 @@ package com.supermap.dynamicchart;
  *      许可目录："../SuperMap/License/"
  *      
  * 3、关键类型/成员: 
- *    recordset.seekID();				方法
- *    recordset.getFieldValue();		方法
- *    data.setColor();					方法
- *    data.setGeoID();					方法
- *    data.setLabel();					方法
- *    data.setValue();					方法
- *    m_pieChart.addData();				方法		
- *    m_pieChart.setChartTitle();		方法
- *    m_pieChart.getLegendView();		方法
- *    m_pieChart.reLayout();			方法
- *    m_lineChart.addXLabel();			方法
+ *    Recordset.seekID();				方法
+ *    Recordset.getFieldValue();		方法
+ *    Data.setColor();					方法
+ *    Data.setGeoID();					方法
+ *    Data.setLabel();					方法
+ *    Data.setValue();					方法
+ *    PieChart.addData();				方法		
+ *    PieChart.setChartTitle();		方法
+ *    PieChart.getLegendView();		方法
+ *    PieChart.reLayout();			方法
+ *    LineChart.addXLabel();			方法
  *
  * 4、功能展示
  *   (1)创建、显示折线图

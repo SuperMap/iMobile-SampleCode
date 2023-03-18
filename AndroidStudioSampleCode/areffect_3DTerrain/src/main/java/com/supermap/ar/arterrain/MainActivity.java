@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.supermap.ar.Point3D;
 import com.supermap.ar.areffect.AREffectElement;
@@ -13,6 +13,8 @@ import com.supermap.ar.areffect.AREffectView;
 import com.supermap.ar.areffect.ARGltfElement;
 import com.supermap.ar.areffect.ARViewElement;
 import com.supermap.ar.areffect.Vector;
+import com.supermap.data.Environment;
+import com.supermap.hiar.AREngine;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -21,7 +23,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  * Title:AR沙盘的示范代码
  * </p>
  *
- * <p>
+ * <pre>
  * Description:
  * ============================================================================>
  * ------------------------------版权声明----------------------------
@@ -31,6 +33,13 @@ import pub.devrel.easypermissions.EasyPermissions;
  * ---------------------SuperMap iMobile for Android 示范程序说明------------------------
  *
  * 1、范例简介：示范如何在AR场景中加载模型及视图构建AR沙盘
+ * 2、依赖配置：
+ *      libs/
+ *          armeabi-v7a/
+ *              libimb_v1xxx.so
+ *          com.supermap.data_v1xxx.jar
+ *          com.supermap.ar_v1xxx.jar
+ *          sceneform-sm-11.0.0.aar
  * 2、关键类型/成员:
  *      AREffectView
  * 		AREffectElement
@@ -48,9 +57,12 @@ import pub.devrel.easypermissions.EasyPermissions;
  * 4、使用步骤：
  *   (1)点击第一个按钮，显示（隐藏）地形
  *   (2)点击其它按钮，显示（隐藏）不同的模型或标注
+ * 5、注意事项：
+ *    默认情况下，ARCore和AREngine的坐标系不同，
+ *    此示例是根据ARCore设备设置的场景元素位置，因此，加载出的场景元素的坐标有所不同。
  * ------------------------------------------------------------------------------
  * ============================================================================>
- * </p>
+ * </pre>
  *
  * <p>
  * Company: 北京超图软件股份有限公司
@@ -99,10 +111,17 @@ public class MainActivity extends AppCompatActivity {
     private static boolean isLoadModel03 = false;
     private static boolean isLoadModel04 = false;
 
+    public static final String SD_CARD = android.os.Environment.getExternalStorageDirectory().getAbsolutePath();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //注意：强制使用ARCore,仅针对既支持ARCore，又支持AREngine的设备。
+//        AREngine.enforceARCore();
         super.onCreate(savedInstanceState);
         requestPermissions();
+
+        //desc-许可配置
+        Environment.setLicensePath(SD_CARD + "/SuperMap/license");
+        Environment.initialization(this);
 
         setContentView(R.layout.activity_main);
         arFragment = findViewById(R.id.ar_effect);
@@ -193,7 +212,16 @@ public class MainActivity extends AppCompatActivity {
                     this,
                     "为了应用的正常使用，请允许以下权限。",
                     0,
-                    Manifest.permission.CAMERA);
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.ACCESS_WIFI_STATE,
+                    Manifest.permission.ACCESS_NETWORK_STATE,
+                    Manifest.permission.CHANGE_WIFI_STATE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.RECORD_AUDIO);
             //没有授权，编写申请权限代码
         } else {
             //已经授权，执行操作代码

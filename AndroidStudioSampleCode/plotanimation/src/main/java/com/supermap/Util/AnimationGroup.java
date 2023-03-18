@@ -11,10 +11,10 @@ public class AnimationGroup extends com.supermap.plot.AnimationGroup {
         }
         return animationGroup;
     }
-    public com.supermap.plot.AnimationGroup getGroup(){
-        if (group==null){
-            group=AnimationManager.getInstance().addAnimationGroup("PlotGroup");
-        }
-        return group;
-    }
+//    public com.supermap.plot.AnimationGroup getGroup(){
+//        if (group==null){
+//            group=AnimationManager.getInstance().addAnimationGroup("PlotGroup");
+//        }
+//        return group;
+//    }
 }

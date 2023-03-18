@@ -52,14 +52,14 @@ public class RestMapsFragment extends Fragment implements View.OnClickListener {
 
         Bundle arguments = getArguments();
         restUrl = arguments.getString("restUrl");
-        IPortalService.getInstance().addOnResponseListener(new OnResponseListener() {
+        IPortalService.getInstance().getRestMaps(restUrl, new OnResponseListener() {
             @Override
-            public void onFailed(Exception exception) {
+            public void onError(Exception e) {
 
             }
 
             @Override
-            public void onResponse(Response response) {
+            public void onComplete(Response response) {
                 String responseBody = null;
                 ArrayList<RestMapsBean> restMapsBeanList = new ArrayList<>();
                 try {
@@ -93,7 +93,6 @@ public class RestMapsFragment extends Fragment implements View.OnClickListener {
                 });
             }
         });
-        IPortalService.getInstance().getRestMaps(restUrl);
     }
 
     @Override

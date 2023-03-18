@@ -39,10 +39,10 @@ public class ServicesControl {
      */
     public void getServices() {
         try {
-            IPortalService.getInstance().addOnResponseListener(listener);
+
             HashMap<String, String> searchParameter = new HashMap<>();
             searchParameter.put("pageSize", "20");
-            IPortalService.getInstance().getServices(searchParameter);
+            IPortalService.getInstance().getServices(searchParameter,listener);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,10 +55,10 @@ public class ServicesControl {
         @Override
         public void onRefresh() {
             try {
-                IPortalService.getInstance().addOnResponseListener(listener);
+
                 HashMap<String, String> searchParameter = new HashMap<>();
                 searchParameter.put("pageSize", "20");
-                IPortalService.getInstance().getServices(searchParameter);
+                IPortalService.getInstance().getServices(searchParameter,listener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -70,7 +70,7 @@ public class ServicesControl {
      */
     private OnResponseListener listener = new OnResponseListener() {
         @Override
-        public void onFailed(final Exception exception) {
+        public void onError(final Exception exception) {
             if (exception != null) {
                 Log.e("onFailed", exception.getMessage());
             }
@@ -85,7 +85,7 @@ public class ServicesControl {
         }
 
         @Override
-        public void onResponse(final Response response) {
+        public void onComplete(final Response response) {
             String responseBody = null;
             ServicesBean servicesBean = null;
             try {
