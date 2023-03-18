@@ -1,0 +1,43 @@
+{
+  materials: [
+    {
+      name: 'wire_141007058',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.55289999999999995,
+            0.0275,
+            0.22750000000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.242536,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/samplebook.obj',
+    name: 'samplebook',
+    recenter: 'root',
+    scale: 0.048732900000000001,
+  },
+  version: '0.54:2',
+}

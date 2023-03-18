@@ -1,0 +1,40 @@
+{
+    "models": [
+               {"ID": 243,
+               "longitude": 116.457897,
+               "latitude": 39.913678,
+               "altitude": 200,
+               "red": 1.0,
+               "green": 1.0,
+               "blue": 1.0,
+               "alpha": 1.0
+               },
+               {"ID": 10,
+               "longitude": 116.452311,
+               "latitude": 39.91095,
+               "altitude": 300,
+               "red": 1.0,
+               "green": 1.0,
+               "blue": 1.0,
+               "alpha": 1.0
+               },
+               {"ID": 69,
+               "longitude": 116.462187,
+               "latitude": 39.905372,
+               "altitude": 150,
+               "red": 1.0,
+               "green": 1.0,
+               "blue": 1.0,
+               "alpha": 1.0
+               },
+               {"ID": 141,
+               "longitude": 116.470235,
+               "latitude": 39.915762,
+               "altitude": 50,
+               "red": 1.0,
+               "green": 1.0,
+               "blue": 1.0,
+               "alpha": 1.0
+               }
+               ]
+}

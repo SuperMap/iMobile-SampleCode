@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:id="@+id/btn_select"
+        android:background="@drawable/shape_menu2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_margin="5dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ai"/>
+    </RelativeLayout>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/image_ai_select"
+        android:background="@drawable/ai_01"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="150dp"
+        android:layout_height="150dp"/>
+    <include
+        android:visibility="gone"
+        android:id="@+id/select_dialog"
+        layout="@layout/image_dialog"/>
+
+</RelativeLayout>

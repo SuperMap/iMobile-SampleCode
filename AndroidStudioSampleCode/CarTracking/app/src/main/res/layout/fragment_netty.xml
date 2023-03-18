@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:background="@color/log_bg"
+                android:layout_height="match_parent">
+
+    <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout
+            xmlns:rfal="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_list_sample_rfal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/log_bg"
+            rfal:rfal_frame_color="#000000"
+            rfal:rfal_frame_alpha="0.15">
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/cardview_status"
+                android:layout_height="wrap_content">
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_margin="10dp"
+                          android:layout_height="wrap_content">
+
+                <ImageView android:layout_width="wrap_content"
+                           android:id="@+id/image_status"
+                           android:background="@drawable/status_red"
+                           android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:text="状态："
+                          android:textColor="@color/log_bg"
+                          android:layout_marginLeft="10dp"
+                          android:layout_height="wrap_content"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:id="@+id/status"
+                          android:text="未连接服务器"
+                          android:textColor="@color/log_bg"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView android:layout_width="match_parent"
+                  android:id="@+id/tv_netlog"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp"
+                  android:layout_below="@id/cardview_status"
+                  android:text="网络日志:"
+                  android:textColor="@color/log_text"
+                  android:layout_height="wrap_content"/>
+
+        <ScrollView android:layout_width="match_parent"
+                    android:id="@+id/scrollview_log"
+                    android:layout_below="@id/tv_netlog"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/netlog"
+                    android:layout_height="match_parent">
+            <TextView android:layout_width="match_parent"
+                      android:padding="5dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginRight="10dp"
+                      android:layout_marginBottom="10dp"
+                      android:id="@+id/log"
+                      android:textColor="@color/log_text"
+                      android:layout_height="wrap_content"/>
+        </ScrollView>
+
+        <!--<HorizontalScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:fillViewport="true"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<com.yuyh.jsonviewer.library.JsonRecyclerView-->
+        <!--android:id="@+id/rv_json"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+        <!--</HorizontalScrollView>-->
+
+
+        <!--rfab:rfab_drawable="@drawable/rfab__drawable_rfab_default"-->
+        <!--rfab:rfab_color_normal="#37474f"-->
+        <!--rfab:rfab_color_pressed="#263238"-->
+        <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
+                xmlns:rfab="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_list_sample_rfab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                rfab:rfab_size="normal"
+                rfab:rfab_drawable="@drawable/myscenes"
+                rfab:rfab_color_normal="@color/colorAccent"
+                rfab:rfab_color_pressed="@color/colorAccentDeep"
+                rfab:rfab_shadow_radius="7dp"
+                rfab:rfab_shadow_color="@color/log_bg"
+                rfab:rfab_shadow_dx="0dp"
+                rfab:rfab_shadow_dy="5dp"/>
+
+    </com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout>
+
+</RelativeLayout>

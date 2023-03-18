@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.scenemicrocontrol.MainActivity" >
+
+    <com.supermap.realspace.SceneControl
+        android:id="@+id/sceneControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_panup"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_pandown"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="上移" />
+
+    <Button
+        android:id="@+id/btn_pandown"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_panleft"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="下移" />
+
+    <Button
+        android:id="@+id/btn_panleft"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_panright"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="左移" />
+
+    <Button
+        android:id="@+id/btn_panright"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="右移" />
+
+    <Button
+        android:id="@+id/btn_pitchup"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_pitchdown"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:text="仰视" />
+
+    <Button
+        android:id="@+id/btn_pitchdown"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_rollleft"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:text="俯视" />
+
+    <Button
+        android:id="@+id/btn_rollleft"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_rollright"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:text="左旋" />
+
+    <Button
+        android:id="@+id/btn_rollright"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:text="右旋" />
+
+</RelativeLayout>

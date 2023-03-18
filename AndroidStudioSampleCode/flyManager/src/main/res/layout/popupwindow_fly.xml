@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/mm_top"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/back2"
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#00000000"
+            android:src="@drawable/back" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="1.5dp"
+            android:layout_height="match_parent"
+            android:layout_alignRight="@+id/back2"
+            android:background="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="飞行路线"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ListView
+            android:id="@+id/listView_fly"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="#b0000000"
+            android:divider="#ff888888"
+            android:dividerHeight="1dp"
+            android:focusableInTouchMode="true"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:listSelector="#000000"
+            android:scrollbars="none" >
+        </ListView>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="1.5dp"
+        android:layout_height="252dp"
+        android:layout_alignLeft="@+id/listView_fly"
+        android:background="#FFFFFF" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="1.5dp"
+        android:layout_height="252dp"
+        android:layout_alignRight="@+id/listView_fly"
+        android:background="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/iv_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listView_fly"
+        android:background="@drawable/mm_bottom"
+        android:contentDescription="@null"
+        android:scaleType="fitXY" />
+
+    </RelativeLayout>
+
+    </LinearLayout>

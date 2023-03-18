@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                tools:context="com.supermap.imobile.poiwithgps.PoiWithGPSActivity">
+
+
+
+<!--        <include layout="@layout/content_main"/>-->
+
+
+        <!--        <RelativeLayout-->
+<!--            android:id="@+id/lyt_sceneView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+
+
+<!--        <com.google.ar.sceneform.ux.ArFragment-->
+<!--            android:id="@+id/ux_fragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+<!--        -->
+
+
+        <!--                <com.google.ar.sceneform.ArSceneView-->
+<!--                        android:id="@+id/ar_scene_view"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                />-->
+
+<!--                <com.google.ar.sceneform.ux.ArFragment-->
+<!--                    android:id="@+id/lytUxFragment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                </com.google.ar.sceneform.ux.ArFragment>-->
+
+
+<!--                <com.supermap.mapping.MapView-->
+<!--                android:id="@+id/lytMapView"-->
+<!--                android:layout_width="200dp"-->
+<!--                android:layout_height="200dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                    android:visibility="invisible"-->
+<!--                />-->
+
+
+        <!--        </RelativeLayout>-->
+
+        <!--<com.supermap.mapping.MapView-->
+        <!--android:id="@+id/testMapView"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--/>-->
+
+<!--        <android.opengl.GLSurfaceView-->
+<!--            android:id="@+id/view_ARMapDrawGLView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height= "match_parent"/>-->
+
+<!--        <android.opengl.GLSurfaceView-->
+<!--            android:id="@+id/view_ARMapDrawGLView6th"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height= "match_parent"/>-->
+
+
+        <!--<com.supermap.mapping.MapView-->
+            <!--android:id="@+id/mMapView"-->
+            <!--android:layout_width="600dp"-->
+            <!--android:layout_height="400dp"-->
+            <!--android:visibility="visible" />-->
+
+        <com.supermap.ar.arlayer.ARLayerView
+            android:id="@+id/lytARLayerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btnAROperate"
+            android:background="@drawable/change_map"
+            android:visibility="invisible"
+            />
+
+
+<!--        <android.support.v4.view.ViewPager-->
+<!--            android:id="@+id/viewPagerDataCollector"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--        </android.support.v4.view.ViewPager>-->
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/initARCity"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/arcity_disable"/>
+
+
+                <TextView
+                    android:id="@+id/txtAutoAR"
+                    android:text="自主模式"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/initARCity"
+                    android:visibility="visible"
+                    />
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/txtLocation"
+            android:text="info"
+            android:background="#B8B8B8"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            />
+
+
+
+
+</RelativeLayout>

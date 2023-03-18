@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.distanceandareameasurement.MainActivity" >
+
+    <com.supermap.realspace.SceneControl
+        android:id="@+id/sceneControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" 
+        android:layout_below="@+id/rl_bottom"
+        /> 
+    
+      <RelativeLayout 
+          android:id="@+id/rl_bottom"
+          android:layout_width="250dp"
+          android:layout_height="180dp"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginTop="15dp"
+          android:layout_marginLeft="15dp"
+          android:background="#FFFFFF"
+          >
+          
+         <include
+        android:id="@+id/titerbar_layer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        layout="@layout/titerbar_layer" />
+         
+         <TextView 
+             android:id="@+id/tv_info"
+             android:layout_width="match_parent"
+             android:layout_height="40dp"
+             android:layout_marginLeft="5dp"
+             android:layout_marginRight="5dp"
+             android:layout_marginTop="15dp"
+             android:background="@drawable/tv"
+             android:layout_below="@+id/titerbar_layer"
+             android:gravity="center"
+             />
+         
+         <TextView 
+             android:id="@+id/tv_clear"
+             android:layout_width="match_parent"
+             android:layout_height="40dp"
+             android:layout_marginLeft="5dp"
+             android:layout_marginRight="5dp"
+             android:layout_marginTop="15dp"
+             android:background="@drawable/tv"
+             android:layout_below="@+id/tv_info"
+             android:text="清除"
+             android:textSize="18sp"
+             android:textStyle="bold"
+             android:gravity="center"
+             />
+          
+      </RelativeLayout>
+      
+</RelativeLayout>

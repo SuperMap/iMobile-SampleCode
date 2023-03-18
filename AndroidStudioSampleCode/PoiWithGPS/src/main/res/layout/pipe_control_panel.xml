@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/custom_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:layout_width="280dp"
+            android:alpha="0.8"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_outbg"
+            android:layout_height="230dp">
+
+        <TextView android:layout_width="wrap_content"
+            android:id="@+id/btnConfirm"
+                  android:text="确认"
+                  android:textSize="16sp"
+                  android:textColor="#ffffff"
+                  android:background="@drawable/shape_itembg"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentBottom="true"
+                  android:layout_height="wrap_content"
+
+            />
+
+<!--        <TextView android:layout_width="wrap_content"-->
+<!--            android:id="@+id/btnReport"-->
+<!--            android:text="上报"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:background="@drawable/shape_itembg"-->
+<!--            android:layout_marginLeft="@+id/btnConfirm"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+    </RelativeLayout>
+
+    <!--    <RelativeLayout
+                android:layout_width="300dp"
+                android:alpha="0.6"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_bigoutbg"
+                android:layout_height="210dp">
+
+        </RelativeLayout>-->
+
+
+<!--    android:layout_centerVertical="true"-->
+
+    <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="250dp"
+            android:background="@drawable/shape_itembg"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:alpha="0.95"
+            android:layout_height="160dp">
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical"
+                      android:layout_marginLeft="5dp"
+                      android:layout_height="40dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:text="编号:"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_marginLeft="2dp"
+                      android:layout_weight="1"
+                      android:text="22020376"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical"
+                      android:layout_marginLeft="5dp"
+                      android:layout_height="40dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:text="管径:"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_marginLeft="2dp"
+                      android:layout_weight="1"
+                      android:text="400"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical"
+                      android:layout_marginLeft="5dp"
+                      android:layout_height="40dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:text="所属:"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_marginLeft="2dp"
+                      android:layout_weight="1"
+                      android:text="一分公司"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical"
+                      android:layout_marginLeft="5dp"
+                      android:layout_height="40dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:text="压力:"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+
+            <TextView android:layout_width="0dp"
+                      android:layout_marginLeft="2dp"
+                      android:layout_weight="1"
+                      android:text="中压A 0.2 P 0.4MPa"
+                      android:textSize="16sp"
+                      android:textColor="#ffffff"
+                      android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

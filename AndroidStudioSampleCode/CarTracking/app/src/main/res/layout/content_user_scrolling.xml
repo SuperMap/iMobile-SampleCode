@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_user_scrolling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserScrollingActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:layout_margin="6dp"
+                                            android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="账号："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"/>
+                    <TextView
+                            android:id="@+id/tv_username"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:maxLines="2"
+                            android:textIsSelectable="true"
+                            android:ellipsize="end"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="昵称："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"/>
+                    <TextView
+                            android:id="@+id/tv_nickname"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:maxLines="2"
+                            android:textIsSelectable="true"
+                            android:ellipsize="end"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="邮箱："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"/>
+                    <TextView
+                            android:id="@+id/tv_email"
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:maxLines="2"
+                            android:textIsSelectable="true"
+                            android:ellipsize="end"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:layout_margin="6dp"
+                                            android:layout_height="wrap_content">
+            <RadioGroup android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:id="@+id/radio_group"
+                        android:layout_height="wrap_content">
+                <RadioButton
+                        android:id="@+id/rb_nickname"
+                        android:text="修改昵称"
+                        android:gravity="center"
+                        android:button="@null"
+                        android:textSize="14sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_btn"
+                        android:layout_height="wrap_content"/>
+                <RadioButton
+                        android:id="@+id/rb_password"
+                        android:text="修改密码"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_btn"
+                        android:layout_height="wrap_content"/>
+                <RadioButton
+                        android:id="@+id/rb_question"
+                        android:text="修改安全问题"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:layout_width="0dp"
+                        android:button="@null"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_btn"
+                        android:layout_height="wrap_content"/>
+                <RadioButton
+                        android:id="@+id/rb_email"
+                        android:text="修改邮箱"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:layout_width="0dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_btn"
+                        android:layout_height="wrap_content"/>
+
+            </RadioGroup>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:id="@+id/cardview_nickname"
+                                            android:layout_margin="6dp"
+                                            android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="昵称："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <EditText
+                            android:id="@+id/edt_nickname"
+                            android:textSize="14sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:layout_margin="6dp"
+                                            android:visibility="gone"
+                                            android:id="@+id/cardview_password"
+                                            android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="原密码："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <EditText
+                            android:id="@+id/origin_password"
+                            android:textSize="14sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="新密码："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <EditText
+                            android:id="@+id/new_passowrd"
+                            android:textSize="14sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="确认新密码："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <EditText
+                            android:id="@+id/confirm_new_passowrd"
+                            android:textSize="14sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_margin="4dp"
+                          android:padding="10dp"
+                          android:text="提示：密码格式为4-18位，需要包含大、小写字母、数字和特殊字符！"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:layout_margin="6dp"
+                                            android:visibility="gone"
+                                            android:id="@+id/cardview_question"
+                                            android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="安全性问题："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <Spinner
+                            android:id="@+id/spinner"
+                            android:textSize="16sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:entries="@array/security_questions"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="安全性答案："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <EditText
+                            android:id="@+id/security_answer"
+                            android:textSize="16sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <TextView android:layout_width="match_parent"
+                          android:layout_margin="4dp"
+                          android:padding="10dp"
+                          android:text="提示：答案最少4个字母（2个汉字），最多30个字母（15个汉字）！"
+                          android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                            android:layout_margin="6dp"
+                                            android:id="@+id/cardview_email"
+                                            android:visibility="gone"
+                                            android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="vertical"
+                          android:layout_height="wrap_content">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:orientation="horizontal"
+                              android:layout_margin="5dp"
+                              android:layout_height="wrap_content">
+                    <TextView
+                            android:textSize="14sp"
+                            android:padding="4dp"
+                            android:text="邮箱地址："
+                            android:layout_marginLeft="2dp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"/>
+                    <EditText
+                            android:id="@+id/edt_email"
+                            android:textSize="14sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+                android:id="@+id/update"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:padding="4dp"
+                android:text="提交修改"
+                android:background="@drawable/btn_nor_down"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:textColor="@color/download_button"
+                android:layout_height="40dp"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

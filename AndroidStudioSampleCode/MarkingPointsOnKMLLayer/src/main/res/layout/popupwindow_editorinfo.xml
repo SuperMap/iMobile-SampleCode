@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/rl_editor"
+   >
+
+    <RelativeLayout 
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        >
+       <ImageView 
+      android:id="@+id/iv_back"
+      android:layout_height="35dp"
+      android:layout_width="35dp"
+      android:background="@drawable/icon_back"
+      android:layout_centerVertical="true"
+      />
+  
+  <TextView 
+      android:id="@+id/tv_title"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:text="属性"
+      android:textSize="20sp"
+      android:layout_centerInParent="true"
+      />
+    
+        
+    </RelativeLayout>
+    
+   <View 
+       android:id="@+id/view1"
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@android:color/darker_gray"
+       android:layout_below="@+id/rl_title"
+       />
+   
+   <TextView 
+       android:id="@+id/tv_name"
+       android:layout_width="wrap_content"
+       android:layout_height="40dp"
+       android:text="名称"
+       android:textSize="18sp"
+       android:layout_below="@+id/view1"
+       android:layout_marginTop="13dp"
+       android:layout_marginLeft="10dp"
+       />
+   
+   <EditText 
+       android:id="@+id/et_name"
+       android:layout_width="match_parent"
+       android:layout_height="33dp"
+       android:text="未命名"
+       android:textSize="18sp"
+       android:layout_toRightOf="@+id/tv_name"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_marginTop="10dp"
+       android:layout_below="@+id/view1"
+       android:background="@drawable/tv"
+       />
+   
+   <TextView 
+        android:id="@+id/tv_visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="场景中显示"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tv_name"
+        android:textColor="#1d1e19"
+        android:layout_marginTop="10dp"
+        />
+    
+     <ToggleButton
+        android:id="@+id/mTogBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/transparent"
+        android:button="@drawable/checkbox_iphone"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:checked="true"
+        android:text=""
+        android:textOff=""
+        android:textOn="" 
+        android:layout_below="@+id/tv_name"
+        android:paddingRight="10dp"
+        android:layout_marginTop="10dp"
+        />
+      <TextView 
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="描述信息"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tv_visible"
+        android:textColor="#1d1e19"
+        android:layout_marginTop="10dp"
+        />
+    
+     <EditText 
+       android:id="@+id/et_info"
+       android:layout_width="wrap_content"
+       android:layout_height="50dp"
+       android:text="名称"
+       android:textSize="18sp"
+       android:layout_marginLeft="5dp"
+       android:layout_marginRight="5dp"
+       android:layout_below="@+id/tv_info"
+       android:background="@drawable/tv"
+       android:paddingLeft="5dp"
+       android:paddingRight="5dp"
+       />
+    
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.nodeanimationdemo.MainActivity" >
+
+   <com.supermap.realspace.SceneControl
+        android:id="@+id/sceneControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+   
+    <RelativeLayout
+        android:id="@+id/rl_nodeAnimation"
+        android:layout_width="200dp"
+        android:layout_height="190dp"
+        android:background="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+        
+           <TextView
+            android:id="@+id/tv_createRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_opacity"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="点击创建路线"
+            android:textSize="20sp" />
+        
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="时长"
+            android:layout_below="@+id/tv_createRoute"
+            android:textSize="18sp" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/tv_time"
+            android:layout_below="@+id/tv_createRoute"
+            android:max="100"
+            android:progress="30" />
+
+       
+
+        <TextView
+            android:id="@+id/tv_playmode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time"
+            android:layout_marginTop="10dp"
+            android:text="循环模式"
+            android:textSize="18sp" />
+
+        <ToggleButton
+            android:id="@+id/mTogBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_time"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:background="@android:color/transparent"
+            android:button="@drawable/select_style"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <TextView
+            android:id="@+id/tv_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_playmode"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="清除"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_clear"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_clear"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="开始"
+            android:textSize="20sp" />
+    </RelativeLayout>
+     
+</RelativeLayout>

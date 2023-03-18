@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout
+            xmlns:rfal="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_list_sample_rfal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            rfal:rfal_frame_color="#000000"
+            rfal:rfal_frame_alpha="0.15">
+
+        <com.dandan.jsonhandleview.library.JsonViewLayout
+                android:id="@+id/jsonView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <!--<HorizontalScrollView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:fillViewport="true"-->
+                <!--android:orientation="vertical">-->
+
+            <!--<com.yuyh.jsonviewer.library.JsonRecyclerView-->
+                    <!--android:id="@+id/rv_json"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content" />-->
+        <!--</HorizontalScrollView>-->
+
+
+        <!--rfab:rfab_drawable="@drawable/rfab__drawable_rfab_default"-->
+        <!--rfab:rfab_color_normal="#37474f"-->
+        <!--rfab:rfab_color_pressed="#263238"-->
+        <com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton
+                xmlns:rfab="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_list_sample_rfab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                rfab:rfab_size="normal"
+                rfab:rfab_drawable="@drawable/mymaps"
+                rfab:rfab_color_normal="@color/colorAccent"
+                rfab:rfab_color_pressed="@color/colorAccentDeep"
+                rfab:rfab_shadow_radius="7dp"
+                rfab:rfab_shadow_color="#999999"
+                rfab:rfab_shadow_dx="0dp"
+                rfab:rfab_shadow_dy="5dp"/>
+
+    </com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout>
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/editmapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.supermap.mapping.MapView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="30dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ht"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ht"
+            android:scaleType="fitCenter"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"/>
+
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:splitTrack="false"
+            />
+
+        <ImageButton
+            android:id="@+id/kj"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/kj"
+            android:scaleType="fitCenter"
+            android:gravity="center"
+            android:layout_marginRight="10dp"/>
+
+        <ImageButton
+            android:id="@+id/bf"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bf"
+            android:scaleType="fitCenter"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间 : 2011-07-29 18:00:00 至 2011-07-30 18:00:00"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+     <RelativeLayout 
+        android:id="@+id/rl_botom"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        >
+        <TextView 
+        android:id="@+id/tv_progre"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/a"  
+          />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:id="@+id/rl_right"
+        android:layout_width="200dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="-10.5dp"
+        android:background="@drawable/rightshape"  
+        android:layout_toRightOf="@+id/rl_botom"
+        android:layout_marginBottom="27dp"
+        android:layout_alignParentBottom="true"      
+        >
+         <ImageView
+            android:id="@+id/iv_imageView1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+           />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_imageView1"
+            android:layout_marginTop="1.5dp"
+            android:layout_marginBottom="1.5dp"
+            android:background="#ff888888" />
+
+        <ImageView
+            android:id="@+id/iv_imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/view1"
+            android:background="@drawable/stop" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_imageView2"
+            android:background="#ff888888" 
+            android:layout_marginTop="1.5dp"
+            android:layout_marginBottom="1.5dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_imageView3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/view2"
+            android:background="@drawable/fullscreen" />
+        
+         <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="X"/>
+        
+        
+    </RelativeLayout>
+    
+</RelativeLayout>
+
+
+

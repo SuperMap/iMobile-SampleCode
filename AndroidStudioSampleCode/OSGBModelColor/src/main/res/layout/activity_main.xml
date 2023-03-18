@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.osgbmodelcolor.MainActivity" 
+    >
+
+     <com.supermap.realspace.SceneControl
+         android:id="@+id/sceneControl"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"/>
+     <ListView
+            android:id="@+id/listView_main"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#ffffff"
+            android:cacheColorHint="#00000000"
+            android:dividerHeight="1dp"
+            android:focusableInTouchMode="true"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="false"
+            android:scrollbars="none" 
+            android:layout_alignParentBottom="true"
+            android:descendantFocusability="blocksDescendants"
+            >
+        </ListView>
+        
+       <TextView
+            android:id="@+id/tv_dialog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="@+id/sceneControl"
+            android:layout_alignParentTop="@+id/sceneControl"
+            android:background="@color/Color_white"
+            
+           />
+
+</RelativeLayout>

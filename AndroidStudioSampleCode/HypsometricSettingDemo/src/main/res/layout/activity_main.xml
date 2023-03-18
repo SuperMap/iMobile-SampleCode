@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.hysometricsettingdemo.MainActivity" >
+
+    <com.supermap.realspace.SceneControl
+        android:id="@+id/sceneControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+
+    <RelativeLayout
+        android:id="@+id/rl_hypsometricSetting"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#FFFFFF"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <TextView
+            android:id="@+id/tv_opacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="透明度"
+            android:textSize="15sp" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_opacity"
+            android:max="100"
+            android:progress="30" />
+
+        <TextView
+            android:id="@+id/tv_maxWaterLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_opacity"
+            android:layout_marginTop="10dp"
+            android:text="最大水位:"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_maxWaterLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/tv_opacity"
+            android:layout_toRightOf="@+id/tv_maxWaterLevel"
+            android:background="@null"
+            android:textSize="15sp"
+            android:text="100" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_maxWaterLevel"
+            android:layout_marginTop="10dp"
+            android:text="动画时间:"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/tv_maxWaterLevel"
+            android:layout_toRightOf="@+id/tv_time"
+            android:background="@null"
+            android:textSize="15sp"
+            android:text="10" />
+
+        <TextView
+            android:id="@+id/tv_playmode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time"
+            android:layout_marginTop="10dp"
+            android:text="循环模式"
+            android:textSize="15sp" />
+
+        <ToggleButton
+            android:id="@+id/mTogBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tv_time"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="1dp"
+            android:background="@android:color/transparent"
+            android:button="@drawable/select_style"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <TextView
+            android:id="@+id/tv_play"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_playmode"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="播放"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_play"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tv_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_play"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="停止"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

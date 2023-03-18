@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    
+    <TextView 
+        android:id="@+id/tv_TrackDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="模型选择"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        
+        />
+    
+    <RadioGroup 
+        android:id="@+id/rg_TrackDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_TrackDistance"
+        android:layout_below="@id/tv_TrackDistance"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        >
+        <RadioButton 
+            android:id="@+id/rb_3m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="灭火器"
+            android:textColor="#000000"
+            />
+        
+        <RadioButton 
+            android:id="@+id/rb_5m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="警示牌"
+            android:textColor="#000000"
+            />
+        
+         <RadioButton 
+            android:id="@+id/rb_10m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="消防栓"
+            android:textColor="#000000"
+            />
+    </RadioGroup>
+    
+
+        
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" 
+        >
+
+        <Button
+            android:id="@+id/btn_set_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textColor="#000000" 
+            />
+
+        <Button
+            android:id="@+id/btn_set_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/btn_set_confirm"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/btn_set_confirm"
+            android:text="取消"
+            android:textColor="#000000"
+            android:textSize="15sp" 
+            />
+    </RelativeLayout>
+"
+</RelativeLayout>

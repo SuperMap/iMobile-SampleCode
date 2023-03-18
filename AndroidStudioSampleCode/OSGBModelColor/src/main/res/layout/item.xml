@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:layout_marginTop="0dp"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="ID:" />
+
+    <TextView
+        android:id="@+id/tv_modelid"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tv_modelcolor"
+        android:layout_toRightOf="@+id/textView"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="1111" />
+
+    <TextView
+        android:id="@+id/tv_modelcolor"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_toLeftOf="@+id/iv_modelcolor"
+        android:layout_marginRight="3dp"
+        android:text="颜色:" 
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textSize="16sp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_modelcolor"
+        android:layout_width="100dp"
+        android:layout_height="34dp"
+        android:layout_alignParentRight="true" 
+        android:focusable="false"
+        android:background="@drawable/login"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.mapscenelinkage.MainActivity" >
+
+     
+     <RelativeLayout 
+         android:id="@+id/rl_btn"
+         android:layout_width="50dp"
+         android:layout_height="wrap_content"
+         >
+     <Button 
+            android:id="@+id/btn_map"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="二维"
+            
+            />
+        <Button 
+            android:id="@+id/btn_scene"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="三维"
+            android:layout_below="@+id/btn_map"
+            />
+        <Button 
+            android:id="@+id/btn_linkage"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="二三维"
+            android:layout_below="@+id/btn_scene"
+            />
+        </RelativeLayout>
+    
+      <RelativeLayout 
+           android:id="@+id/rl_map"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" 
+            android:layout_toRightOf="@+id/rl_btn"
+          >
+        
+        <com.supermap.mapping.MapView
+            
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            />  
+       </RelativeLayout>
+       
+       <RelativeLayout 
+            android:id="@+id/rl_scene"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_toRightOf="@+id/rl_map"
+            
+          >
+         <com.supermap.realspace.SceneControl
+         android:id="@+id/sceneControl"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:gravity="center_horizontal"
+         
+         />
+          </RelativeLayout>
+        
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_xml"
+    tools:context="com.supermap.markingpointsonkmllayer.MainActivity" >
+    <com.supermap.realspace.SceneControl
+        android:id="@+id/sceneControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+    
+    
+    <RelativeLayout 
+        android:id="@+id/rl_bottomMenu"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_gray"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        >
+        
+        <TextView 
+            android:id="@+id/tv_info"
+            android:textSize="11sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="5dp"
+            />
+        
+         <ImageView 
+            android:id="@+id/iv_close"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/icon_close"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            />
+        
+        <View 
+            android:id="@+id/view1"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@android:color/darker_gray"
+            android:layout_centerVertical="true"
+            />
+        
+        <ImageView 
+            android:id="@+id/iv_collect"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/icon_not_collect"
+            android:layout_below="@+id/view1"
+            android:layout_marginLeft="27.5dp"
+            />
+         <View 
+            android:id="@+id/view2"
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginLeft="27.5dp"
+            android:layout_below="@+id/view1"
+            android:layout_toRightOf="@+id/iv_collect"
+            />
+        
+        <ImageView 
+            android:id="@+id/iv_circle"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/icon_flyaround"
+            android:layout_below="@+id/view1"
+            android:layout_toRightOf="@+id/view2"
+            android:layout_marginLeft="27.5dp"
+            />
+         <View 
+            android:id="@+id/view3"
+            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/view1"
+            android:layout_marginLeft="27.5dp"
+            android:layout_toRightOf="@+id/iv_circle"
+            />
+        
+        <ImageView 
+            android:id="@+id/iv_editor"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/icon_rename"
+            android:layout_below="@+id/view1"
+            android:layout_toRightOf="@+id/view3"
+            android:layout_marginLeft="27.5dp"
+            />
+        
+        
+    </RelativeLayout>
+    
+    
+    
+</RelativeLayout>

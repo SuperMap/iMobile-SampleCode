@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnPointTitle"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="采集点"
+            android:background="@drawable/button_dark"
+            android:textColor="#F2F8F3"
+            android:textSize="24dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/radGroupPointModelSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnPointTitle"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <RadioButton
+                android:id="@+id/rb_3m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="灭火器"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/rb_5m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="警示牌"
+                android:textColor="#000000" />
+
+            <RadioButton
+                android:id="@+id/rb_10m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="消防栓"
+                android:textColor="#000000" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnAddPointSingle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="0dp"
+        android:background="@drawable/button"
+        android:text="添加" />
+
+
+
+</RelativeLayout>

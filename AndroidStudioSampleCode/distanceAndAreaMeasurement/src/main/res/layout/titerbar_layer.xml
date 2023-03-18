@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal" 
+    android:background="@drawable/scenelist"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    
+    >
+    
+    
+    <TextView 
+        android:id="@+id/tv_distance"
+        android:text="距离"        
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:textSize="20sp" 
+        android:background="@drawable/tv_left"  
+        android:textColor="#FFFFFF"  
+            
+        />
+    
+    <View 
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#87867F"
+        
+        />
+  
+    <TextView 
+        android:id="@+id/tv_area"
+        android:text="面积"        
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:textSize="20sp"  
+        android:textColor="#FFFFFF"
+        android:background="@drawable/tv_right"          
+        />
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <!--<com.supermap.mapping.AR.ArControl2-->
+        <!--android:id="@+id/test_arcontrol"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="visible"/>-->
+
+
+
+    <com.supermap.mapping.MapView
+        android:id="@+id/testMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+    </com.supermap.mapping.MapView>
+
+
+<!--    <com.supermap.mapping.AR.ArControl2-->
+<!--        android:id="@+id/test_arcontrol"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:visibility="visible"/>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="hello"/>&ndash;&gt;-->
+
+            <!--<com.supermap.mapping.MapView-->
+            <!--android:id="@+id/test_mapView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:visibility="visible"-->
+            <!--/>-->
+        <!--</RelativeLayout>-->
+
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="我的地圖"-->
+        <!--android:textSize="30sp"-->
+        <!--android:layout_centerInParent="true"/>-->
+
+</RelativeLayout>

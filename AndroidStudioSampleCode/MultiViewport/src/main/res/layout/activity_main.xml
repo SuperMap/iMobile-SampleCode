@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.supermap.mutiviewport.MainActivity" >
+
+
+    <com.supermap.realspace.SceneControl
+        android:id="@+id/sceneControl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:padding="0dp" />
+   <Button 
+       android:id="@+id/btn_none"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_alignParentBottom="true"
+       android:text="退出分屏"
+       />
+   <Button 
+       android:id="@+id/btn_quad"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_above="@+id/btn_none"
+       android:text="四分屏"
+       />
+   <Button 
+       android:id="@+id/btn_triple"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_above="@+id/btn_quad"
+       android:text="三分屏"
+       />
+   <Button 
+       android:id="@+id/btn_vertical"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_above="@+id/btn_triple"
+       android:text="垂直"
+       />
+   <Button 
+       android:id="@+id/btn_horizontal"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+       android:layout_alignParentLeft="true"
+       android:layout_above="@+id/btn_vertical"
+       android:text="水平"
+       />
+    
+   
+</RelativeLayout>
