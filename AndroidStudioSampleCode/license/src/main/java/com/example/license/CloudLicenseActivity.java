@@ -44,7 +44,7 @@ public class CloudLicenseActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
-        manager.login("992275331@qq.com","1995824lwh");
+        manager.login("username","userpwd");
     }
 
     public void query(View view) {
